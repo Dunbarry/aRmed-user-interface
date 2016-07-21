@@ -21,7 +21,7 @@ var shoulder= {
             3:{
               plating:0,
               insulation: 0,
-              weapons:["empty"],
+              weapons:["empty", "empty"],
               equip:["polarizer"]
             },
             4:{
@@ -36,8 +36,24 @@ var shoulder= {
 
 $("#ignition").on('click', function(){
   $("#health span").html(shoulder.Player.health);
-  $("#armor span").html(shoulder.aRm["1"].plating);
-  $("#insulation span").html(shoulder.aRm["1"].insulation);
-  $("#weapon1").html(shoulder.aRm["1"].weapons[0]);
-  $("#ammo1 span").html(shoulder.aRm["1"].equip[0]);
+/*Q1*/
+  $("#armor1 span").html(shoulder.aRm["1"].plating);
+  $("#insulation1 span").html(shoulder.aRm["1"].insulation);
+  $("#weapon11").html(shoulder.aRm["1"].weapons[0]);
+  $("#weapon12").html(shoulder.aRm["1"].weapons[1]);
+/*Q2*/
+  $("#armor2 span").html(shoulder.aRm["2"].plating);
+  $("#insulation2 span").html(shoulder.aRm["2"].insulation);
+  $("#weapon21").html(shoulder.aRm["2"].weapons[0]);
+  $("#weapon22").html(shoulder.aRm["2"].weapons[1]);
+/*Q3*/
+  $("#armor3 span").html(shoulder.aRm["3"].plating);
+  $("#insulation3 span").html(shoulder.aRm["3"].insulation);
+  $("#weapon31").html(shoulder.aRm["3"].weapons[0]);
+  $("#weapon32").html(shoulder.aRm["3"].weapons[1]);
+/*Q3*/
+  $("#armor4 span").html(shoulder.aRm["4"].plating);
+  $("#insulation4 span").html(shoulder.aRm["4"].insulation);
+  $("#weapon41").html(shoulder.aRm["4"].weapons[0]);
+  $("#weapon42").html(shoulder.aRm["4"].weapons[1]);
 })
