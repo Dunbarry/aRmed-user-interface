@@ -1,0 +1,121 @@
+/*why doesn't this work?*/
+@font-face{
+ font-family:'digital';
+ src: url('http://www.1001fonts.com/digital-7-font.html');
+ }
+
+
+#ignition{
+  height: 1vw;
+}
+
+body{
+	padding: 0em;
+	background-color: silver;
+  margin:auto;
+  height: 100%;
+  width: 99vw;
+}
+
+footer{
+  background-color: #FFFFFF;
+  padding: 0em;
+}
+
+header{
+	background-color: #FFFFFF;
+	padding: 1.5em;
+}
+
+.container{
+	display: flex;
+  height: 50%;
+	width: 100%;
+}
+
+.box1{
+  order: 2;
+	flex: 3;
+
+  text-align: center;
+  background-color: #62626D;
+}
+
+/*Quadrant Box*/
+.Q{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2vw;
+
+  font-family: 'digital';
+}
+
+/*Stat Windows*/
+.status1{
+  display: flex;
+	order: 1;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content:flex-end;
+
+  padding-bottom: 2em;
+	background-color: green;
+}
+
+.status2{
+  display: flex;
+	order: 3;
+  flex: 2;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content:flex-start;
+
+	background-color: red;
+}
+
+.box1, .box2, .box3{
+	padding: 0em;
+}
+
+/* CHIPS */
+.chip{
+  display:flex;
+  align-content: space-around;
+  width: 80%;
+  color:white;
+  background-color: grey;
+  border: 0em;
+  padding: .2em 2em;
+  border-radius: 2em;
+
+}
+
+.input{
+  background: green;
+  padding: 1em;
+}
+
+.input2{
+  background: red;
+  padding: 1em;
+}
+
+/* mobile layout? */
+@media (max-width: 480px){
+	.container{
+		display: flex;
+    width: 100%;
+
+    orient: vertical;
+	}
+	.box2{
+		order: 2;	}
+	.box1{
+		order: 1;
+	}
+	.box3{
+		order: 3;
+}
+}
