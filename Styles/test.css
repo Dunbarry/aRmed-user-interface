@@ -1,3 +1,8 @@
+/*why doesn't this work?*/
+@font-face{
+ font-family:'digital';
+ src: url('http://www.1001fonts.com/digital-7-font.html');
+ }
 
 
 #ignition{
