@@ -1,0 +1,33 @@
+.div{
+  display: flex;
+  flex-direction: column;
+  width:35vw;
+}
+
+#aRm{
+  display: flex;
+  padding: .5vw;
+  margin-top: .5vw;
+  text-align: center;
+}
+
+#Q{
+  display: flex;
+  justify-content: center;
+  padding:.25vw;
+
+  margin:1vw;
+  margin-top: 3vw;
+  outline: .2vw solid grey;
+  background-color: grey;
+  color: white;
+}
+
+form > span{
+  display: flex;
+  justify-content: space-between;
+}
+
+input{
+  display: flex;
+}
