@@ -35,6 +35,7 @@ var shoulder= {
 };
 
 $("#ignition").on('click', function(){
+  // rutger();
   $("#health span").html(shoulder.Player.health);
 /*Q1*/
   $("#armor1").html("Armor: "+shoulder.aRm["1"].plating+"  Insulation: "+shoulder.aRm["1"].insulation);
@@ -54,4 +55,6 @@ $("#ignition").on('click', function(){
   $("#insulation4 span").html(shoulder.aRm["4"].insulation);
   $("#weapon41").html(shoulder.aRm["4"].weapons[0]);
   $("#weapon42").html(shoulder.aRm["4"].weapons[1]);
+
+  OPrutger();
 })
