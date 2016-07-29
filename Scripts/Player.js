@@ -36,7 +36,8 @@ var shoulder= {
 
 $("#ignition").on('click', function(){
   // rutger();
-  $("#health span").html(shoulder.Player.health);
+  $("#moniker").html(shoulder.Player.name)
+  $("#health").html(shoulder.Player.health);
 /*Q1*/
   $("#armor1").html("Armor: "+shoulder.aRm["1"].plating+"  Insulation: "+shoulder.aRm["1"].insulation);
   $("#insulation1 span").html(shoulder.aRm["1"].insulation);

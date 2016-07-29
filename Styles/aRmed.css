@@ -59,6 +59,12 @@ header{
 	background-color: green;
 }
 
+#OPhealth{
+  display: flex;
+  display: block;
+  justify-content:flex-end;
+}
+
 .status2{
   display: flex;
 	order: 3;
@@ -74,10 +80,14 @@ header{
 	padding: 0em;
 }
 
+h4{
+  margin:2px;
+}
+
 /* CHIPS */
 .chip{
   display:flex;
-  align-content: space-around;
+  justify-content: space-between;
   width: 80%;
   color:white;
   background-color: grey;
@@ -88,11 +98,14 @@ header{
 }
 
 .input{
+  display:flex;
+  /*justify-content: space-around;*/
   background: green;
   padding: 1em;
 }
 
 .input2{
+  display: flex;
   background: red;
   padding: 1em;
 }

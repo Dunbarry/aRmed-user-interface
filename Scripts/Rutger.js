@@ -36,7 +36,8 @@ var rutger= {
 
 function OPrutger(){
   console.log("Rutger online.");
-  $("#OPhealth span").html(rutger.Player.health);
+  $("#OPmoniker").html(rutger.Player.name)
+  $("#OPhealth").html(rutger.Player.health);
 /*Q1*/
   $("#OParmor1").html("Armor: "+rutger.aRm["1"].plating+"  Insulation: "+rutger.aRm["1"].insulation);
   $("#insulation1 span").html(rutger.aRm["1"].insulation);
