@@ -65,7 +65,7 @@ header{
   flex: 2;
   flex-wrap: wrap;
   justify-content: flex-end;
-  align-content:flex-start;
+  align-content: flex-start;
 
 	background-color: red;
 }
