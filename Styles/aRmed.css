@@ -1,4 +1,7 @@
-
+.trigger{
+  width:3vw;
+  height:.5px;
+}
 
 #ignition{
   height: 1vw;
