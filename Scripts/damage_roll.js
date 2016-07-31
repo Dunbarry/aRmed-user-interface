@@ -6,7 +6,7 @@
 
 var base = 2;
 function toHit(aim,dmg){
-	console.log("Aim "+aim+", Damage "+dmg);
+	console.log("Aim: "+aim+", Damage: "+dmg);
 	hit=(Math.floor(Math.random()*10)+aim);
 	console.log("To hit "+hit);
   if(hit<=0){ 			       //crit
@@ -37,7 +37,7 @@ var weapons={
     dmg=base*2;
     toHit(aim,dmg);
   },
-  repOff: function(toHit){
+  "Repeat Offender": function(toHit){
   	shots=1;
   	dmg=base;
   	while(shots<=3){	      //Aim bonus grows with each shot in burst
