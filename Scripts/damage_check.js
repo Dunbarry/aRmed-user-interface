@@ -1,14 +1,15 @@
-function rngQ(){
+function rngQ(){									//Randomly selecting a quadrant
 	n=Math.floor(Math.random()*4);
-		if(n===0){
-			random=4;
-		}
-		else{
-			random=n;
-		}
+	if(n===0){
+		random=4;
+	}
+	else{
+		random=n;
+	}
 	return random;
 }
 
+//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
 var shoulder= {
   "Val.R/E":{
    	name:"Val.R/E",
@@ -16,64 +17,67 @@ var shoulder= {
     nationality:"American",
     health:4,
   },
-      "aRm":{
-            1:{
-              plating: 15,
-              insulation: 5,
-              weapons: ["Misdemeanor","empty"],
-              equip:["empty"]
-            },
-            2:{
-              plating: 10,
-              insulation: 10,
-              weapons:["Misdemeanor","empty"],
-              equip:["gyros","aRc"]
-            },
-            3:{
-              plating:0,
-              insulation: 0,
-              weapons:["empty"],
-              equip:["polarizer"]
-            },
-            4:{
-              plating: 0,
-              insulation: 0,
-              weapons:["empty"],
-              equip:["ammo","ammo"]
-            },
-            cylinder:["empty"]
-}
+  "aRm":{
+  	1:{
+    	plating: 15,
+      insulation: 5,
+      weapons: ["Misdemeanor","empty"],
+      equip:["empty"]
+    },
+    2:{
+    	plating: 10,
+      insulation: 10,
+      weapons:["Misdemeanor","empty"],
+      equip:["gyros","aRc"]
+    },
+    3:{
+      plating:0,
+      insulation: 0,
+      weapons:["empty"],
+      equip:["polarizer"]
+    },
+    4:{
+    	plating: 0,
+  		insulation: 0,
+      weapons:["empty"],
+    	equip:["ammo","ammo"]
+  	},
+  	cylinder:["empty"]
+	}
 };
+//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
+
+$("document").ready( "test.js" );
 
 function check(Dmg){
 	var q=rngQ();
-    console.log(q);
-    console.log(Dmg);
-        for(var i in shoulder.aRm){
-            if(shoulder.aRm[i]===shoulder.aRm[q]){
-               if(shoulder.aRm[i].plating===0){
-                 x=i;
-                 pass=Dmg
-                 console.log("check")
-                 breach(pass);
-               }
-               else if(shoulder.aRm[i].plating===Dmg){
-               shoulder.aRm[i].plating=0;
-               console.log("Armor destroyed!")
-               }
-               else if(shoulder.aRm[i].plating<=Dmg){
-                    x=i;
-                    pass=Dmg-shoulder.aRm[i].plating;
-                    shoulder.aRm[i].plating=0;
-                    console.log("Armor breached");
-                    breach(pass)
-               }
-               else{
-               shoulder.aRm[i].plating-=Dmg;
-               console.log(shoulder.aRm[i].plating)
-               }
-           }
-        }
+  console.log(q);
+  console.log(Dmg);
+  for(var i in shoulder.aRm){
+  	if(shoulder.aRm[i]===shoulder.aRm[q]){
+   		if(shoulder.aRm[i].plating===0){
+		 		x=i;
+       	pass=Dmg
+       	console.log("check")
+        breach(pass);
+      }
+    	else if(shoulder.aRm[i].plating===Dmg){
+    		shoulder.aRm[i].plating=0;
+        console.log("Armor destroyed!")
+      }
+      else if(shoulder.aRm[i].plating<=Dmg){
+        x=i;
+        pass=Dmg-shoulder.aRm[i].plating;
+        shoulder.aRm[i].plating=0;
+        console.log("Armor breached");
+        breach(pass)
+    	}
+      else{
+        shoulder.aRm[i].plating-=Dmg;
+        console.log(shoulder.aRm[i].plating)
+      }
+    }
+  }
 }
 
 function breach(pass){
@@ -98,7 +102,7 @@ function breach(pass){
         console.log("Insulation offline!")
         if(shoulder.aRm[x].weapons!= "empty"){
           console.log(shoulder.aRm[x].weapons[0]+" destroyed!")
-          shoulder.aRm[x].weapons.shift();          
+          shoulder.aRm[x].weapons.shift();
         }
     }
 }
@@ -114,4 +118,3 @@ function wound(pass){
 
 }
 //console.log(shoulder["aRm"]q3.equip);
-check(30);

@@ -1,195 +1,188 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>aRmed</title>
-  <link type="text/css" rel="stylesheet" href="styles/aRmed.css"/>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>aRmed</title>
+    <link type="text/css" rel="stylesheet" href="styles/aRmed.css"/>
+  </head>
   <body>
-  <header>aRmed</header>
-  <div class="container">
-    <article class="box1">
-      Dynamic Image<br/ >( Player )
-    </article>
-    <article class="box1">
-      Dynamic Image<br/ >( Opponent )
-    </article>
-    <nav class="status1">
-        <div class="input">
+    <header>aRmed</header>
+    <div class="container">
+      <article class="box1">
+        Dynamic Image<br/ >( Player )
+      </article>
+      <article class="box1">
+        Dynamic Image<br/ >( Opponent )
+      </article>
+      <nav class="status1">
+          <div class="input">
+            <span class="chip">
+              <span id="moniker">error 0</span>
+              <span id="health">error 0</span>
+            </span>
+        </div>
+        <button class="ignition" id="ignition">ignition</button>
+        <div class="Q">
+          <h4>Q1</h4>
+            <span class="chip">
+              <div id="armor1">error 0</div>
+              <div id="insulation1">error 0</div>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon11"></span>
+              <button class="trigger" value="weapon11"></button>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon12"></span>
+              <button class="trigger"></button>
+            </span>
+        </div>
+        <div class="Q">
+          Q2<br>
+            <span class="chip">
+              <div id="armor2">error 0</div>
+              <div id="insulation2">error 0</div>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon21"></span>
+              <button class="trigger"></button>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon22"></span>
+              <button class="trigger"></button>
+            </span>
+        </div>
+        <div class="Q">
+          Q3<br>
+            <span class="chip">
+              <div id="armor3">error 0</div>
+              <div id="insulation3">error 0</div>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon31"></span>
+              <button class="trigger"></button>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon32"></span>
+              <button class="trigger"></button>
+            </span>
+        </div>
+        <div class="Q">
+          Q4<br>
+            <span class="chip">
+              <div id="armor4">error 0</div>
+              <div id="insulation4">error 0</div>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon41"></span>
+              <button class="trigger"></button>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="weapon42"></span>
+              <button class="trigger"></button>
+            </span>
+        </div>
+      </nav>
+      <nav class="status2">
+        <div class="input2">
           <span class="chip">
-            <span id="moniker">error 0</span>
-              <span id="health">error 0
+            <span id="OPmoniker">error 0</span>
+              <span id="OPhealth">error 0
               </span>
           </span>
       </div>
-      <button class="ignition" id="ignition">ignition</button><br><br>
-      <div class="Q">
-        <h4>Q1</h4>
-          <span class="chip">
-            <div id="armor1">error 0</div>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon11">
-              <span class="button" id="ammo1"></span>
+        <div class="Q">
+          Q1<br>
+            <span class="chip">
+              <div id="OParmor1">error 0</div>
             </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon12">
-              <span class="button" id="ammo2"></span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon11">
+                <span id="ammo1"></span>
+              </span>
             </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q2<br>
-          <span class="chip">
-            <span id="armor2">error 0</span>
-
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon21">
-              <span class="button" id="ammo1"></span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon12">
+                <span class="button" id="ammo2"></span>
+              </span>
             </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon22">
-              <span class="button" id="ammo2"></span>
+        </div>
+        <div class="Q">
+          Q2<br>
+            <span class="chip">
+              <span id="OParmor2">error 0</span>
             </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q3<br>
-          <span class="chip">
-            <span id="armor3">error 0</span>
-            <span id="insulation3"></span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon31">
-              <span class="button" id="ammo1"></span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon21">
+                <span class="button" id="ammo1"></span>
+              </span>
             </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon32">
-              <span class="button" id="ammo2"></span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon22">
+                <span class="button" id="ammo2"></span>
+              </span>
             </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q4<br>
-          <span class="chip">
-            <span id="armor4">error 0</span>
-              <span id="insulation4"></span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon41">
-              <span class="button" id="ammo1"></span>
+        </div>
+        <div class="Q">
+          Q3<br>
+            <span class="chip">
+              <span id="OParmor3">error 0</span>
+              <span id="insulation3"></span>
             </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="weapon42">
-              <span class="button" id="ammo2"></span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon31">
+                <span class="button" id="ammo1"></span>
+              </span>
             </span>
-          </span>
-      </div>
-    </nav>
-    <nav class="status2">
-      <div class="input2">
-        <span class="chip">
-          <span id="OPmoniker">error 0</span>
-            <span id="OPhealth">error 0
+            <br>
+            <span class="chip">
+              <span id="OPweapon32">
+                <span class="button" id="ammo2"></span>
+              </span>
             </span>
-        </span>
+        </div>
+        <div class="Q">
+          Q4<br>
+            <span class="chip">
+              <span id="OParmor4">error 0</span>
+                <span id="insulation4"></span>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon41">
+                <span class="button" id="ammo1"></span>
+              </span>
+            </span>
+            <br>
+            <span class="chip">
+              <span id="OPweapon42">
+                <span class="button" id="ammo2"></span>
+              </span>
+            </span>
+        </div>
+      </nav>
     </div>
-      <div class="Q">
-        Q1<br>
-          <span class="chip">
-            <div id="OParmor1">error 0</div>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon11">
-              <span class="button" id="ammo1"></span>
-            </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon12">
-              <span class="button" id="ammo2"></span>
-            </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q2<br>
-          <span class="chip">
-            <span id="OParmor2">error 0</span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon21">
-              <span class="button" id="ammo1"></span>
-            </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon22">
-              <span class="button" id="ammo2"></span>
-            </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q3<br>
-          <span class="chip">
-            <span id="OParmor3">error 0</span>
-            <span id="insulation3"></span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon31">
-              <span class="button" id="ammo1"></span>
-            </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon32">
-              <span class="button" id="ammo2"></span>
-            </span>
-          </span>
-      </div>
-      <div class="Q">
-        Q4<br>
-          <span class="chip">
-            <span id="OParmor4">error 0</span>
-              <span id="insulation4"></span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon41">
-              <span class="button" id="ammo1"></span>
-            </span>
-          </span>
-          <br>
-          <span class="chip">
-            <span id="OPweapon42">
-              <span class="button" id="ammo2"></span>
-            </span>
-          </span>
-      </div>
-    </nav>
-    </div>
-<footer>Made by Ryan A. Dunbar</footer>
+    <footer>Made by Ryan A. Dunbar</footer>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="Scripts/Player.js"></script>
-<script src="Scripts/Rutger.js"></script>
-<!-- <script src="Scripts/Motoko.js"></script>
-<script src="Scripts/Skylar.js"></script> -->
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="Scripts/Player.js"></script>
+    <script src="Scripts/Rutger.js"></script>
+    <!-- <script src="Scripts/Motoko.js"></script>
+    <script src="Scripts/Skylar.js"></script> -->
+    <script src="Scripts/damage_roll.js"></script>
+  </body>
 </html>
