@@ -8,9 +8,9 @@
 }
 
 body{
-	padding: 0em;
+	/*padding-right: 3em;*/
 	background-color: silver;
-  margin:auto;
+  /*margin:0em;*/
   height: 100%;
   width: 99vw;
 }
@@ -50,6 +50,12 @@ header{
 }
 
 /*Stat Windows*/
+#OPhealth{
+  display: flex;
+  display: block;
+  justify-content:flex-end;
+}
+
 .status1{
   display: flex;
 	order: 1;
@@ -62,18 +68,12 @@ header{
 	background-color: green;
 }
 
-#OPhealth{
-  display: flex;
-  display: block;
-  justify-content:flex-end;
-}
-
 .status2{
   display: flex;
 	order: 3;
   flex: 2;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   align-content: flex-start;
 
 	background-color: red;
@@ -100,6 +100,18 @@ h4{
 
 }
 
+.OPchip{
+  display:flex;
+  justify-content: space-between;
+  width: 80%;
+  color:white;
+  background-color: grey;
+  border: 0em;
+  padding: .2em 2em;
+  border-radius: 2em;
+
+}
+
 .input{
   display:flex;
   /*justify-content: space-around;*/
@@ -111,22 +123,4 @@ h4{
   display: flex;
   background: red;
   padding: 1em;
-}
-
-/* mobile layout? */
-@media (max-width: 480px){
-	.container{
-		display: flex;
-    width: 100%;
-
-    orient: vertical;
-	}
-	.box2{
-		order: 2;	}
-	.box1{
-		order: 1;
-	}
-	.box3{
-		order: 3;
-}
 }
