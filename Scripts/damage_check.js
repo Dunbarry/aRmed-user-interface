@@ -9,112 +9,73 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
-//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
-var shoulder= {
-  "Val.R/E":{
-   	name:"Val.R/E",
-    height:"5.41",
-    nationality:"American",
-    health:4,
-  },
-  "aRm":{
-  	1:{
-    	plating: 15,
-      insulation: 5,
-      weapons: ["Misdemeanor","empty"],
-      equip:["empty"]
-    },
-    2:{
-    	plating: 10,
-      insulation: 10,
-      weapons:["Misdemeanor","empty"],
-      equip:["gyros","aRc"]
-    },
-    3:{
-      plating:0,
-      insulation: 0,
-      weapons:["empty"],
-      equip:["polarizer"]
-    },
-    4:{
-    	plating: 0,
-  		insulation: 0,
-      weapons:["empty"],
-    	equip:["ammo","ammo"]
-  	},
-  	cylinder:["empty"]
-	}
-};
-//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
-
-$("document").ready( "test.js" );
-
-function check(Dmg){
+function check(dmg){
 	var q=rngQ();
-  console.log(q);
-  console.log(Dmg);
-  for(var i in shoulder.aRm){
-  	if(shoulder.aRm[i]===shoulder.aRm[q]){
-   		if(shoulder.aRm[i].plating===0){
+	var target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
+	// var found=find[target+"Object"]();
+	console.log(dmg+" damage headed toward #"+q+" quadrant!");
+  for(var i in target.aRm){
+  	if(target.aRm[i]===target.aRm[q]){
+   		if(target.aRm[i].plating===0){
 		 		x=i;
-       	pass=Dmg
-       	console.log("check")
-        breach(pass);
+       	pass=dmg
+       	console.log("check",x,pass)
+        // breach(pass);
       }
-    	else if(shoulder.aRm[i].plating===Dmg){
-    		shoulder.aRm[i].plating=0;
+    	else if(target.aRm[i].plating===dmg){
+    		target.aRm[i].plating=0;
         console.log("Armor destroyed!")
       }
-      else if(shoulder.aRm[i].plating<=Dmg){
+      else if(target.aRm[i].plating<=dmg){
         x=i;
-        pass=Dmg-shoulder.aRm[i].plating;
-        shoulder.aRm[i].plating=0;
+        pass=dmg-target.aRm[i].plating;
+        target.aRm[i].plating=0;
         console.log("Armor breached");
-        breach(pass)
+        // breach(pass)
     	}
       else{
-        shoulder.aRm[i].plating-=Dmg;
-        console.log(shoulder.aRm[i].plating)
+        target.aRm[i].plating-=dmg;
+        console.log(target.aRm[i].plating)
       }
     }
   }
 }
 
 function breach(pass){
-    if(shoulder.aRm[x].insulation===0){
-        console.log("breach")
-        if(shoulder.aRm[x].weapons[0]==="empty"){
-           console.log("breach 2");
-           wound(pass);
-       }
-    }
-    else if(shoulder.aRm[x].insulation>pass){
-        shoulder.aRm[x].insulation-=pass;
-        Console.log(pass+" Insulation damaged!");
-    }
-    else if(shoulder.aRm[x].insulation===pass){
-        shoulder.aRm[x].insulation=0;
-        console.log("Insulation offline!")
-    }
-    else{
-        z=pass-shoulder.aRm[x].insulation
-        shoulder.aRm[x].insulation=0;
-        console.log("Insulation offline!")
-        if(shoulder.aRm[x].weapons!= "empty"){
-          console.log(shoulder.aRm[x].weapons[0]+" destroyed!")
-          shoulder.aRm[x].weapons.shift();
-        }
-    }
+  if(target.aRm[x].insulation===0){
+    console.log("breach")
+      if(target.aRm[x].weapons[0]==="empty"){
+      	console.log("breach 2");
+        wound(pass);
+      }
+  }
+  else if(target.aRm[x].insulation>pass){
+    target.aRm[x].insulation-=pass;
+    Console.log(pass+" Insulation damaged!");
+  }
+  else if(target.aRm[x].insulation===pass){
+    target.aRm[x].insulation=0;
+    console.log("Insulation offline!")
+  }
+  else{
+    z=pass-target.aRm[x].insulation
+    target.aRm[x].insulation=0;
+    console.log("Insulation offline!")
+      if(target.aRm[x].weapons!= "empty"){
+        console.log(target.aRm[x].weapons[0]+" destroyed!")
+        target.aRm[x].weapons.shift();
+      }
+  }
 }
 
 function wound(pass){
-    shoulder["Val.R/E"]["health"]-=1;
-    if(shoulder["Val.R/E"]["health"]===0){
-        console.log("Shoulder is unconcious!")
+    target["Val.R/E"]["health"]-=1;
+    if(target["Val.R/E"]["health"]===0){
+        console.log("target is unconcious!")
     }
     else{
        console.log("Beginning medical protocols!")
     }
 
 }
-//console.log(shoulder["aRm"]q3.equip);
+//console.log(target["aRm"]q3.equip);

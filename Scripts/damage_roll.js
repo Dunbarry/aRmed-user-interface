@@ -23,7 +23,7 @@ function toHit(aim,dmg){
   }
   console.log(dmg+" damage done!");
   console.log("~~~~~~~~~~~");
-  return(dmg);
+  check(dmg);
 }
 
 var weapons={
