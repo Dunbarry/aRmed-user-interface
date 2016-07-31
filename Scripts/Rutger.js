@@ -36,24 +36,26 @@ var rutger= {
 
 function OPrutger(){
   console.log("Rutger online.");
-  $("#OPmoniker").html(rutger.Player.name)
-  $("#OPhealth").html(rutger.Player.health);
-/*Q1*/
-  $("#OParmor1").html("Armor: "+rutger.aRm["1"].plating+"  Insulation: "+rutger.aRm["1"].insulation);
-  $("#insulation1 span").html(rutger.aRm["1"].insulation);
-  $("#OPweapon11").html(rutger.aRm["1"].weapons[0]);
-  $("#OPweapon12").html(rutger.aRm["1"].weapons[1]);
-/*Q2*/
-  $("#OParmor2").html("Armor: "+rutger.aRm["2"].plating+"  Insulation: "+rutger.aRm["2"].insulation);
-  $("#OPweapon21").html(rutger.aRm["2"].weapons[0]);
-  $("#OPweapon22").html(rutger.aRm["2"].weapons[1]);
-/*Q3*/
-  $("#OParmor3").html("Armor: "+rutger.aRm["3"].plating+"  Insulation: "+shoulder.aRm["3"].insulation);
-  $("#OPweapon31").html(rutger.aRm["3"].weapons[0]);
-  $("#OPweapon32").html(rutger.aRm["3"].weapons[1]);
-/*Q4*/
-  $("#OParmor4").html("Armor: "+rutger.aRm["4"].plating+"  Insulation: "+shoulder.aRm["4"].insulation);
-  $("#OPinsulation4 span").html(rutger.aRm["4"].insulation);
-  $("#OPweapon41").html(rutger.aRm["4"].weapons[0]);
-  $("#OPweapon42").html(rutger.aRm["4"].weapons[1]);
+  $("#OPmoniker").html(shoulder.Player.name)
+  $("#OPhealth").html(shoulder.Player.health);
+  /*Q1*/
+  $("#OParmor1").html("Armor: "+shoulder.aRm["1"].plating);
+  $("#OPinsulation1").html("Insulation: "+shoulder.aRm["1"].insulation);
+  $("#OPweapon10").html(shoulder.aRm["1"].weapons[0]);
+  $("#OPweapon11").html(shoulder.aRm["1"].weapons[1]);
+  /*Q2*/
+  $("#OParmor2").html("Armor: "+shoulder.aRm["2"].plating);
+  $("#OPinsulation2").html("Insulation: "+shoulder.aRm["2"].insulation);
+  $("#OPweapon20").html(shoulder.aRm["2"].weapons[0]);
+  $("#OPweapon21").html(shoulder.aRm["2"].weapons[1]);
+  /*Q3*/
+  $("#OParmor3").html("Armor: "+shoulder.aRm["3"].plating);
+  $("#OPinsulation3").html("Insulation: "+shoulder.aRm["3"].insulation);
+  $("#OPweapon30").html(shoulder.aRm["3"].weapons[0]);
+  $("#OPweapon31").html(shoulder.aRm["3"].weapons[1]);
+  /*Q4*/
+  $("#OParmor4").html("Armor: "+shoulder.aRm["4"].plating);
+  $("#OPinsulation4").html("Insulation: "+shoulder.aRm["4"].insulation);
+  $("#OPweapon40").html(shoulder.aRm["4"].weapons[0]);
+  $("#OPweapon41").html(shoulder.aRm["4"].weapons[1]);
 }
