@@ -12,7 +12,6 @@ function rngQ(){									//Randomly selecting a quadrant
 function check(dmg){
 	var q=rngQ();
 	var target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
-	// var found=find[target+"Object"]();
 	console.log(dmg+" damage headed toward #"+q+" quadrant!");
   for(var i in target.aRm){
   	if(target.aRm[i]===target.aRm[q]){
@@ -36,6 +35,7 @@ function check(dmg){
       else{
         target.aRm[i].plating-=dmg;
         console.log(target.aRm[i].plating)
+				$('#OParmor'+q).text("Armor: "+target.aRm[i].plating);
       }
     }
   }

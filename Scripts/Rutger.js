@@ -19,15 +19,15 @@ var rutger= {
               equip:["gyros","aRc"]
             },
             3:{
-              plating:0,
-              insulation: 0,
-              weapons:["empty", "empty"],
-              equip:["polarizer"]
+              plating:5,
+              insulation: 10,
+              weapons:["Polarizer", "empty"],
+              equip:["Polarizer"]
             },
             4:{
-              plating: 0,
-              insulation: 0,
-              weapons:["empty","empty"],
+              plating: 10,
+              insulation: 10,
+              weapons:["Repeat Offender","empty"],
               equip:["30","30","empty"]
             },
             cylinder:["empty"]
@@ -58,4 +58,10 @@ function OPrutger(){
   $("#OPinsulation4").html("Insulation: "+rutger.aRm["4"].insulation);
   $("#OPweapon40").html(rutger.aRm["4"].weapons[0]);
   $("#OPweapon41").html(rutger.aRm["4"].weapons[1]);
+}
+
+var find={
+  rutgerObject: function(){
+  return rutger;
+  }
 }
