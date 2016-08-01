@@ -9,25 +9,25 @@ var Player= {
             1:{
               plating: 15,
               insulation: 5,
-              weapons: ["Misdemeanor","Repeat Offender","empty"],
+              weapons: ["Misdemeanor","Repeat Offender"],
               equip:["empty"]
             },
             2:{
               plating: 10,
               insulation: 10,
-              weapons:["Misdemeanor","Felony","empty"],
+              weapons:["Misdemeanor","Felony"],
               equip:["gyros","aRc"]
             },
             3:{
               plating:0,
               insulation: 0,
-              weapons:["empty", "empty","empty"],
+              weapons:["empty", "empty"],
               equip:["polarizer"]
             },
             4:{
               plating: 0,
               insulation: 0,
-              weapons:["empty","empty","empty"],
+              weapons:["empty","empty"],
               equip:["30","30","empty"]
             },
             cylinder:["empty"]
@@ -60,3 +60,9 @@ $("#ignition").on('click', function(){
 
   OPrutger();
 })
+
+var Playerfind={
+  PlayerObject: function(){
+  return Player;
+  }
+}
