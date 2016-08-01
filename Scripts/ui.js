@@ -6,11 +6,9 @@ function turnSwap(){
   else{
     state="Player";
   }
-  console.log(state);
   return state;
 }
 
 function turnState(){
-  console.log(state);
   return state;
 }
