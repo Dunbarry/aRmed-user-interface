@@ -22,7 +22,7 @@ function toHit(aim,dmg){
     dmg=dmg;
   }
   console.log(dmg+" damage outbound!");
-  console.log("~~~~~~~~~~~");
+  console.log("~~~~~~~~~~~=>");
   check(dmg);
 }
 
