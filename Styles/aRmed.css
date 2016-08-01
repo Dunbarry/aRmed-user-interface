@@ -36,7 +36,17 @@ header{
 	flex: 3;
 
   text-align: center;
-  background-color: #62626D;
+  background-color: black;
+  color: grey;
+}
+
+.combatLog{
+  display: flex;
+  width: auto;
+  height: auto;
+
+  background-color: black;
+  color: white;
 }
 
 /*Quadrant Box*/
