@@ -9,7 +9,7 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
-var q=;
+var q=0;
 function check(dmg){		//Player attacking enemy.
 	if(dmg===0){
 		console.log("Miss!")
