@@ -4,7 +4,7 @@
 // 7&8=glance (.5dmg)
 // 9 <= miss (no dmg)
 
-var base = 2;
+var base = 10;
 function toHit(aim,dmg){
 	console.log("Aim: "+aim+", Damage: "+dmg);
 	hit=(Math.floor(Math.random()*10)+aim);
@@ -21,9 +21,9 @@ function toHit(aim,dmg){
   else{					          //Standard
     dmg=dmg;
   }
-  console.log(dmg+" damage done!");
-  console.log("~~~~~~~~~~~");
-  return(dmg);
+  console.log(dmg+" damage outbound!");
+  console.log("~~~~~~~~~~~=>");
+  check(dmg);
 }
 
 var weapons={

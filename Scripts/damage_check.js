@@ -9,112 +9,87 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
-//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
-var shoulder= {
-  "Val.R/E":{
-   	name:"Val.R/E",
-    height:"5.41",
-    nationality:"American",
-    health:4,
-  },
-  "aRm":{
-  	1:{
-    	plating: 15,
-      insulation: 5,
-      weapons: ["Misdemeanor","empty"],
-      equip:["empty"]
-    },
-    2:{
-    	plating: 10,
-      insulation: 10,
-      weapons:["Misdemeanor","empty"],
-      equip:["gyros","aRc"]
-    },
-    3:{
-      plating:0,
-      insulation: 0,
-      weapons:["empty"],
-      equip:["polarizer"]
-    },
-    4:{
-    	plating: 0,
-  		insulation: 0,
-      weapons:["empty"],
-    	equip:["ammo","ammo"]
-  	},
-  	cylinder:["empty"]
+var q=;
+function check(dmg){		//Player attacking enemy.
+	if(dmg===0){
+		console.log("Miss!")
 	}
-};
-//THIS SHOULD BE PULLED FROM THE SCRIPTS!!!
+	else{
+		q=rngQ();						//Quadrant to assign damage to.
+		target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
+		console.log(dmg+" damage headed toward #"+q+" quadrant!");
+	  for(var i in target.aRm){
+	  	if(target.aRm[i]===target.aRm[q]){		//find the right quadrant & check armor
+	   		if(target.aRm[q].plating===0){			//If there is no armor call breach func
+	       	pass=dmg
+	       	console.log("check",q,pass)
+	        breach(pass);
+	      }
+	    	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
+	    		target.aRm[q].plating=0;
+					$('#OParmor'+q).text("Armor: "+target.aRm[q].plating);
+	        console.log("Armor destroyed!")
+	      }
+	      else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
+	        pass=dmg-target.aRm[q].plating;
+	        target.aRm[q].plating=0;
+					$('#OParmor'+q).text("Armor: "+target.aRm[q].plating);
+	        console.log("Armor breached");
+	        breach(pass)
+	    	}
+	      else{																	//Else mark damage.
+	        target.aRm[q].plating-=dmg;
+	        console.log("Damage blocked. Plating reduced by "+dmg+".")
+					$('#OParmor'+q).text("Armor: "+target.aRm[q].plating);
+	      }
+	    }
+	  }
+	}
+	console.log("~~~~~~~~~~~*$")
+}
 
-$("document").ready( "test.js" );
-
-function check(Dmg){
-	var q=rngQ();
-  console.log(q);
-  console.log(Dmg);
-  for(var i in shoulder.aRm){
-  	if(shoulder.aRm[i]===shoulder.aRm[q]){
-   		if(shoulder.aRm[i].plating===0){
-		 		x=i;
-       	pass=Dmg
-       	console.log("check")
-        breach(pass);
+function breach(pass){ //Checks damage breaching armor against insulation.
+	slot=0;
+	if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons[0]==="empty"){
+		slot=1;
+	} 	//Check if something is in slot 0 and act accordingly.
+  if(target.aRm[q].insulation>pass){ //If insulated mark damage.
+    target.aRm[q].insulation-=pass;
+		$('#OPinsulation'+q).text("Insulation: "+target.aRm[q].insulation);
+    console.log(pass+" Insulation units damaged!");
+  }
+  else if(target.aRm[q].insulation===pass){ //If insulation destroyed declare it.
+    target.aRm[q].insulation=0;
+		$('#OPinsulation'+q).text("Insulation: "+target.aRm[q].insulation);
+    console.log("Fatal error. Insulation offline.")
+  }
+  else{ //If pass is bigger than or equal to insultation...
+    pass=pass-target.aRm[q].insulation;
+    target.aRm[q].insulation=0;
+		$('#OPinsulation'+q).text("Insulation: "+target.aRm[q].insulation);
+    console.log("Insulation offline!")
+      if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons==="empty"){
+				wound(pass); //...and there's no weapon to destroy, call wound for core damage.
       }
-    	else if(shoulder.aRm[i].plating===Dmg){
-    		shoulder.aRm[i].plating=0;
-        console.log("Armor destroyed!")
-      }
-      else if(shoulder.aRm[i].plating<=Dmg){
-        x=i;
-        pass=Dmg-shoulder.aRm[i].plating;
-        shoulder.aRm[i].plating=0;
-        console.log("Armor breached");
-        breach(pass)
-    	}
-      else{
-        shoulder.aRm[i].plating-=Dmg;
-        console.log(shoulder.aRm[i].plating)
-      }
-    }
+			else{
+				console.log(target.aRm[q].weapons[slot]+" destroyed!") //...destroy a weapon.
+				target.aRm[q].weapons.splice(0,1,"error 0");
+				$('#OPweapon'+q+slot).text(target.aRm[q].weapons[slot]);
+			}
   }
 }
 
-function breach(pass){
-    if(shoulder.aRm[x].insulation===0){
-        console.log("breach")
-        if(shoulder.aRm[x].weapons[0]==="empty"){
-           console.log("breach 2");
-           wound(pass);
-       }
-    }
-    else if(shoulder.aRm[x].insulation>pass){
-        shoulder.aRm[x].insulation-=pass;
-        Console.log(pass+" Insulation damaged!");
-    }
-    else if(shoulder.aRm[x].insulation===pass){
-        shoulder.aRm[x].insulation=0;
-        console.log("Insulation offline!")
-    }
-    else{
-        z=pass-shoulder.aRm[x].insulation
-        shoulder.aRm[x].insulation=0;
-        console.log("Insulation offline!")
-        if(shoulder.aRm[x].weapons!= "empty"){
-          console.log(shoulder.aRm[x].weapons[0]+" destroyed!")
-          shoulder.aRm[x].weapons.shift();
-        }
-    }
-}
-
 function wound(pass){
-    shoulder["Val.R/E"]["health"]-=1;
-    if(shoulder["Val.R/E"]["health"]===0){
-        console.log("Shoulder is unconcious!")
-    }
-    else{
-       console.log("Beginning medical protocols!")
-    }
-
+  target.Player.health-=1;
+	$("#OPhealth").html(target.Player.health);
+	console.log(target.Player.name+"'s core has been damaged!")
+  if(target.Player.health===0){
+    console.log("aRm destroyed!")
+		if(target==="Player"){
+			console.log("You lose...")
+		}
+		else{
+			console.log("You win!");
+		}
+  }
 }
-//console.log(shoulder["aRm"]q3.equip);
