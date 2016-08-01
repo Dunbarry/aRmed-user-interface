@@ -9,25 +9,25 @@ var rutger= {
             1:{
               plating: 15,
               insulation: 5,
-              weapons: ["Misdemeanor","R"],
+              weapons: ["Misdemeanor","R","empty"],
               equip:["empty"]
             },
             2:{
               plating: 10,
               insulation: 10,
-              weapons:["Misdemeanor","empty"],
+              weapons:["Misdemeanor","empty","empty"],
               equip:["gyros","aRc"]
             },
             3:{
               plating:5,
               insulation: 10,
-              weapons:["Polarizer", "empty"],
+              weapons:["Polarizer", "empty","empty"],
               equip:["Polarizer"]
             },
             4:{
               plating: 10,
               insulation: 10,
-              weapons:["Repeat Offender","empty"],
+              weapons:["Repeat Offender","empty","empty"],
               equip:["30","30","empty"]
             },
             cylinder:["empty"]

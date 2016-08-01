@@ -9,25 +9,25 @@ var Player= {
             1:{
               plating: 15,
               insulation: 5,
-              weapons: ["Misdemeanor","Repeat Offender"],
+              weapons: ["Misdemeanor","Repeat Offender","empty"],
               equip:["empty"]
             },
             2:{
               plating: 10,
               insulation: 10,
-              weapons:["Misdemeanor","Felony"],
+              weapons:["Misdemeanor","Felony","empty"],
               equip:["gyros","aRc"]
             },
             3:{
               plating:0,
               insulation: 0,
-              weapons:["empty", "empty"],
+              weapons:["empty", "empty","empty"],
               equip:["polarizer"]
             },
             4:{
               plating: 0,
               insulation: 0,
-              weapons:["empty","empty"],
+              weapons:["empty","empty","empty"],
               equip:["30","30","empty"]
             },
             cylinder:["empty"]
