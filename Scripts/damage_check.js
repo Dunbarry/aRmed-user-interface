@@ -9,6 +9,7 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
+
 var q=0;
 function check(dmg){		//Player attacking enemy.
 	if(dmg===0){
@@ -46,6 +47,7 @@ function check(dmg){		//Player attacking enemy.
 	  }
 	}
 	console.log("~~~~~~~~~~~*$")
+	turnSwap();
 }
 
 function breach(pass){ //Checks damage breaching armor against insulation.
