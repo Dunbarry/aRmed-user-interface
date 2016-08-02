@@ -6,28 +6,25 @@
 
 var base = 10;
 function toHit(aim,dmg){
-	console.log(state+" is about to fire!")
-	console.log("Aim: "+aim+", Damage: "+dmg);
 	hit=(Math.floor(Math.random()*10)+aim);
-	console.log("To hit "+hit);
   if(hit<=0){ 			       //crit
     dmg=dmg+(dmg*'.5');
   }
-  if(hit===7||hit===8){   //glance
+  else if(hit===7||hit===8){   //glance
     dmg=(dmg*'.5');
   }
-  if(hit>=9){        			//miss
+  else if(hit>=9){        			//miss
   	dmg=0;
   }
   else{					          //Standard
     dmg=dmg;
   }
+	console.log(state+" is about to fire with "+hit+" to hit and at aim "+aim+", for "+dmg+" damage!")
 	console.log("~~~~~~~~~~~=>");
-  console.log(dmg+" damage outbound!");
   check(dmg);
 }
 
-var weapons={
+var aRmaments={
   Misdemeanor: function(toHit){
     aim=0;
     dmg=base;
@@ -58,7 +55,7 @@ $(".trigger").click(function(){
   //What is in the slot: thing.innerHTML
   var fire=(document.getElementById(($(this).val()))).innerHTML;
   console.log(fire);
-  weapons[fire](toHit);
+  aRmaments[fire](toHit);
 })
 
 // fel(toHit);

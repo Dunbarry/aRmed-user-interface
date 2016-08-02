@@ -1,10 +1,10 @@
 function rngQ(){									//Randomly selecting a quadrant
-	n=Math.floor(Math.random()*4);
-	if(n===0){
+	num=Math.floor(Math.random()*4);
+	if(num===0){
 		random=4;
 	}
 	else{
-		random=n;
+		random=num;
 	}
 	return random;
 }
