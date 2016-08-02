@@ -27,7 +27,7 @@ function toHit(aim,dmg){
   check(dmg);
 }
 
-var weapons={
+var aRmaments={
   Misdemeanor: function(toHit){
     aim=0;
     dmg=base;
@@ -58,7 +58,7 @@ $(".trigger").click(function(){
   //What is in the slot: thing.innerHTML
   var fire=(document.getElementById(($(this).val()))).innerHTML;
   console.log(fire);
-  weapons[fire](toHit);
+  aRmaments[fire](toHit);
 })
 
 // fel(toHit);

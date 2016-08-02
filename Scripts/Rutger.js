@@ -16,8 +16,8 @@ var rutger= {
             2:{
               plating: 10,
               insulation: 10,
-              weapons:["empty","empty"],
-              // weapons:["Misdemeanor","empty"],
+              // weapons:["empty","empty"],
+              weapons:["Misdemeanor","empty"],
               equip:["gyros","aRc"]
             },
             3:{
@@ -34,7 +34,7 @@ var rutger= {
               // weapons:["Repeat Offender","empty"],
               equip:["30","30","empty"]
             },
-            cylinder:["empty"]
+            // cylinder:["empty"]
 }
 };
 
