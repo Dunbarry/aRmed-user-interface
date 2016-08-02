@@ -27,6 +27,7 @@ function check(dmg){		//Player attacking enemy.
 		}
 		q=rngQ();						//Quadrant to assign damage to.
 		console.log(dmg+" damage headed toward "+target.Player.name+"'s #"+q+" quadrant!");
+
 	  for(var i in target.aRm){
 	  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
 	   		if(target.aRm[q].plating===0){			//If there is no armor call breach func
@@ -37,18 +38,21 @@ function check(dmg){		//Player attacking enemy.
 	    	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
 	    		target.aRm[q].plating=0;
 					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-	        console.log("Armor destroyed!")
+	        console.log("Armor destroyed!");
+					$("#"+state+"Log").append('>Plating destroyed in quadrant '+q+'<br />');
 	      }
 	      else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
 	        pass=dmg-target.aRm[q].plating;
 	        target.aRm[q].plating=0;
 					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
 	        console.log("Armor breached");
+					$("#"+state+"Log").append('>Plating breached in quadrant '+q+'<br />');
 	        breach(pass)
 	    	}
 	      else{																	//Else mark damage.
 	        target.aRm[q].plating-=dmg;
 	        console.log("Damage blocked. Plating reduced by "+dmg+".")
+					$("#"+state+"Log").append('>Damaged blocked. Plating reduced in quadrant '+q+' by '+dmg+'.<br />');
 					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
 	      }
 	    }

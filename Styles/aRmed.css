@@ -1,3 +1,8 @@
+@import{
+  font-family:'digital-7';
+  src: url('http://www.fontspace.com/style-7/digital-7?text=');
+}
+
 .trigger{
   width:3vw;
   height:.5px;
@@ -34,19 +39,25 @@ header{
 .box1{
   order: 2;
 	flex: 3;
+  padding-top: .5vw;
 
   text-align: center;
   background-color: black;
-  color: grey;
+  color: black;
 }
 
 .combatLog{
   display: flex;
+  align-content: column;
+  justify-content: flex-start;
   width: auto;
-  height: auto;
+  height: 11vw;
 
+  overflow: auto;
   background-color: black;
   color: white;
+  font-family: digital-7;
+  color: #66ff66;
 }
 
 /*Quadrant Box*/
@@ -56,7 +67,7 @@ header{
   justify-content: space-between;
   padding-top: 2vw;
 
-  font-family: 'digital';
+  font-family: 'digital-7';
 }
 
 /*Stat Windows*/
@@ -72,10 +83,11 @@ header{
   flex: 2;
   flex-wrap: wrap;
   justify-content: flex-start;
+  /*justify-content: flex-end;*/
   align-content:flex-end;
 
   padding-bottom: 2em;
-	background-color: green;
+	background-color: blue;
 }
 
 .status2{
@@ -106,7 +118,7 @@ h4{
   background-color: grey;
   border: 0em;
   padding: .2em 2em;
-  border-radius: 2em;
+  /*border-radius: 2em;*/
 
 }
 
@@ -118,14 +130,14 @@ h4{
   background-color: grey;
   border: 0em;
   padding: .2em 2em;
-  border-radius: 2em;
+  /*border-radius: 2em;*/
 
 }
 
 .input{
   display:flex;
   /*justify-content: space-around;*/
-  background: green;
+  background: blue;
   padding: 1em;
 }
 
