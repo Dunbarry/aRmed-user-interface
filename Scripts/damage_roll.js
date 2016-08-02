@@ -10,10 +10,10 @@ function toHit(aim,dmg){
   if(hit<=0){ 			       //crit
     dmg=dmg+(dmg*'.5');
   }
-  if(hit===7||hit===8){   //glance
+  else if(hit===7||hit===8){   //glance
     dmg=(dmg*'.5');
   }
-  if(hit>=9){        			//miss
+  else if(hit>=9){        			//miss
   	dmg=0;
   }
   else{					          //Standard

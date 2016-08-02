@@ -9,7 +9,7 @@ var rutger= {
             1:{
               plating: 15,
               insulation: 5,
-              weapons:["empty","empty"],
+              weapons:["empty","Felony"],
               // weapons: ["Misdemeanor","Felony"],
               equip:["empty"]
             },

@@ -19,14 +19,14 @@ var Player= {
               equip:["gyros","aRc"]
             },
             3:{
-              plating:0,
-              insulation: 0,
+              plating:10,
+              insulation: 10,
               weapons:["empty", "empty"],
               equip:["polarizer"]
             },
             4:{
-              plating: 0,
-              insulation: 0,
+              plating: 5,
+              insulation: 20,
               weapons:["empty","empty"],
               equip:["30","30","empty"]
             },
