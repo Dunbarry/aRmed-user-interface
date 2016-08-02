@@ -1,13 +1,15 @@
 var state="Player";
 function turnSwap(){
+  console.log("I was just called!")
   if(state==="Player"){
     state="OP";
+    console.log("It is now "+state+"'s turn. From IF")
     OPfire();
   }
   else if(state==="OP"){
     state="Player";
+    console.log("It is now "+state+"'s turn. FROM ELSE IF")
   }
-  console.log("It is now "+state+"'s turn.")
 }
 
 function turnState(){
@@ -17,24 +19,19 @@ function turnState(){
 function OPfire(){
 	shooter=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
   quadrantChoice=rngQ();
-  weaponChoice=1;
-	alt=0;
-	if(quadrantChoice===0||quadrantChoice===2){
-		weaponChoice=0;
-		alt=1;
-	}
-  console.log(quadrantChoice, weaponChoice);
-  if(shooter.aRm[quadrantChoice].weapons[weaponChoice]!="empty"&&shooter.aRm[quadrantChoice].weapons[weaponChoice]!="error 0"){
-    var fire=shooter.aRm[quadrantChoice].weapons[weaponChoice];
-    console.log("Firing "+fire+" from frame one.");
-    aRmaments[fire](toHit);
-  }
-  else if(shooter.aRm[quadrantChoice].weapons[alt]!="empty"&&shooter.aRm[quadrantChoice].weapons[alt]!="error 0"){
-    var fire=shooter.aRm[quadrantChoice].weapons[alt];
-    console.log("Firing "+fire+" from frame two.");
-    aRmament[fire](toHit);
-  }
-  else{
+  // if(shooter.aRm[quadrantChoice].weapons[weaponChoice]!="empty"&&shooter.aRm[quadrantChoice].weapons[weaponChoice]!="error 0"){
+  //   var fire=shooter.aRm[quadrantChoice].weapons[weaponChoice];
+  //   console.log("Firing "+fire+" from frame one.");
+  //   aRmaments[fire](toHit);
+  //   break;
+  // }
+  // else if(shooter.aRm[quadrantChoice].weapons[alt]!="empty"&&shooter.aRm[quadrantChoice].weapons[alt]!="error 0"){
+  //   var fire=shooter.aRm[quadrantChoice].weapons[alt];
+  //   console.log("Firing "+fire+" from frame two.");
+  //   aRmament[fire](toHit);
+  //   break;
+  // }
+  // else{
     for(var roulette in shooter.aRm){
       if(shooter.aRm[roulette].weapons[0]!="empty"&&shooter.aRm[roulette].weapons[0]!="error 0"){
       var fire=shooter.aRm[roulette].weapons[0];
@@ -49,6 +46,5 @@ function OPfire(){
           break;
       }
     }
-  }
   console.log("OPfire finished.");
 }

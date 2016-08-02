@@ -6,10 +6,7 @@
 
 var base = 10;
 function toHit(aim,dmg){
-	console.log(state+" is about to fire!")
-	console.log("Aim: "+aim+", Damage: "+dmg);
 	hit=(Math.floor(Math.random()*10)+aim);
-	console.log("To hit "+hit);
   if(hit<=0){ 			       //crit
     dmg=dmg+(dmg*'.5');
   }
@@ -22,8 +19,8 @@ function toHit(aim,dmg){
   else{					          //Standard
     dmg=dmg;
   }
+	console.log(state+" is about to fire with "+hit+" to hit and at aim "+aim+", for "+dmg+" damage!")
 	console.log("~~~~~~~~~~~=>");
-  console.log(dmg+" damage outbound!");
   check(dmg);
 }
 

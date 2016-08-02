@@ -31,7 +31,7 @@ var rutger= {
               plating: 10,
               insulation: 10,
               // weapons:["empty","empty"],
-              weapons:["empty","Repeat Offender"],
+              weapons:["empty","Felony"],
               equip:["30","30","empty"]
             },
             // cylinder:["empty"]
