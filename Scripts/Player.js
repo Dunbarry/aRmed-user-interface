@@ -35,6 +35,7 @@ var Player= {
 };
 
 $("#ignition").on('click', function(){
+  $("#PlayerLog").append('>Match has begun!<br /><br />');
   $("#moniker").html(Player.Player.name)
   $("#health").html(Player.Player.health);
 /*Q1*/

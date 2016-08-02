@@ -40,6 +40,8 @@ var rutger= {
 
 function OPrutger(){
   console.log("Rutger online.");
+  $("#OPLog").append('<br /><br />');
+
   $("#OPmoniker").html(rutger.Player.name)
   $("#OPhealth").html(rutger.Player.health);
   /*Q1*/

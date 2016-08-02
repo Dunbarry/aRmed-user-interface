@@ -1,5 +1,7 @@
 $(document).ready(function(){
     $('.combatLog').scrollTop($('.combatLog')[0].scrollHeight);
+    $("#PlayerLog").append('>Welcome to aRmed combat.<br />')
+    $("#OPLog").append('>Welcome to aRmed combat.<br />')
     console.log("This is working");
 });
 
