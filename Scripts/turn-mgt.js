@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $('.combatLog').scrollTop($('.combatLog')[0].scrollHeight);
-    $("#PlayerLog").append('>Welcome to aRmed combat.<br />')
-    $("#OPLog").append('>Welcome to aRmed combat.<br />')
+    $('#PlayerLog').scrollTop($('#PlayerLog')[0].scrollHeight);
+    $("#PlayerLog").append('>Match pending...<br />')
+    $("#OPLog").append('>Match pending...<br />')
     console.log("This is working");
 });
 
