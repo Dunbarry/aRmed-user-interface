@@ -11,7 +11,9 @@ function turnSwap(){
   if(state==="Player"){
     state="OP";
     console.log("It is now "+state+"'s turn.");
-    OPfire();
+    // delay=(Math.floor(Math.random()*7)*1000);
+    // console.log(delay);
+    setTimeout(OPfire,5500);
   }
   else if(state==="OP"){
     state="Player";
@@ -30,17 +32,13 @@ function OPfire(){
     var fire=shooter.aRm[quadrantChoice].weapons[0];
     console.log("Firing "+fire+" from frame one.");
     $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
-    delay=(Math.floor(Math.random()*15)*1000);
-    console.log(delay);
-    setTimeout(aRmaments[fire](toHit),delay);
+    aRmaments[fire](toHit);
   }
   else if(shooter.aRm[quadrantChoice].weapons[1]!="empty"&&shooter.aRm[quadrantChoice].weapons[1]!="error 0"){
     var fire=shooter.aRm[quadrantChoice].weapons[1];
     console.log("Firing "+fire+" from frame one.");
     $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
-    delay=(Math.floor(Math.random()*15)*1000);
-    console.log(delay);
-    setTimeout(aRmaments[fire](toHit),delay);
+    aRmaments[fire](toHit);
   }
   else{
     for(var roulette in shooter.aRm){
@@ -48,18 +46,14 @@ function OPfire(){
       var fire=shooter.aRm[roulette].weapons[0];
       console.log("Firing "+fire+" from Loop one.");
       $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
-      delay=(Math.floor(Math.random()*15)*1000);
-      console.log(delay);
-      setTimeout(aRmaments[fire](toHit),delay);
+      aRmaments[fire](toHit);
       break;
       }
       else if(shooter.aRm[roulette].weapons[1]!="empty"&&shooter.aRm[roulette].weapons[1]!="error 0"){
           var fire=shooter.aRm[roulette].weapons[1];
           console.log("Firing "+fire+" from Loop two.");
           $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
-          delay=(Math.floor(Math.random()*15)*1000);
-          console.log(delay);
-          setTimeout(aRmaments[fire](toHit),delay);
+          aRmaments[fire](toHit);
           break;
       }
     }
