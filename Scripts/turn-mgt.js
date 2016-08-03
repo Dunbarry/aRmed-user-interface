@@ -42,17 +42,17 @@ function OPfire(){
   }
   else{
     for(var roulette in shooter.aRm){
-      console.log(roulette);
+      // console.log(roulette);
       if(shooter.aRm[roulette].weapons[0]!="empty"&&shooter.aRm[roulette].weapons[0]!="error 0"){
       var fire=shooter.aRm[roulette].weapons[0];
-      console.log("Firing "+fire+" from Loop one.");
+      // console.log("Firing "+fire+" from Loop one.");
       $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
       aRmaments[fire](toHit);
       break;
       }
       else if(shooter.aRm[roulette].weapons[1]!="empty"&&shooter.aRm[roulette].weapons[1]!="error 0"){
           var fire=shooter.aRm[roulette].weapons[1];
-          console.log("Firing "+fire+" from Loop two.");
+          // console.log("Firing "+fire+" from Loop two.");
           $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
           aRmaments[fire](toHit);
           break;
