@@ -12,10 +12,6 @@ function rngQ(){									//Randomly selecting a quadrant
 var turn="";
 var q=0;
 function check(dmg){		//Player attacking enemy.
-	if(dmg===0){
-		console.log("Miss!")
-	}
-	else{
 		turn=turnState();
 		if (turn==="Player"){ //Figure out who's shooting at whom!
 			target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
@@ -26,6 +22,10 @@ function check(dmg){		//Player attacking enemy.
 			target=Playerfind[((document.getElementById('moniker')).innerHTML)+"Object"]();
 			turn="#";
 			write="Player"
+		}
+		if(dmg===0){
+			console.log("Miss!")
+			('#'+write+'Log').append(shooter+" missed!")
 		}
 		q=rngQ();						//Quadrant to assign damage to.
 		console.log(dmg+" damage headed toward "+target.Player.name+"'s #"+q+" quadrant!");
@@ -58,7 +58,6 @@ function check(dmg){		//Player attacking enemy.
 	      }
 	    }
 	  }
-	}
 	console.log("~~~~~~~~~~~*$")
 	turnSwap();
 }

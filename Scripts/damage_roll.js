@@ -4,48 +4,67 @@
 // 7&8=glance (.5dmg)
 // 9 <= miss (no dmg)
 
-var base = 10;
+var base=2;
 function toHit(aim,dmg){
 	hit=(Math.floor(Math.random()*10)+aim);
   if(hit<=0){ 			       //crit
-    dmg=dmg+(dmg*'.5');
+    dmg=(dmg+(dmg*'.5'))+bypass;
   }
   else if(hit===7||hit===8){   //glance
-    dmg=(dmg*'.5');
+    dmg=(dmg*'.5')+bypass;
   }
   else if(hit>=9){        			//miss
-  	dmg=0;
+  	dmg=0+bypass;
   }
   else{					          //Standard
-    dmg=dmg;
+    dmg=dmg+bypass;
   }
-	console.log(state+" is about to fire with "+hit+" to hit and at aim "+aim+", for "+dmg+" damage!")
+	console.log(state+" is about to fire with "+hit+" to hit, for "+dmg+" damage!")
 	console.log("~~~~~~~~~~~=>");
   check(dmg);
+}
+
+function multiHit(shots){
+	while(shots>0){	      //Aim bonus grows with each shot in burst
+		aim=shots;
+		hit=(Math.floor(Math.random()*10)+aim);
+		if(hit<=0){ 			       //crit
+			bypass+=base+(base*'.5');
+		}
+		else if(hit===7||hit===8){   //glance
+			bypass+=(base*'.5');
+		}
+		else if(hit>=9){        			//miss
+			bypass+=0;
+		}
+		else{					          //Standard
+			bypass+=base;
+		}
+		shots--;
+		console.log(shots+" shot remaining. Byass: "+bypass);
+	}
 }
 
 var aRmaments={
   Misdemeanor: function(toHit){
     aim=0;
     dmg=base;
+		bypass=0
     toHit(aim,dmg);
   },
   Felony: function(toHit){
     aim=1;
     dmg=base*2;
+		bypass=0
     toHit(aim,dmg);
   },
   "Repeat Offender": function(toHit){
-  	shots=1;
-  	dmg=base;
-  	while(shots<=3){	      //Aim bonus grows with each shot in burst
-  		aim=shots;
-    	if(shots===3){
-    		dmg=base+1;	        //"Reeling enemy" bonus for a third hit
-  		}
-  	  toHit(aim,dmg);
-  		shots++;
-  	}
+  	shots=2;
+		bypass=0
+		multiHit(shots);
+    dmg=base+1;	        //"Reeling enemy" bonus for a third hit
+  	aim=3;
+		toHit(aim,dmg);
   }
 }
 
@@ -57,6 +76,3 @@ $(".trigger").click(function(){
   console.log(fire);
   aRmaments[fire](toHit);
 })
-
-// fel(toHit);
-// repOff(toHit);

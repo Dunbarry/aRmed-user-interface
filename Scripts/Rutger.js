@@ -9,15 +9,15 @@ var rutger= {
             1:{
               plating: 15,
               insulation: 5,
-              // weapons:["empty","Felony"],
-              weapons: ["empty","empty"],
+              weapons:["empty","Felony"],
+              // weapons: ["empty","empty"],
               equip:["empty"]
             },
             2:{
               plating: 10,
               insulation: 10,
-              weapons:["empty","empty"],
-              // weapons:["Misdemeanor","empty"],
+              // weapons:["empty","empty"],
+              weapons:["Misdemeanor","empty"],
               equip:["gyros","aRc"]
             },
             3:{
