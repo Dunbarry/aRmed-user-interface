@@ -42,6 +42,7 @@ function OPfire(){
   }
   else{
     for(var roulette in shooter.aRm){
+      console.log(roulette);
       if(shooter.aRm[roulette].weapons[0]!="empty"&&shooter.aRm[roulette].weapons[0]!="error 0"){
       var fire=shooter.aRm[roulette].weapons[0];
       console.log("Firing "+fire+" from Loop one.");
@@ -55,6 +56,12 @@ function OPfire(){
           $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
           aRmaments[fire](toHit);
           break;
+      }
+      roulette++
+      if(roulette===5){
+        console.log(shooter+" cannot fire!");
+        $("#PlayerLog").append('>'+shooter.Player.name+' cannot fire!<br />');
+        turnSwap();
       }
     }
   }
