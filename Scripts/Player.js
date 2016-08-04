@@ -38,6 +38,7 @@ $("#ignition").on('click', function(){
   $('#imgInsert').attr('src','images/vonztirf.jpg')
   $("#PlayerLog").append('>Match has begun!<br /><br />');
   $("#moniker").html(Player.Player.name)
+  $('#turnBox').html(Player.Player.name);
   $("#health").html(Player.Player.health);
 /*Q1*/
   $("#armor1").html("Armor: "+Player.aRm["1"].plating);

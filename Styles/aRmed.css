@@ -12,6 +12,25 @@
   height: 1vw;
 }
 
+#turnBox{
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -2%;
+  margin: 43.5%;
+  height: 3vw;
+  width: 12vw;
+  border-radius: 30%;
+
+  background-color: black;
+  border: 1.5px solid grey;
+  font-family: digital-7;
+  color: #66ff66;
+  font-size:1.8em;
+  z-index: 1;
+}
+
 body{
 	/*padding-right: 3em;*/
 	background-color: silver;
@@ -58,6 +77,11 @@ header{
   color: white;
   font-family: digital-7;
   color: #66ff66;
+}
+
+#OPLog{
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*Quadrant Box*/
