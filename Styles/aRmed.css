@@ -138,6 +138,7 @@ h4{
   display:flex;
   justify-content: space-between;
   width: 80%;
+  margin-bottom: .6vw;
 
   background-color: black;
   border: 1.5px solid grey;
@@ -153,6 +154,7 @@ h4{
   display:flex;
   justify-content: space-between;
   width: 80%;
+  margin-bottom: .6vw;
 
   background-color: black;
   border: 1.5px solid grey;
