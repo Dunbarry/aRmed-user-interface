@@ -1,7 +1,11 @@
+function loader(){
+  $("#PlayerLog").append('<br/>>Match pending...<br />')
+  $("#OPLog").append('<br/>>Match pending...<br />')
+}
+
 $(document).ready(function(){
     $('#PlayerLog').scrollTop($('#PlayerLog')[0].scrollHeight);
-    $("#PlayerLog").append('>Match pending...<br />')
-    $("#OPLog").append('>Match pending...<br />')
+    setTimeout(loader,2000);
     console.log("This is working");
 });
 
@@ -11,6 +15,7 @@ function turnSwap(){
   if(state==="Player"){
     state="OP";
     console.log("It is now "+state+"'s turn.");
+    $('#turnBox').html(rutger.Player.name);
     // delay=(Math.floor(Math.random()*7)*1000);
     // console.log(delay);
     setTimeout(OPfire,5500);
@@ -18,6 +23,7 @@ function turnSwap(){
   else if(state==="OP"){
     state="Player";
     console.log("It is now "+state+"'s turn.")
+    $('#turnBox').html(Player.Player.name);
   }
 }
 
