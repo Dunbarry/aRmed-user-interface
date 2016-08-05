@@ -1,3 +1,7 @@
+.box1{
+  color: white;
+}
+
 .div{
   display: flex;
   flex-direction: column;

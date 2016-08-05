@@ -1,50 +1,50 @@
 console.log("Drone online.");
-function check(){
+function charCheck(){
 var x=$("#character-select").find("option:selected");
 var y=x[0].id;
-$("#insert").attr("src","images/"+y+".jpg")
+$("#creationInsert").attr("src","images/"+y+".jpg")
 }
+
+var Player={
+  "Player":{
+   	name:"Player",
+    height:"5.41",
+    nationality:"American",
+    health:4,
+  },
+  "aRm":{
+    1:{
+      plating: 15,
+      insulation: 5,
+      weapons: ["Misdemeanor","Repeat Offender"],
+      equip:["empty"]
+    },
+    2:{
+      plating: 10,
+      insulation: 10,
+      weapons:["Misdemeanor","Felony"],
+      equip:["gyros","aRc"]
+    },
+    3:{
+      plating:10,
+      insulation: 10,
+      weapons:["empty", "empty"],
+      equip:["polarizer"]
+    },
+    4:{
+      plating: 5,
+      insulation: 20,
+      weapons:["empty","empty"],
+      equip:["30","30","empty"]
+    },
+    cylinder:["empty"]
+  }
+};
 
 // var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
 //     $("#insert").attr("src","assets/images/"+y+".jpg");
 // }
 
-
-// var shoulder= {
-//   "Player":{
-//    	name:"Player",
-//     height:"5.41",
-//     nationality:"American",
-//     health:4,
-//   },
-//   "aRm":{
-//     1:{
-//       plating: 15,
-//       insulation: 5,
-//       weapons: ["Misdemeanor","empty"],
-//       equip:["empty"]
-//     },
-//     2:{
-//       plating: 10,
-//       insulation: 10,
-//       weapons:["Misdemeanor","empty"],
-//       equip:["gyros","aRc"]
-//     },
-//     3:{
-//       plating:0,
-//       insulation: 0,
-//       weapons:["empty", "empty"],
-//       equip:["polarizer"]
-//     },
-//     4:{
-//       plating: 0,
-//       insulation: 0,
-//       weapons:["empty","empty"],
-//       equip:["30","30","empty"]
-//     },
-//     cylinder:["empty"]
-//     }
-// };
 //
 // $("#ignition").on('click', function(){
 //   $("#health span").html(shoulder.Player.health);
