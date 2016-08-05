@@ -1,37 +1,37 @@
-var Player= {
+var Player={
   "Player":{
    	name:"Player",
     height:"5.41",
     nationality:"American",
     health:4,
   },
-      "aRm":{
-            1:{
-              plating: 15,
-              insulation: 5,
-              weapons: ["Misdemeanor","Repeat Offender"],
-              equip:["empty"]
-            },
-            2:{
-              plating: 10,
-              insulation: 10,
-              weapons:["Misdemeanor","Felony"],
-              equip:["gyros","aRc"]
-            },
-            3:{
-              plating:10,
-              insulation: 10,
-              weapons:["empty", "empty"],
-              equip:["polarizer"]
-            },
-            4:{
-              plating: 5,
-              insulation: 20,
-              weapons:["empty","empty"],
-              equip:["30","30","empty"]
-            },
-            cylinder:["empty"]
-}
+  "aRm":{
+    1:{
+      plating: 15,
+      insulation: 5,
+      weapons: ["Misdemeanor","Repeat Offender"],
+      equip:["empty"]
+    },
+    2:{
+      plating: 10,
+      insulation: 10,
+      weapons:["Misdemeanor","Felony"],
+      equip:["gyros","aRc"]
+    },
+    3:{
+      plating:10,
+      insulation: 10,
+      weapons:["empty", "empty"],
+      equip:["polarizer"]
+    },
+    4:{
+      plating: 5,
+      insulation: 20,
+      weapons:["empty","empty"],
+      equip:["30","30","empty"]
+    },
+    cylinder:["empty"]
+  }
 };
 
 $("#ignition").on('click', function(){
@@ -67,5 +67,8 @@ $("#ignition").on('click', function(){
 var Playerfind={
   PlayerObject: function(){
   return Player;
+  }
+  userObject: function(){
+    return user;
   }
 }

@@ -5,41 +5,47 @@ var y=x[0].id;
 $("#creationInsert").attr("src","images/"+y+".jpg")
 }
 
-var Player={
-  "Player":{
-   	name:"Player",
-    height:"5.41",
-    nationality:"American",
-    health:4,
-  },
-  "aRm":{
-    1:{
-      plating: 15,
-      insulation: 5,
-      weapons: ["Misdemeanor","Repeat Offender"],
-      equip:["empty"]
+$("#creator").submit(function(){
+  // var x=$("#role").find("option:selected");
+  // var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
+  event.preventDefault();
+  var user={
+    "Player":{
+     	name:$('#name').val(),
+      height:$('#height').val(),
+      nationality:$('#nationality').val(),
+      health:4,
     },
-    2:{
-      plating: 10,
-      insulation: 10,
-      weapons:["Misdemeanor","Felony"],
-      equip:["gyros","aRc"]
-    },
-    3:{
-      plating:10,
-      insulation: 10,
-      weapons:["empty", "empty"],
-      equip:["polarizer"]
-    },
-    4:{
-      plating: 5,
-      insulation: 20,
-      weapons:["empty","empty"],
-      equip:["30","30","empty"]
-    },
-    cylinder:["empty"]
+    "aRm":{
+      1:{
+        plating: $('#armor1').val(),
+        insulation: $('#insulation1').val(),
+        weapons: [$('#weapon10').val(),$('#weapon11').val()],
+        equip:["empty"]
+      },
+      2:{
+        plating: $('#armor2').val(),
+        insulation: $('#insulation2').val(),
+        weapons: [$('#weapon20').val(),$('#weapon21').val()],
+        equip:["empty"]
+      },
+      3:{
+        plating:$('#armor3').val(),
+        insulation: $('#insultation').val(),
+        weapons: [$('#weapon30').val(),$('#weapon31').val()],
+        equip:["empty"]
+      },
+      4:{
+        plating: $('#armor4').val(),
+        insulation: $('#insulation').val(),
+        weapons: [$('#weapon30').val(),$('#weapon31').val()],
+        equip:["empty"]
+      },
+      cylinder:["empty"]
+    }
   }
-};
+  console.log(user);
+})
 
 // var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
 //     $("#insert").attr("src","assets/images/"+y+".jpg");
