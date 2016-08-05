@@ -67,6 +67,13 @@ var aRmaments={
 		toHit(aim,dmg);
   }
 }
+// ,
+// 	Flasher: function(toHit){
+// 		shots=2;
+// 		bypass=0;
+// 		multiHit(shots);
+// 		dmg=base
+// 	}
 
 $(".trigger").click(function(){
   //Find what was clicker: $(this).val();
