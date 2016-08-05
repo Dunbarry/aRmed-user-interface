@@ -22,7 +22,7 @@
   padding:.25vw;
 
   /*margin:1vw;*/
-  margin-top: 2.5vw;
+  margin-top: 1.75vw;
   margin-bottom: .5vw;
   outline: .2vw solid grey;
   background-color: grey;
@@ -30,12 +30,32 @@
 }
 
 .top{
-  margin-top: 1.5vw;
+  margin-top: 1vw;
 }
 
 form > span{
   display: flex;
   justify-content: space-between;
+}
+
+#submit{
+  display: flex;
+  border-radius: 2em;
+  /*justify-content: center;
+  align-content:center;*/
+  margin-top: 2vw;
+  margin-left: 44%;
+
+  background-color: black;
+  border: 1.5px solid grey;
+  font-family: digital-7;
+  color: #66ff66;
+  font-size:1em;
+  z-index: 1;
+}
+
+#submit:hover{
+  cursor: pointer;
 }
 
 input{
