@@ -1,5 +1,6 @@
 .box1{
   color: white;
+  padding: .3vw;
 }
 
 .div{
@@ -20,11 +21,16 @@
   justify-content: center;
   padding:.25vw;
 
-  margin:1vw;
-  margin-top: 3vw;
+  /*margin:1vw;*/
+  margin-top: 2.5vw;
+  margin-bottom: .5vw;
   outline: .2vw solid grey;
   background-color: grey;
   color: white;
+}
+
+.top{
+  margin-top: 1.5vw;
 }
 
 form > span{
