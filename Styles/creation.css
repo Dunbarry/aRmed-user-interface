@@ -6,7 +6,7 @@
 .div{
   display: flex;
   flex-direction: column;
-  width:35vw;
+  width:30vw;
 }
 
 #aRm{
@@ -44,7 +44,7 @@ form > span{
   /*justify-content: center;
   align-content:center;*/
   margin-top: 2vw;
-  margin-left: 44%;
+  margin-left: 42%;
 
   background-color: black;
   border: 1.5px solid grey;
