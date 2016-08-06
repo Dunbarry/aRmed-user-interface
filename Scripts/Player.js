@@ -68,7 +68,4 @@ var Playerfind={
   PlayerObject: function(){
   return Player;
   }
-  userObject: function(){
-    return user;
-  }
 }

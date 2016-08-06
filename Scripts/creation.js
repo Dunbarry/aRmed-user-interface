@@ -1,9 +1,23 @@
-console.log("Drone online.");
 function charCheck(){
 var x=$("#character-select").find("option:selected");
 var y=x[0].id;
+console.log(y)
 $("#creationInsert").attr("src","images/"+y+".jpg")
 }
+
+function loader(){
+  $("#PlayerLog").append('<br/>>Match pending...<br />')
+  $("#OPLog").append('<br/>>Match pending...<br />')
+}
+
+// $('#creatorTab').click(function(){
+//   console.log("Drone Online");
+//   var div=$('<div>',{id:"popUp"})
+//   var userForm=$('<form>',{id:'creator'})
+//   $('body').append(div)
+//   $('#popUp').append(userForm);
+//   $('#creator').append(guts);
+// })
 
 $("#creator").submit(function(){
   // var x=$("#role").find("option:selected");
@@ -45,7 +59,17 @@ $("#creator").submit(function(){
     }
   }
   console.log(user);
+  $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
+  $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
+  $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
+  $('.box2').append('<div class="combatLog" id="OPLog"></div>');
+  $('.container').append('<div id="turnBox">...</div>');
+  setTimeout(loader,2000);
+  console.log("This is working");
 })
+
+// <img id="imgInsert" src="http://placehold.it/370x490">
+// <div class="combatLog" id="PlayerLog"></div>
 
 // var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
 //     $("#insert").attr("src","assets/images/"+y+".jpg");
