@@ -1,3 +1,4 @@
+
 function charCheck(){
 var x=$("#character-select").find("option:selected");
 var y=x[0].id;
@@ -10,20 +11,9 @@ function loader(){
   $("#OPLog").append('<br/>>Match pending...<br />')
 }
 
-// $('#creatorTab').click(function(){
-//   console.log("Drone Online");
-//   var div=$('<div>',{id:"popUp"})
-//   var userForm=$('<form>',{id:'creator'})
-//   $('body').append(div)
-//   $('#popUp').append(userForm);
-//   $('#creator').append(guts);
-// })
-
 $("#creator").submit(function(){
-  // var x=$("#role").find("option:selected");
-  // var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
   event.preventDefault();
-  var user={
+  var User={
     "Player":{
      	name:$('#name').val(),
       height:$('#height').val(),
@@ -45,29 +35,63 @@ $("#creator").submit(function(){
       },
       3:{
         plating:$('#armor3').val(),
-        insulation: $('#insultation').val(),
+        insulation: $('#insultation3').val(),
         weapons: [$('#weapon30').val(),$('#weapon31').val()],
         equip:["empty"]
       },
       4:{
         plating: $('#armor4').val(),
-        insulation: $('#insulation').val(),
-        weapons: [$('#weapon30').val(),$('#weapon31').val()],
+        insulation: $('#insulation4').val(),
+        weapons: [$('#weapon40').val(),$('#weapon41').val()],
         equip:["empty"]
       },
       cylinder:["empty"]
     }
   }
-  console.log(user);
+
+  var x=$("#character-select").find("option:selected");
+  y=x[0].id;
+  console.log(User,y);
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
-  console.log("This is working");
-})
 
+  $("#ignition").on('click', function(){
+    $('#imgInsert').attr('src','images/'+y+'.jpg')
+    $("#PlayerLog").append('>Match has begun!<br /><br />');
+    $("#moniker").html(User.Player.name)
+    $('#turnBox').html(User.Player.name);
+    $("#health").html(User.Player.health);
+  /*Q1*/
+    $("#armor1").html("Armor: "+User.aRm["1"].plating);
+    $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
+    $("#weapon10").html(User.aRm["1"].weapons[0]);
+    $("#weapon11").html(User.aRm["1"].weapons[1]);
+  /*Q2*/
+    $("#armor2").html("Armor: "+User.aRm["2"].plating);
+    $("#insulation2").html("Insulation: "+User.aRm["2"].insulation);
+    $("#weapon20").html(User.aRm["2"].weapons[0]);
+    $("#weapon21").html(User.aRm["2"].weapons[1]);
+  /*Q3*/
+    $("#armor3").html("Armor: "+User.aRm["3"].plating);
+    $("#insulation3").html("Insulation: "+User.aRm["3"].insulation);
+    $("#weapon30").html(User.aRm["3"].weapons[0]);
+    $("#weapon31").html(User.aRm["3"].weapons[1]);
+  /*Q4*/
+    $("#armor4").html("Armor: "+User.aRm["4"].plating);
+    $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
+    $("#weapon40").html(User.aRm["4"].weapons[0]);
+    $("#weapon41").html(User.aRm["4"].weapons[1]);
+    OPrutger();
+
+    function playerFind(){
+      return User;
+    }
+  })
+})
 // <img id="imgInsert" src="http://placehold.it/370x490">
 // <div class="combatLog" id="PlayerLog"></div>
 
@@ -75,25 +99,42 @@ $("#creator").submit(function(){
 //     $("#insert").attr("src","assets/images/"+y+".jpg");
 // }
 
+// function userFind(){
+//   return (User, y);
+// }
 //
-// $("#ignition").on('click', function(){
-//   $("#health span").html(shoulder.Player.health);
+// // $("#ignition").on('click', function(){
+//   userFind();
+//   $('#imgInsert').attr('src','images/'+y+'.jpg')
+//   $("#PlayerLog").append('>Match has begun!<br /><br />');
+//   $("#moniker").html(User.Player.name)
+//   $('#turnBox').html(User.Player.name);
+//   $("#health").html(User.Player.health);
 // /*Q1*/
-//   $("#armor1").html("Armor: "+shoulder.aRm["1"].plating+"  Insulation: "+shoulder.aRm["1"].insulation);
-// //  $("#insulation1 span").html(shoulder.aRm["1"].insulation);
-//   $("#weapon11").html(shoulder.aRm["1"].weapons[0]);
-//   $("#weapon12").html(shoulder.aRm["1"].weapons[1]);
+//   $("#armor1").html("Armor: "+User.aRm["1"].plating);
+//   $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
+//   $("#weapon10").html(User.aRm["1"].weapons[0]);
+//   $("#weapon11").html(User.aRm["1"].weapons[1]);
 // /*Q2*/
-//   $("#armor2").html("Armor: "+shoulder.aRm["2"].plating+"  Insulation: "+shoulder.aRm["2"].insulation);
-//   $("#weapon21").html(shoulder.aRm["2"].weapons[0]);
-//   $("#weapon22").html(shoulder.aRm["2"].weapons[1]);
+//   $("#armor2").html("Armor: "+User.aRm["2"].plating);
+//   $("#insulation2").html("Insulation: "+User.aRm["2"].insulation);
+//   $("#weapon20").html(User.aRm["2"].weapons[0]);
+//   $("#weapon21").html(User.aRm["2"].weapons[1]);
 // /*Q3*/
-//   $("#armor3").html("Armor: "+shoulder.aRm["3"].plating+"  Insulation: "+shoulder.aRm["3"].insulation);
-//   $("#weapon31").html(shoulder.aRm["3"].weapons[0]);
-//   $("#weapon32").html(shoulder.aRm["3"].weapons[1]);
+//   $("#armor3").html("Armor: "+User.aRm["3"].plating);
+//   $("#insulation3").html("Insulation: "+User.aRm["3"].insulation);
+//   $("#weapon30").html(User.aRm["3"].weapons[0]);
+//   $("#weapon31").html(User.aRm["3"].weapons[1]);
 // /*Q4*/
-//   $("#armor4").html("Armor: "+shoulder.aRm["4"].plating+"  Insulation: "+shoulder.aRm["4"].insulation);
-//   $("#insulation4 span").html(shoulder.aRm["4"].insulation);
-//   $("#weapon41").html(shoulder.aRm["4"].weapons[0]);
-//   $("#weapon42").html(shoulder.aRm["4"].weapons[1]);
+//   $("#armor4").html("Armor: "+User.aRm["4"].plating);
+//   $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
+//   $("#weapon40").html(User.aRm["4"].weapons[0]);
+//   $("#weapon41").html(User.aRm["4"].weapons[1]);
+//
+//   OPrutger();
 // })
+
+// function playerFind={
+//     return User;
+//   }
+// }

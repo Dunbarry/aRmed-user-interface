@@ -19,7 +19,8 @@ function check(dmg){		//Player attacking enemy.
 			write="OP"
 		}
 		else{
-			target=Playerfind[((document.getElementById('moniker')).innerHTML)+"Object"]();
+			target=playerFind();
+			// Playerfind[((document.getElementById('moniker')).innerHTML)+"Object"]();
 			turn="#";
 			write="Player"
 		}
