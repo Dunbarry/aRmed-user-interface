@@ -1,9 +1,10 @@
 
+// var chosen={};
 function charCheck(){
 var x=$("#character-select").find("option:selected");
-var y=x[0].id;
-console.log(y)
-$("#creationInsert").attr("src","images/"+y+".jpg")
+chosen=x[0].id;
+console.log(chosen)
+$("#creationInsert").attr("src","images/"+chosen+".jpg")
 }
 
 function loader(){
@@ -50,17 +51,17 @@ $("#creator").submit(function(){
     }
   }
   var x=$("#character-select").find("option:selected");
-  y=x[0].id;
-  console.log(User,y);
+  chosen=x[0].id;
+  console.log(User,chosen);
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
-
+  //Populate user fields with the corresponding data.
   $("#ignition").on('click', function(){
-    $('#imgInsert').attr('src','images/'+y+'.jpg')
+    $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
     $('#turnBox').html(User.Player.name);
@@ -87,6 +88,10 @@ $("#creator").submit(function(){
     $("#weapon41").html(User.aRm["4"].weapons[1]);
     OPrutger();
   })
+})
+
+$('#preMade').click(function(){
+  populate(chosen)
 })
 
 function playerFind(){
