@@ -11,9 +11,10 @@ function loader(){
   $("#OPLog").append('<br/>>Match pending...<br />')
 }
 
+var User={};
 $("#creator").submit(function(){
   event.preventDefault();
-  var User={
+  User={
     "Player":{
      	name:$('#name').val(),
       height:$('#height').val(),
@@ -48,7 +49,6 @@ $("#creator").submit(function(){
       cylinder:["empty"]
     }
   }
-
   var x=$("#character-select").find("option:selected");
   y=x[0].id;
   console.log(User,y);
@@ -86,55 +86,9 @@ $("#creator").submit(function(){
     $("#weapon40").html(User.aRm["4"].weapons[0]);
     $("#weapon41").html(User.aRm["4"].weapons[1]);
     OPrutger();
-
-    function playerFind(){
-      return User;
-    }
   })
 })
-// <img id="imgInsert" src="http://placehold.it/370x490">
-// <div class="combatLog" id="PlayerLog"></div>
 
-// var y=x[0].value; //Converting user-selection to "Tank" or "Attack" etc.
-//     $("#insert").attr("src","assets/images/"+y+".jpg");
-// }
-
-// function userFind(){
-//   return (User, y);
-// }
-//
-// // $("#ignition").on('click', function(){
-//   userFind();
-//   $('#imgInsert').attr('src','images/'+y+'.jpg')
-//   $("#PlayerLog").append('>Match has begun!<br /><br />');
-//   $("#moniker").html(User.Player.name)
-//   $('#turnBox').html(User.Player.name);
-//   $("#health").html(User.Player.health);
-// /*Q1*/
-//   $("#armor1").html("Armor: "+User.aRm["1"].plating);
-//   $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
-//   $("#weapon10").html(User.aRm["1"].weapons[0]);
-//   $("#weapon11").html(User.aRm["1"].weapons[1]);
-// /*Q2*/
-//   $("#armor2").html("Armor: "+User.aRm["2"].plating);
-//   $("#insulation2").html("Insulation: "+User.aRm["2"].insulation);
-//   $("#weapon20").html(User.aRm["2"].weapons[0]);
-//   $("#weapon21").html(User.aRm["2"].weapons[1]);
-// /*Q3*/
-//   $("#armor3").html("Armor: "+User.aRm["3"].plating);
-//   $("#insulation3").html("Insulation: "+User.aRm["3"].insulation);
-//   $("#weapon30").html(User.aRm["3"].weapons[0]);
-//   $("#weapon31").html(User.aRm["3"].weapons[1]);
-// /*Q4*/
-//   $("#armor4").html("Armor: "+User.aRm["4"].plating);
-//   $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
-//   $("#weapon40").html(User.aRm["4"].weapons[0]);
-//   $("#weapon41").html(User.aRm["4"].weapons[1]);
-//
-//   OPrutger();
-// })
-
-// function playerFind={
-//     return User;
-//   }
-// }
+function playerFind(){
+    return User;
+}
