@@ -12,7 +12,7 @@ function turnSwap(){
   else if(state==="OP"){
     state="Player";
     console.log("It is now "+state+"'s turn.")
-    $('#turnBox').html(Player.Player.name);
+    $('#turnBox').html(User.Player.name);
   }
 }
 
