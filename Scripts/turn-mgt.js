@@ -1,14 +1,3 @@
-function loader(){
-  $("#PlayerLog").append('<br/>>Match pending...<br />')
-  $("#OPLog").append('<br/>>Match pending...<br />')
-}
-
-$(document).ready(function(){
-    $('#PlayerLog').scrollTop($('#PlayerLog')[0].scrollHeight);
-    setTimeout(loader,2000);
-    console.log("This is working");
-});
-
 var state="Player";
 function turnSwap(){
   // console.log("I was just called!")

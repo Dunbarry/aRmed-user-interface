@@ -65,6 +65,16 @@ header{
   color: black;
 }
 
+.box2{
+  order: 2;
+	flex: 3;
+  padding-top: .5vw;
+
+  text-align: center;
+  background-color: black;
+  color: black;
+}
+
 .combatLog{
   display: flex;
   align-content: column;

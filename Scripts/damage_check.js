@@ -19,13 +19,14 @@ function check(dmg){		//Player attacking enemy.
 			write="OP"
 		}
 		else{
-			target=Playerfind[((document.getElementById('moniker')).innerHTML)+"Object"]();
+			target=playerFind();
+			// Playerfind[((document.getElementById('moniker')).innerHTML)+"Object"]();
 			turn="#";
 			write="Player"
 		}
 		if(dmg===0){
 			console.log("Miss!")
-			('#'+write+'Log').append(shooter+" missed!")
+			$('#'+write+'Log').append("Miss!")
 		}
 		q=rngQ();						//Quadrant to assign damage to.
 		console.log(dmg+" damage headed toward "+target.Player.name+"'s #"+q+" quadrant!");
