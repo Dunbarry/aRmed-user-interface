@@ -36,7 +36,7 @@ $("#creator").submit(function(){
       },
       3:{
         plating:$('#armor3').val(),
-        insulation: $('#insultation3').val(),
+        insulation: $('#insulation3').val(),
         weapons: [$('#weapon30').val(),$('#weapon31').val()],
         equip:["empty"]
       },
