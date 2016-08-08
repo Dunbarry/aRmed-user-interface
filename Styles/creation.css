@@ -1,3 +1,12 @@
+@import{
+  font-family:'SF Ironsides';
+  src: url('http://www.1001fonts.com/sf-ironsides-font.html');
+}
+
+h4{
+  font-family: 'SF Ironsides';
+}
+
 .box1{
   color: white;
   padding: .3vw;
@@ -22,6 +31,9 @@
 
 .splash{
   display:flex;
+  /*justify-content: flex-start;
+  align-items: flex-start;*/
+  flex-direction: column;
   position: absolute;
   border-radius: .5em;
   height:auto;
@@ -102,6 +114,29 @@ form > span{
 }
 
 #preMade:hover{
+  cursor: pointer;
+}
+
+#splashSubmit{
+  display: flex;
+  display: inline;
+  border-radius: 2em;
+  /*width: 7px;*/
+  padding: .5px;
+  justify-content:flex-start;
+  /*align-content:center;*/
+  /*margin-top: 2vw;
+  margin-left: 42%;*/
+
+  background-color: black;
+  border: 1.5px solid grey;
+  font-family: digital-7;
+  color: #66ff66;
+  font-size:1em;
+  z-index: 1;
+}
+
+#splashSubmit:hover{
   cursor: pointer;
 }
 
