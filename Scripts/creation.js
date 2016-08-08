@@ -11,6 +11,11 @@ function loader(){
   $("#OPLog").append('<br/>>Match pending...<br />')
 }
 
+$('.closer').click(function(){
+  $('.splash').remove();
+  $('.splashCloud').remove();
+})
+
 var User={};
 $("#creator").submit(function(){
   event.preventDefault();
@@ -60,7 +65,7 @@ $("#creator").submit(function(){
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
   //Populate user fields with User created data when the match begins.
-  $("#ignition").on('click', function(){ 
+  $("#ignition").on('click', function(){
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
