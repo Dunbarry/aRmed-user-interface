@@ -64,10 +64,10 @@ function check(dmg){		//Player attacking enemy.
 }
 
 function breach(pass){ //Checks damage breaching armor against insulation.
-	slot=0;
-	if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons[0]==="empty"){
-		slot=1;
-	} 	//Check if something is in slot 0 and act accordingly.
+	// slot=0;
+	// if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons[0]==="empty"){
+	// 	slot=1;
+	// } 	//Check if something is in slot 0 and act accordingly.
   if(target.aRm[q].insulation>pass){ //If insulated mark damage.
     target.aRm[q].insulation-=pass;
 		$(turn+'insulation'+q).text("Insulation: "+target.aRm[q].insulation);
@@ -88,16 +88,35 @@ function breach(pass){ //Checks damage breaching armor against insulation.
 		$(turn+'insulation'+q).text("Insulation: "+target.aRm[q].insulation);
 		$("#"+write+"Log").append('>Warning: #'+q+' quadrant insulation offline<br />');
     console.log("Insulation offline!")
-      if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons[0]==="empty"){
-				wound(pass); //...and there's no weapon to destroy, call wound for core damage.
-      }
-			else{
-				console.log(target.aRm[q].weapons[slot]+" destroyed!") //...destroy a weapon.
-				target.aRm[q].weapons.splice(0,1,"error 0");
-				$(turn+'weapon'+q+slot).text(target.aRm[q].weapons[slot]);
-				$("#"+write+"Log").append('>Warning: '+slot+' offline<br />');
-
+    if(target.aRm[q].weapons[0]!="error 0"&&target.aRm[q].weapons[0]!="empty"){
+			console.log(target.aRm[q].weapons[0]+" destroyed!") //...destroy top weapon.
+			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[0]+' offline<br />');
+			target.aRm[q].weapons.splice(0,1,"error 0");
+		}
+		else if(target.aRm[q].weapons[1]!="error 0"&&target.aRm[q].weapons[1]!="empty"){
+			console.log(target.aRm[q].weapons[1]+" destroyed!") //...or destroy bottom weapon.
+			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[1]+' offline<br />');
+			target.aRm[q].weapons.splice(1,1,"error 0");
+		}
+		else{
+			wound(pass); //...or if there's no weapon to destroy, call wound for core damage.
+			if(turnState()==="OP"){
+				for(var disaRmed in target.aRm){
+		      // console.log(roulette);
+		      if(target.aRm[disaRmed].weapons[0]!="empty"&&shooter.aRm[disaRmed].weapons[0]!="error 0"){
+		      break;
+		      }
+		      else if(target.aRm[disaRmed].weapons[1]!="empty"&&shooter.aRm[disaRmed].weapons[1]!="error 0"){
+		          break;
+		      }
+		      disaRmed++
+		      if(disaRmed===5){
+		        console.log("You lose!");
+						setTimeout(hsalps,3000);
+					}
+				}
 			}
+		}
   }
 }
 
@@ -105,7 +124,7 @@ function wound(pass){
   target.Player.health-=1;
 	$(turn+'health').html(target.Player.health);
 	console.log(target.Player.name+"'s core has been damaged!")
-	$("#"+write+"Log").append('>Warning: core at X%<br />');
+	// $("#"+write+"Log").append('>Warning: core at X%<br />');
   if(target.Player.health===0){
     console.log("aRm destroyed!")
 		if(turnState()==="OP"){
@@ -114,5 +133,6 @@ function wound(pass){
 		else{
 			console.log("You win!");
 		}
+		setTimeout(hsalps,3000);
   }
 }

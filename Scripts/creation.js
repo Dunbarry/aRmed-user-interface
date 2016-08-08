@@ -103,3 +103,9 @@ $('#preMade').click(function(){
 function playerFind(){
     return User;
 }
+
+function hsalps(){
+  $('body').append('<div class="hsalps"></div>')
+  $('body').append('<div class="splashCloud"></div>')
+  $('.hsalps').html("Game over man!");
+})
