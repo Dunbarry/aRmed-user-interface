@@ -58,6 +58,26 @@ form > span{
   cursor: pointer;
 }
 
+#preMade{
+  display: flex;
+  border-radius: 2em;
+  /*justify-content: center;
+  align-content:center;*/
+  margin-top: 6.39vw;
+  margin-left: 42%;
+
+  background-color: black;
+  border: 1.5px solid grey;
+  font-family: digital-7;
+  color: #66ff66;
+  font-size:1em;
+  z-index: 1;
+}
+
+#preMade:hover{
+  cursor: pointer;
+}
+
 input{
   display: flex;
 }
