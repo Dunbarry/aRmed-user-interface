@@ -9,6 +9,28 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
+function disaRmed(){
+	if(turnState()==="OP"){
+		for(var weapCheck in target.aRm){
+			console.log(weapCheck);
+			if(target.aRm[weapCheck].weapons[0]!="empty"&&target.aRm[weapCheck].weapons[0]!="error 0"){
+				console.log(target.aRm[weapCheck].weapons[0])
+				break;
+			}
+			else if(target.aRm[weapCheck].weapons[1]!="empty"&&target.aRm[weapCheck].weapons[1]!="error 0"){
+					console.log(target.aRm[weapCheck].weapons[1])
+				break;
+			}
+			weapCheck++
+			console.log("Final "+weapCheck);
+			if(weapCheck===5){
+				console.log("You lose!");
+				setTimeout(hsalps,3000);
+			}
+		}
+	}
+}
+
 var turn="";
 var q=0;
 function check(dmg){		//Player attacking enemy.
@@ -76,10 +98,8 @@ function breach(pass){ //Checks damage breaching armor against insulation.
 		$(turn+'insulation'+q).text("Insulation: "+target.aRm[q].insulation);
     console.log("Fatal error. Insulation offline.")
 		$("#"+write+"Log").append('>Fatal error: #'+q+' quadrant insulation offline<br />');
-
   }
   else{ //If pass is bigger than or equal to insultation...
-    pass=pass-target.aRm[q].insulation;
     target.aRm[q].insulation=0;
 		$(turn+'insulation'+q).text("Insulation: "+target.aRm[q].insulation);
 		$("#"+write+"Log").append('>Warning: #'+q+' quadrant insulation offline<br />');
@@ -89,39 +109,27 @@ function breach(pass){ //Checks damage breaching armor against insulation.
 			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[0]+' offline<br />');
 			target.aRm[q].weapons.splice(0,1,"error 0");
 			$(turn+'weapon'+q+0).text(target.aRm[q].weapons[0])
+			disaRmed();
 		}
 		else if(target.aRm[q].weapons[1]!="error 0"&&target.aRm[q].weapons[1]!="empty"){
 			console.log(target.aRm[q].weapons[1]+" destroyed!") //...or destroy bottom weapon.
 			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[1]+' offline<br />');
 			target.aRm[q].weapons.splice(1,1,"error 0");
 			$(turn+'weapon'+q+1).text(target.aRm[q].weapons[1])
+			disaRmed();
 		}
 		else{
-			wound(pass); //...or if there's no weapon to destroy, call wound for core damage.
-			if(turnState()==="OP"){
-				for(var disaRmed in target.aRm){
-		      if(target.aRm[disaRmed].weapons[0]!="empty"&&shooter.aRm[disaRmed].weapons[0]!="error 0"){
-		      	break;
-		      }
-		      else if(target.aRm[disaRmed].weapons[1]!="empty"&&shooter.aRm[disaRmed].weapons[1]!="error 0"){
-		        break;
-		      }
-		      disaRmed++
-		      if(disaRmed===5){
-		        console.log("You lose!");
-						setTimeout(hsalps,3000);
-					}
-				}
-			}
+			disaRmed();
+			wound();
 		}
   }
 }
 
-function wound(pass){
+function wound(){
   target.Player.health-=1;
 	$(turn+'health').html(target.Player.health);
 	console.log(target.Player.name+"'s core has been damaged!")
-	// $("#"+write+"Log").append('>Warning: core at X%<br />');
+	$("#"+write+"Log").append('>Warning: core has been damaged.<br />');
   if(target.Player.health===0){
     console.log("aRm destroyed!")
 		if(turnState()==="OP"){
@@ -132,4 +140,4 @@ function wound(pass){
 		}
 		setTimeout(hsalps,3000);
   }
-}
+};

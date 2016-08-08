@@ -31,8 +31,7 @@ var danny={
       insulation: 20,
       weapons:["empty","empty"],
       equip:["30","30","empty"]
-    },
-    cylinder:["empty"]
+    }
   }
 };
 

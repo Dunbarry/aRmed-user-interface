@@ -50,10 +50,10 @@ $("#creator").submit(function(){
         insulation: $('#insulation4').val(),
         weapons: [$('#weapon40').val(),$('#weapon41').val()],
         equip:["empty"]
-      },
-      cylinder:["empty"]
+      }
     }
   }
+  
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
   console.log(User,chosen);
