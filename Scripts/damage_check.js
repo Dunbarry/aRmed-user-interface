@@ -47,7 +47,7 @@ function check(dmg){		//Player attacking enemy.
 			write="Player"
 		}
 		if(dmg===0){
-			console.log("Miss!")
+			console.log(shooter+" missed!")
 			$('#'+write+'Log').append(">Miss!<br />")
 		}
 		q=rngQ();						//Quadrant to assign damage to.
