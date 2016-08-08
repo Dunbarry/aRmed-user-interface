@@ -1,5 +1,4 @@
 
-// var chosen={};
 function charCheck(){
 var x=$("#character-select").find("option:selected");
 chosen=x[0].id;
@@ -53,14 +52,15 @@ $("#creator").submit(function(){
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
   console.log(User,chosen);
+  //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
-  //Populate user fields with the corresponding data.
-  $("#ignition").on('click', function(){
+  //Populate user fields with User created data when the match begins.
+  $("#ignition").on('click', function(){ 
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
@@ -86,6 +86,7 @@ $("#creator").submit(function(){
     $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
     $("#weapon40").html(User.aRm["4"].weapons[0]);
     $("#weapon41").html(User.aRm["4"].weapons[1]);
+  //Set up the opponent.
     OPrutger();
   })
 })
