@@ -64,10 +64,6 @@ function check(dmg){		//Player attacking enemy.
 }
 
 function breach(pass){ //Checks damage breaching armor against insulation.
-	// slot=0;
-	// if(target.aRm[q].weapons[0]==="error 0"||target.aRm[q].weapons[0]==="empty"){
-	// 	slot=1;
-	// } 	//Check if something is in slot 0 and act accordingly.
   if(target.aRm[q].insulation>pass){ //If insulated mark damage.
     target.aRm[q].insulation-=pass;
 		$(turn+'insulation'+q).text("Insulation: "+target.aRm[q].insulation);
@@ -92,22 +88,23 @@ function breach(pass){ //Checks damage breaching armor against insulation.
 			console.log(target.aRm[q].weapons[0]+" destroyed!") //...destroy top weapon.
 			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[0]+' offline<br />');
 			target.aRm[q].weapons.splice(0,1,"error 0");
+			$(turn+'weapon'+q+0).text(target.aRm[q].weapons[0])
 		}
 		else if(target.aRm[q].weapons[1]!="error 0"&&target.aRm[q].weapons[1]!="empty"){
 			console.log(target.aRm[q].weapons[1]+" destroyed!") //...or destroy bottom weapon.
 			$("#"+write+"Log").append('>Warning: '+target.aRm[q].weapons[1]+' offline<br />');
 			target.aRm[q].weapons.splice(1,1,"error 0");
+			$(turn+'weapon'+q+1).text(target.aRm[q].weapons[1])
 		}
 		else{
 			wound(pass); //...or if there's no weapon to destroy, call wound for core damage.
 			if(turnState()==="OP"){
 				for(var disaRmed in target.aRm){
-		      // console.log(roulette);
 		      if(target.aRm[disaRmed].weapons[0]!="empty"&&shooter.aRm[disaRmed].weapons[0]!="error 0"){
-		      break;
+		      	break;
 		      }
 		      else if(target.aRm[disaRmed].weapons[1]!="empty"&&shooter.aRm[disaRmed].weapons[1]!="error 0"){
-		          break;
+		        break;
 		      }
 		      disaRmed++
 		      if(disaRmed===5){
