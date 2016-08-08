@@ -26,7 +26,7 @@ function check(dmg){		//Player attacking enemy.
 		}
 		if(dmg===0){
 			console.log("Miss!")
-			$('#'+write+'Log').append("Miss!")
+			$('#'+write+'Log').append(">Miss!<br />")
 		}
 		q=rngQ();						//Quadrant to assign damage to.
 		console.log(dmg+" damage headed toward "+target.Player.name+"'s #"+q+" quadrant!");
