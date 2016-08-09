@@ -47,6 +47,7 @@ function populate(chosen){
   //Populate user fields with User created data when the match begins.
   $('#ignition').click(function(){
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+    $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     if(chosen==="danny"){
       chosen = danny;
