@@ -65,6 +65,7 @@ var aRmaments={
     dmg=base+1;	        //"Reeling enemy" bonus for a third hit
   	aim=3;
 		toHit(aim,dmg);
+		RO();
   }
 	,
 	Pontificator:	function(toHit){
