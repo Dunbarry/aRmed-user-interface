@@ -57,6 +57,7 @@ var aRmaments={
     dmg=base*2;
 		bypass=0
     toHit(aim,dmg);
+		FEL();
   },
   "Repeat Offender": function(toHit){
   	shots=2;
