@@ -46,7 +46,8 @@ var q=0;
 function check(dmg){		//Player attacking enemy.
 		turn=turnState();
 		if (turn==="Player"){ //Figure out who's shooting at whom!
-			target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
+			target=rutger
+			// target= find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
 			turn="#OP";
 			write="OP"
 		}
