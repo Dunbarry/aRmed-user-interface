@@ -57,6 +57,7 @@ var aRmaments={
     dmg=base*2;
 		bypass=0
     toHit(aim,dmg);
+		FEL();
   },
   "Repeat Offender": function(toHit){
   	shots=2;
@@ -65,6 +66,7 @@ var aRmaments={
     dmg=base+1;	        //"Reeling enemy" bonus for a third hit
   	aim=3;
 		toHit(aim,dmg);
+		RO();
   }
 	,
 	Pontificator:	function(toHit){
