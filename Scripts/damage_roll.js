@@ -3,23 +3,6 @@
 // 1:6=hit
 // 7&8=glance (.5dmg)
 // 9 <= miss (no dmg)
-quote="";
-stat=0;
-function quoteFetch(){
-		$.ajax({
-			url:'http://quotes.rest/qod.json',
-			error: function(err) {console.error(err)},
-		method: 'GET',
-		success: function(data) {
-			quote=data.contents.quotes[0].quote
-			alert(quote);
-			for(var i in quote){
-				stat+=1;
-			}
-			return (Math.floor(stat/3));
-		}
-	})
-}
 
 var base=2;
 function toHit(aim,dmg){
