@@ -51,6 +51,7 @@ var aRmaments={
     dmg=base;
 		bypass=0
     toHit(aim,dmg);
+		MIS();
   },
   Felony: function(toHit){
     aim=1;
