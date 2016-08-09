@@ -5,7 +5,7 @@ var danny={
    	name:"Danny",
     height:"2",
     nationality:"American",
-    health:4,
+    health: 4,
   },
   "aRm":{
     1:{
@@ -35,6 +35,78 @@ var danny={
   }
 };
 
+var brooks={
+  "Player":{
+   	name:"General",
+    height:"1.6",
+    nationality:"American",
+    health: 4,
+  },
+  "aRm":{
+    1:{
+      plating: 15,
+      insulation: 5,
+      weapons: ["Repeat Offender","empty"],
+      equip:["empty"]
+    },
+    2:{
+      plating: 10,
+      insulation: 10,
+      weapons:["empty","empty"],
+      equip:["gyros","aRc"]
+    },
+    3:{
+      plating:10,
+      insulation: 10,
+      weapons:["empty", "empty"],
+      equip:["empty"]
+    },
+    4:{
+      plating: 5,
+      insulation: 20,
+      weapons:["empty","empty"],
+      equip:["30","30","empty"]
+    }
+  }
+};
+
+var valerie={
+  "Player":{
+   	name:"Val.r[E]",
+    height:"1.45",
+    nationality:"American",
+    health: 4,
+  },
+  "aRm":{
+    1:{
+      plating: 15,
+      insulation: 5,
+      weapons: ["Misdemeanor","empty"],
+      equip:["empty"]
+    },
+    2:{
+      plating: 10,
+      insulation: 10,
+      weapons:["empty","empty"],
+      equip:["gyros","aRc"]
+    },
+    3:{
+      plating:20,
+      insulation: 10,
+      weapons:["Felony", "Felony"],
+      equip:["empty"]
+    },
+    4:{
+      plating: 5,
+      insulation: 20,
+      weapons:["empty","empty"],
+      equip:["empty"]
+    }
+  }
+};
+
+
+
 function populate(chosen){
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
@@ -47,12 +119,19 @@ function populate(chosen){
   //Populate user fields with User created data when the match begins.
   $('#ignition').click(function(){
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
-    $('#imgInsert').addClass('shakeMe');
+    // $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     if(chosen==="danny"){
-      chosen = danny;
+    chosen = danny;
     }
-    User=danny;
+    else if(chosen==="brooks"){
+    chosen=brooks;
+    }
+    else{
+    chosen=valerie
+    }
+
+    User=chosen;
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);
     $("#health").html(chosen.Player.health);
