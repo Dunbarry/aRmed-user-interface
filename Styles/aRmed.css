@@ -89,8 +89,8 @@ header{
 	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
 	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
-.shakeMe:hover,
-.shakeMe:focus {
+
+.shakeMe{
 	-webkit-animation-name: shakeMe;
 	-webkit-animation-duration: 0.8s;
 	-webkit-transform-origin:50% 50%;

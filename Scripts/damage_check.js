@@ -9,6 +9,16 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
+function hold(){
+	$(turn+'imgInsert').removeClass('shakeMe');
+}
+
+function rumble(){
+	console.log("Rumbe online")
+	$(turn+'imgInsert').addClass('shakeMe')
+	setTimeout(hold,900);
+}
+
 function disaRmed(){
 	if(turnState()==="OP"){
 		for(var weapCheck in target.aRm){
@@ -52,6 +62,7 @@ function check(dmg){		//Player attacking enemy.
 		}
 		q=rngQ();						//Quadrant to assign damage to.
 		console.log(dmg+" damage headed toward "+target.Player.name+"'s #"+q+" quadrant!");
+		setTimeout(rumble,900);
 		for(var i in target.aRm){
 	  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
 	   		if(target.aRm[q].plating===0){			//If there is no armor call breach func

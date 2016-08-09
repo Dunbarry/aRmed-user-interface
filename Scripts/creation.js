@@ -67,7 +67,7 @@ $("#creator").submit(function(){
   //Populate user fields with User created data when the match begins.
   $("#ignition").on('click', function(){
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
-    $('#imgInsert').addClass('shakeMe');
+    // $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
     $('#turnBox').html(User.Player.name);
