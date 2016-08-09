@@ -66,6 +66,13 @@ var aRmaments={
   	aim=3;
 		toHit(aim,dmg);
   }
+	,
+	Pontificator:	function(toHit){
+		bypass=0;
+		dmg=quoteFetch;
+		aim=4;
+		toHit(aim,dmg);
+	}
 }
 // ,
 // 	Flasher: function(toHit){

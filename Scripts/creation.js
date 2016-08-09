@@ -53,7 +53,7 @@ $("#creator").submit(function(){
       }
     }
   }
-  
+
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
   console.log(User,chosen);
@@ -104,9 +104,23 @@ function playerFind(){
     return User;
 }
 
+function quoteFetch(){
+		$.ajax({
+			url:'http://quotes.rest/qod.json',
+			error: function(err) {console.error(err)},
+		method: 'GET',
+		success: function(data) {
+			quote=data.contents.quotes[0].quote
+			alert(quote);
+		}
+	})
+}
+
 function hsalps(){
 // $('#ignition').click(function(){
   $('body').append('<div class="hsalps"></div>')
   $('body').append('<div class="splashCloud"></div>')
   $('.hsalps').html("<p>Thank you for playing this demo of aRmed Combat. Please be sure to read the credits for all artists involved in the project! And check back in the future for updates.</p><ul>Upcoming features include:<li>Unlockable lore</li><li>Additional weapons and characters</li><li>aRm and weapon mods</li><li>Local PvP</li><li>Much, much more!</li><br><p>Until then, stay aRmed and dangerous.");
+
+  setTimeout(quoteFetch,10000);
 }
