@@ -1,3 +1,12 @@
+$('document').ready(function(){
+  $('.weapSelect').append(
+    '<option selected>empty</option>\
+    <option>Misdemeanor</option>\
+    <option>Felony</option>\
+    <option>Repeat Offender</option>\
+    <option>Streaker</option>'
+  )
+})
 
 function charCheck(){
 var x=$("#character-select").find("option:selected");
@@ -14,6 +23,7 @@ function loader(){
 $('.closer').click(function(){
   $('.splash').remove();
   $('.splashCloud').remove();
+  // $('body').append('<div class="splashCloud"></div><div class="splash"><p>Test</p></div>')
 })
 
 var User={};
