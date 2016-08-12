@@ -1,16 +1,13 @@
 var counter=0;
-var basics='<p>aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. To win a match, a Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or leave them with their aRm broken: their prosthesis reduced to zero functionality.</p><span class="closer" id="closer">Right.</span>'
+var basics='<p>aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. To win a match, a Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or leave them with their aRm broken: their prosthesis reduced to zero functionality.</p><button class="closer" id="closer">Right.</button>'
 
-var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p><span class="closer" id="closer">Right.</span>'
+var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p><button class="closer" id="closer">Right.</button>'
 
-var chips='<p>But your opponent will have their own tools of destruction. While you break their aRm, they will be trying to break yours. If you choose to build up your defenses, their effectiveness will be displayed here. Plating breach? Insulation offline? Weapon scrapped? These windows will let you know.</p><span class="closer" id="closer">Makes sense.</span>'
+var chips='<p>But your opponent will have their own tools of destruction. While you break their aRm, they will be trying to break yours. If you choose to build up your defenses, their effectiveness will be displayed here. Plating breach? Insulation offline? Weapon scrapped? These windows will let you know.</p><button class="closer" id="closer">Makes sense.</button>'
 
-var transition='<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><span class="closer" id="ender">Giddy up.</span>'
+var transition='<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><button class="closer" id="ender">Giddy up.</button>'
 
 function tutorial(text){
-  // // $('body').append('<div class="infoPane"></div>')
-  // // $('body').append('<div class="splashCloud"></div>')
-  // $('body').append('<div class="splashCloud"></div><div class="infoPane"></div>');
   $('.infoPane').html(text)
 }
 
@@ -29,7 +26,7 @@ $(document).on("click","#closer",function(){
       $('.infoPane').html(chips);
       break;
     case 4:
-      $('.infoPane').html(transition); //Transition has ender button.
+      $('.infoPane').html(transition);
       break;
   }
 })

@@ -54,7 +54,7 @@ header{
   /*justify-content: flex-start;
   align-items: flex-start;*/
   flex-direction: column;
-  position: fixed;
+  position: absolute;
   top: 0;
   border-radius: .5em;
   height:auto;
@@ -67,6 +67,29 @@ header{
   background-color: white;
   color: black;
   z-index: 2;
+}
+
+.closer{
+  display: flex;
+  display: inline;
+  border-radius: 2em;
+  /*width: 7px;*/
+  padding: .5px;
+  justify-content:center;
+  align-content:center;
+  /*margin-top: 2vw;
+  margin-left: 42%;*/
+
+  background-color: black;
+  border: 1.5px solid grey;
+  font-family: digital-7;
+  color: #66ff66;
+  font-size:1em;
+  z-index: 1;
+}
+
+.closer:hover{
+  cursor: pointer;
 }
 
 #aRm{
@@ -135,29 +158,6 @@ form > span{
 }
 
 #preMade:hover{
-  cursor: pointer;
-}
-
-.closer{
-  display: flex;
-  display: inline;
-  border-radius: 2em;
-  /*width: 7px;*/
-  padding: .5px;
-  justify-content:flex-start;
-  /*align-content:center;*/
-  /*margin-top: 2vw;
-  margin-left: 42%;*/
-
-  background-color: black;
-  border: 1.5px solid grey;
-  font-family: digital-7;
-  color: #66ff66;
-  font-size:1em;
-  z-index: 1;
-}
-
-.closer:hover{
   cursor: pointer;
 }
 
