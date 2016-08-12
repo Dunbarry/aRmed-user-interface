@@ -8,10 +8,6 @@ header{
   background-size: cover;
 }
 
-h4{
-  font-family: 'SF Ironsides';
-}
-
 .box1{
   color: white;
   padding: .3vw;
@@ -53,7 +49,7 @@ h4{
   z-index: 2;
 }
 
-.hsalps{
+.infoPane{
   display:flex;
   /*justify-content: flex-start;
   align-items: flex-start;*/
@@ -142,7 +138,7 @@ form > span{
   cursor: pointer;
 }
 
-#splashSubmit{
+.closer{
   display: flex;
   display: inline;
   border-radius: 2em;
@@ -161,7 +157,7 @@ form > span{
   z-index: 1;
 }
 
-#splashSubmit:hover{
+.closer:hover{
   cursor: pointer;
 }
 
