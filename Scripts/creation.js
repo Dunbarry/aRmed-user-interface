@@ -1,7 +1,21 @@
 var counter=0;
 var basics='<p>aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. To win a match, a Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or leave them with their aRm broken: their prosthesis reduced to zero functionality.</p><button class="closer" id="closer">Okay!</button>'
 
-var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p><button class="closer" id="closer">Okay!</button>'
+var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p>\
+<div class="crossSection">\
+  <div class="outerHousing">\
+    <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
+  </div>\
+  <div class="weapon"></div>\
+  <div class="innerHousing">\
+    <div class="weapPeg"></div>\
+    <div class="weapConduit"></div>\
+    <div class="weapConduit1"></div>\
+    <div class="weapConduit2"></div>\
+  </div>\
+  <div class="core"></div>\
+  <div class="charge"></div>\
+</div><button class="closer" id="closer">Okay!</button>'
 
 var chips='<p>But your opponent will have their own tools of destruction, and while you try to break their aRm, they will be trying to break yours. Fortify your aRm like a tank, build a completely offensive arm and bring the pain, or anything inbetween. No matter what, all those choices and their status will be displayed here, with your opponent displayed on the other side. Plating breach? Insulation offline? Weapon scrapped? These windows will let you know.</p><button class="closer" id="closer">Okay!</button>'
 
@@ -34,7 +48,7 @@ $(document).on("click","#closer",function(){
       $('body').append('<div class="arrowPulse"></div>');
       break;
     case 5:
-      $('.aprrowPulse').remove();
+      $('.arrowPulse').remove();
       $('.infoPane').html(transition);
       break;
   }
