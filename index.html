@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="Styles/creation.css"/>
   </head>
   <body>
-    <header><img src="images/aRmed.png"></header>
+    <header><img src="images/aRmed.png" alt="aRmed Combat"></header>
     <div class="container">
       <article class="box1">
         <div class="div">
@@ -15,12 +15,12 @@
           <div class="splash">
             <p>Welcome to aRmed Combat. A near future world of underground dualing where the augmented, known as 'Shoulders', pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. In this demo you will be able to create and then pit your own creation against those already in use, or deploy a pre-made aRm and get straight to the action! </p>
             <ul>To build a custom aRm:
-              <li>Select an avatar on the right, fill out the character sheet on the left, and then click <p id="splashSubmit">Create!</p></li>
+              <li>Select an avatar on the right, fill out the character sheet on the left, and then click <p class="closer">Create!</p></li>
             </ul>
             <ul>To use a pre-made aRm:
-              <li>Select an avatar and click <p id="splashSubmit">Deploy!</p></li>
+              <li>Select an avatar and click <p class="closer">Deploy!</p></li>
             </ul>
-            <button class="closer" id="splashSubmit">Ready to begin?</button>
+            <button class="closer" id="closer">Ready to begin?</button>
           </div>
           <form id="creator">
             <span>Character Name:<input type="text" placeholder="Character Name" id="name"></span>
@@ -31,23 +31,11 @@
             <span>Plating:<input type="number" value="0" min="0" max="80" id="armor1"></span>
             <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1"></span>
             <span>Weapon 1:
-              <select id="weapon10">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon10">
               </select>
             </span>
             <span>Weapon 2:
-              <select id="weapon11">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon11">
               </select>
             </span>
             <!--Q2-->
@@ -55,23 +43,11 @@
             <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor2"></span>
             <span>insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation2"></span>
             <span>Weapon 1:
-              <select id="weapon20">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon20">
               </select>
             </span>
             <span>Weapon 2:
-              <select id="weapon21">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon21">
               </select>
             </span>
             <!--Q3-->
@@ -79,23 +55,11 @@
             <span>armor3:<input type="number" value="0" min="0" max="80"  id="armor3"></span>
             <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation3"></span>
             <span>Weapon 1:
-              <select id="weapon30">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon30">
               </select>
             </span>
             <span>weapon 2:
-              <select id="weapon31">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon31">
               </select>
             </span>
             <!--Q4-->
@@ -103,23 +67,11 @@
             <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor4"></span>
             <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation4"></span>
             <span>Weapon 1:
-              <select id="weapon40">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon40">
               </select>
             </span>
             <span>Weapon 2:
-              <select id="weapon41">
-                <!-- <option value:"" disabled selected hide>Select</option> -->
-                <option selected>empty</option>
-                <option>Misdemeanor</option>
-                <option>Felony</option>
-                <option>Repeat Offender</option>
-                <option>Pontificator</option>
+              <select class="weapSelect" id="weapon41">
               </select>
             </span>
             <input type="submit" id="submit" value="Create!">
@@ -131,10 +83,9 @@
           <span>
             <select name="character-select" id="character-select" onchange="charCheck()">
               <option value:"" disabled selected hide>-Select a shoulder-</option>
-              <option id="danny">Dr. Fritz</option>
+              <option id="danny">Dr. Ztirf</option>
               <option id="brooks">The General</option>
               <option id="valerie">Val.r[E]</option>
-              <option id="g31">g[31]</option>
             </select>
           </span>
           <img id="creationInsert" src="http://placehold.it/370x490">

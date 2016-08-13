@@ -159,9 +159,3 @@ function populate(chosen){
     OPrutger();
   })
 }
-
-// var Playerfind={
-//   PlayerObject: function(){
-//   return chosen;
-//   }
-// }

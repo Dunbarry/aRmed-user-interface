@@ -98,9 +98,9 @@ header{
 	-webkit-animation-timing-function: linear;
 }
 
-.shakeme {
+/*.shakeme {
 	display:inline-block
-}
+}*/
 
 .combatLog{
   display: flex;
