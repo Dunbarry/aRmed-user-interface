@@ -1,7 +1,7 @@
 var counter=0;
-var basics='<p>aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. To win a match, a Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or leave them with their aRm broken: their prosthesis reduced to zero functionality.</p><button class="closer" id="closer">Okay!</button>'
+var basics='<p>No, aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. Our duals allow the augmented, known as Shoulders, pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. To win, the other Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or, have their aRm broken: the entire prosthesis reduced to zero functionality.</p><button class="closer" id="closer">"Go on."</button>'
 
-var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p>\
+var basicTactics='<p>Any school child knows the history of aRm technology. Our tournament caters to the inevitable next step in that so-called abandoned tehcnology: weaponization. Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Ten minutes on a Tor browser and your basic user could have this information. So do not feel flattered.</p><p>Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p>\
 <div class="crossSection">\
   <div class="outerHousing">\
     <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
@@ -72,6 +72,10 @@ $(document).ready(function(){``
     <option>Repeat Offender</option>\
     <option>Streaker</option>')
   setTimeout(newSplash, 13000);
+})
+
+$('.splashVeil, .icon').click(function(){
+  newSplash();
 })
 
 function charCheck(){
