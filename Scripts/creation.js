@@ -1,78 +1,82 @@
-var counter=0;
-var basics='<p>aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. To win a match, a Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or leave them with their aRm broken: their prosthesis reduced to zero functionality.</p><button class="closer" id="closer">Okay!</button>'
-
-var basicTactics='<p>Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Destroy an the entire arsenal across all quadrants and your opponent is disaRmed. Punch through the defenses and weapons of a quadrant, and the core will be exposed and vulnerable. Destory the core and you break the aRm.</p>\
-<div class="crossSection">\
-  <div class="outerHousing">\
-    <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
-  </div>\
-  <div class="weapon"></div>\
-  <div class="innerHousing">\
-    <div class="weapPeg"></div>\
-    <div class="weapConduit"></div>\
-    <div class="weapConduit1"></div>\
-    <div class="weapConduit2"></div>\
-  </div>\
-  <div class="core"></div>\
-  <div class="charge"></div>\
-</div><button class="closer" id="closer">Okay!</button>'
-
-var chips='<p>But your opponent will have their own tools of destruction, and while you try to break their aRm, they will be trying to break yours. Fortify your aRm like a tank, build a completely offensive arm and bring the pain, or anything inbetween. No matter what, all those choices and their status will be displayed here, with your opponent displayed on the other side. Plating breach? Insulation offline? Weapon scrapped? These windows will let you know.</p><button class="closer" id="closer">Okay!</button>'
-
-var core='<p>Anyone who knows anything knows Cool Fusion is half of what makes aRm technology possible. Not quite cold, and much cooler than hot, not to mention far less messy when it goes critical. If yours does, your aRm is broken and you lose. So keep an eye on this readout and make sure that does not happen!</p><button class="closer" id="closer">Giddy up.</button>'
-
-var transition='<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><button class="closer" id="ender">Giddy up.</button>'
-
-function newSplash(){
-  $('.icon').remove();
-  $('.splashVeil').remove();
-}
-
-function tutorial(text){
-  $('.infoPane').html(text)
-}
-
-$(document).on("click","#closer",function(){
-  counter++;
-  switch (counter){
-    case 1:
-      $('.splash').remove();
-      $('body').append('<div class="infoPane"></div>');
-      tutorial(basics);
-      break;
-    case 2:
-      $('.infoPane').html(basicTactics);
-      break;
-    case 3:
-      $('.infoPane').html(chips);
-      $('body').append('<div class="arrowStrafe"></div>');
-      break;
-    case 4:
-      $('.arrowStrafe').remove();
-      $('.infoPane').html(core);
-      $('body').append('<div class="arrowPulse"></div>');
-      break;
-    case 5:
-      $('.arrowPulse').remove();
-      $('.infoPane').html(transition);
-      break;
-  }
-})
-
-$(document).on('click','#ender',function(){
-  $('.infoPane').remove();
-  $('.splashCloud').remove();
-})
-
-$(document).ready(function(){``
-  $('.weapSelect').append(
-    '<option selected>empty</option>\
-    <option>Misdemeanor</option>\
-    <option>Felony</option>\
-    <option>Repeat Offender</option>\
-    <option>Streaker</option>')
-  setTimeout(newSplash, 13000);
-})
+// var counter=0;
+// var basics='<p>No, aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. Our duals allow the augmented, known as Shoulders, pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. To win, the other Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or, have their aRm broken: the entire prosthesis reduced to zero functionality.</p><button class="closer" id="closer">"Go on."</button>'
+//
+// var basicTactics='<p>Any school child knows the history of aRm technology. Our tournaments cater to the inevitable next step in that so-called abandoned tehcnology: weaponization. Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Ten minutes on a Tor browser and your basic user could have this information. So do not feel flattered.</p><p>Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Punch through the defenses and weapons of a quadrant, and the core will be exposed. Destory the core and you break the aRm.</p>\
+// <div class="crossSection">\
+//   <div class="outerHousing">\
+//     <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
+//   </div>\
+//   <div class="weapon"></div>\
+//   <div class="innerHousing">\
+//     <div class="weapPeg"></div>\
+//     <div class="weapConduit"></div>\
+//     <div class="weapConduit1"></div>\
+//     <div class="weapConduit2"></div>\
+//   </div>\
+//   <div class="core"></div>\
+//   <div class="charge"></div>\
+// </div><button class="closer" id="closer">"Please continue."</button>'
+//
+// var chips='<p>But every dual has two sides, so handing out punishment must be done while also tanking it. Some Shoulders fortify their aRms like tanks, some build a completely offensive and bring the pain. And there are plenty of designers inbetween. Keeping abreast of the status of your own arm is key. Plating breaches, insulation failures and and destroyed weapons are all regular occurences. Without nerves to warn them, Shoulders must keep themselves informed.</p><button class="closer" id="closer">"I see."</button>'
+//
+// var core='<p>As for your question regarding power failures: I should think anyone who knows anything knows Cool Fusion is half of what makes aRm technology possible. Not quite cold, but much cooler than hot fusion. Not to mention infintely less messy when it goes critical. If a combants core does exactly that, the aRm is broken and they lose.</p><button class="closer" id="closer">Giddy up.</button>'
+//
+// var transition='<p>Come to think of it, I know the perfect match for you to see. One of the Shoulders is new to the circuit. The name is: <input type="text" placeholder="Character Name" id="name"> A newcomer, but one with promise. And should you decide to dishonor our agreement? Well, better one of our veterans is not the one to suffer.</p><p>I will be in contact with you on a date, time, and protocol. If you make me regret doing so, it will be a state we share.</p><button class="closer" id="ender">Giddy up.</button>'
+//
+// function newSplash(){
+//   $('.icon').remove();
+//   $('.splashVeil').remove();
+// }
+//
+// function tutorial(text){
+//   $('.infoPane').html(text)
+// }
+//
+// $(document).on("click","#closer",function(){
+//   counter++;
+//   switch (counter){
+//     case 1:
+//       $('.splash').remove();
+//       $('body').append('<div class="infoPane"></div>');
+//       tutorial(basics);
+//       break;
+//     case 2:
+//       $('.infoPane').html(basicTactics);
+//       break;
+//     case 3:
+//       $('.infoPane').html(chips);
+//       $('body').append('<div class="arrowStrafe"></div>');
+//       break;
+//     case 4:
+//       $('.arrowStrafe').remove();
+//       $('.infoPane').html(core);
+//       $('body').append('<div class="arrowPulse"></div>');
+//       break;
+//     case 5:
+//       $('.arrowPulse').remove();
+//       $('.infoPane').html(transition);
+//       break;
+//   }
+// })
+//
+// $(document).on('click','#ender',function(){
+//   $('.infoPane').remove();
+//   $('.splashCloud').remove();
+// })
+//
+// $(document).ready(function(){``
+//   $('.weapSelect').append(
+//     '<option selected>empty</option>\
+//     <option>Misdemeanor</option>\
+//     <option>Felony</option>\
+//     <option>Repeat Offender</option>\
+//     <option>Streaker</option>')
+//   setTimeout(newSplash, 13000);
+// })
+//
+// $('.splashVeil, .icon').click(function(){
+//   newSplash();
+// })
 
 function charCheck(){
   var x=$("#character-select").find("option:selected");
@@ -174,22 +178,3 @@ $('#preMade').click(function(){
 function playerFind(){
     return User;
 }
-
-function quoteFetch(){
-		$.ajax({
-			url:'http://quotes.rest/qod.json',
-			error: function(err) {console.error(err)},
-		method: 'GET',
-		success: function(data) {
-			quote=data.contents.quotes[0].quote
-			alert(quote);
-		}
-	})
-}
-
-  // $('.hsalps').html("<p>Thank you for playing this demo of aRmed Combat.\
-  // Please be sure to read the credits for all artists involved in the project!\
-  // And check back in the future for updates.</p><ul>Upcoming features include:\
-  // <li>Unlockable lore</li><li>Additional weapons and characters</li><li>aRm and\
-  // weapon mods</li><li>Local PvP</li><li>Much, much more!</li><br><p>Until then,\
-  //  stay aRmed and dangerous.");

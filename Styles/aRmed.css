@@ -217,3 +217,21 @@ h4{
   background: red;
   padding: 1em;
 }
+
+.offline{
+  display: inline;
+  cursor: pointer;
+  color: red;
+}
+
+.yellow{
+  display: inline;
+  cursor: pointer;
+  color:#F5F533;
+}
+
+.green{
+  display: inline-block;
+  cursor: pointer;
+  color:#66ff66;
+}
