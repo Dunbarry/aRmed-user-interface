@@ -1,82 +1,38 @@
-// var counter=0;
-// var basics='<p>No, aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. Our duals allow the augmented, known as Shoulders, pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. To win, the other Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or, have their aRm broken: the entire prosthesis reduced to zero functionality.</p><button class="closer" id="closer">"Go on."</button>'
-//
-// var basicTactics='<p>Any school child knows the history of aRm technology. Our tournaments cater to the inevitable next step in that so-called abandoned tehcnology: weaponization. Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Ten minutes on a Tor browser and your basic user could have this information. So do not feel flattered.</p><p>Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Punch through the defenses and weapons of a quadrant, and the core will be exposed. Destory the core and you break the aRm.</p>\
-// <div class="crossSection">\
-//   <div class="outerHousing">\
-//     <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
-//   </div>\
-//   <div class="weapon"></div>\
-//   <div class="innerHousing">\
-//     <div class="weapPeg"></div>\
-//     <div class="weapConduit"></div>\
-//     <div class="weapConduit1"></div>\
-//     <div class="weapConduit2"></div>\
-//   </div>\
-//   <div class="core"></div>\
-//   <div class="charge"></div>\
-// </div><button class="closer" id="closer">"Please continue."</button>'
-//
-// var chips='<p>But every dual has two sides, so handing out punishment must be done while also tanking it. Some Shoulders fortify their aRms like tanks, some build a completely offensive and bring the pain. And there are plenty of designers inbetween. Keeping abreast of the status of your own arm is key. Plating breaches, insulation failures and and destroyed weapons are all regular occurences. Without nerves to warn them, Shoulders must keep themselves informed.</p><button class="closer" id="closer">"I see."</button>'
-//
-// var core='<p>As for your question regarding power failures: I should think anyone who knows anything knows Cool Fusion is half of what makes aRm technology possible. Not quite cold, but much cooler than hot fusion. Not to mention infintely less messy when it goes critical. If a combants core does exactly that, the aRm is broken and they lose.</p><button class="closer" id="closer">Giddy up.</button>'
-//
-// var transition='<p>Come to think of it, I know the perfect match for you to see. One of the Shoulders is new to the circuit. The name is: <input type="text" placeholder="Character Name" id="name"> A newcomer, but one with promise. And should you decide to dishonor our agreement? Well, better one of our veterans is not the one to suffer.</p><p>I will be in contact with you on a date, time, and protocol. If you make me regret doing so, it will be a state we share.</p><button class="closer" id="ender">Giddy up.</button>'
-//
-// function newSplash(){
-//   $('.icon').remove();
-//   $('.splashVeil').remove();
-// }
-//
-// function tutorial(text){
-//   $('.infoPane').html(text)
-// }
-//
-// $(document).on("click","#closer",function(){
-//   counter++;
-//   switch (counter){
-//     case 1:
-//       $('.splash').remove();
-//       $('body').append('<div class="infoPane"></div>');
-//       tutorial(basics);
-//       break;
-//     case 2:
-//       $('.infoPane').html(basicTactics);
-//       break;
-//     case 3:
-//       $('.infoPane').html(chips);
-//       $('body').append('<div class="arrowStrafe"></div>');
-//       break;
-//     case 4:
-//       $('.arrowStrafe').remove();
-//       $('.infoPane').html(core);
-//       $('body').append('<div class="arrowPulse"></div>');
-//       break;
-//     case 5:
-//       $('.arrowPulse').remove();
-//       $('.infoPane').html(transition);
-//       break;
-//   }
-// })
-//
-// $(document).on('click','#ender',function(){
-//   $('.infoPane').remove();
-//   $('.splashCloud').remove();
-// })
-//
-// $(document).ready(function(){``
-//   $('.weapSelect').append(
-//     '<option selected>empty</option>\
-//     <option>Misdemeanor</option>\
-//     <option>Felony</option>\
-//     <option>Repeat Offender</option>\
-//     <option>Streaker</option>')
-//   setTimeout(newSplash, 13000);
-// })
-//
-// $('.splashVeil, .icon').click(function(){
-//   newSplash();
-// })
+var quadCount=0;
+var User={
+  "Player":{
+    name:"",
+    height:0,
+    nationality:"",
+    health:4,
+  },
+  "aRm":{
+    1:{
+      plating:0,
+      insulation: 0,
+      weapons: ["",""],
+      equip:["empty"]
+    },
+    2:{
+      plating:0,
+      insulation: 0,
+      weapons: ["",""],
+      equip:["empty"]
+    },
+    3:{
+      plating:0,
+      insulation: 0,
+      weapons: ["",""],
+      equip:["empty"]
+    },
+    4:{
+      plating:0,
+      insulation: 0,
+      weapons: ["",""],
+      equip:["empty"]
+    }
+  }
+}
 
 function charCheck(){
   var x=$("#character-select").find("option:selected");
@@ -90,87 +46,6 @@ function loader(){
   $("#OPLog").append('<br/>>Match pending...<br />')
 }
 
-var User={};
-$("#creator").submit(function(){
-  event.preventDefault();
-  User={
-    "Player":{
-     	name:$('#name').val(),
-      height:$('#height').val(),
-      nationality:$('#nationality').val(),
-      health:4,
-    },
-    "aRm":{
-      1:{
-        plating: $('#armor1').val(),
-        insulation: $('#insulation1').val(),
-        weapons: [$('#weapon10').val(),$('#weapon11').val()],
-        equip:["empty"]
-      },
-      2:{
-        plating: $('#armor2').val(),
-        insulation: $('#insulation2').val(),
-        weapons: [$('#weapon20').val(),$('#weapon21').val()],
-        equip:["empty"]
-      },
-      3:{
-        plating:$('#armor3').val(),
-        insulation: $('#insulation3').val(),
-        weapons: [$('#weapon30').val(),$('#weapon31').val()],
-        equip:["empty"]
-      },
-      4:{
-        plating: $('#armor4').val(),
-        insulation: $('#insulation4').val(),
-        weapons: [$('#weapon40').val(),$('#weapon41').val()],
-        equip:["empty"]
-      }
-    }
-  }
-
-  var x=$("#character-select").find("option:selected");
-  chosen=x[0].id;
-  console.log(User,chosen);
-  //Append remaining UI elements.
-  $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
-  $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
-  $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
-  $('.box2').append('<div class="combatLog" id="OPLog"></div>');
-  $('.container').append('<div id="turnBox">...</div>');
-  setTimeout(loader,2000);
-  //Populate user fields with User created data when the match begins.
-  $("#ignition").on('click', function(){
-    $('#imgInsert').attr('src','images/'+chosen+'.jpg')
-    // $('#imgInsert').addClass('shakeMe');
-    $("#PlayerLog").append('>Match has begun!<br /><br />');
-    $("#moniker").html(User.Player.name)
-    $('#turnBox').html(User.Player.name);
-    $("#health").html(User.Player.health);
-  /*Q1*/
-    $("#armor1").html("Armor: "+User.aRm["1"].plating);
-    $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
-    $("#weapon10").html(User.aRm["1"].weapons[0]);
-    $("#weapon11").html(User.aRm["1"].weapons[1]);
-  /*Q2*/
-    $("#armor2").html("Armor: "+User.aRm["2"].plating);
-    $("#insulation2").html("Insulation: "+User.aRm["2"].insulation);
-    $("#weapon20").html(User.aRm["2"].weapons[0]);
-    $("#weapon21").html(User.aRm["2"].weapons[1]);
-  /*Q3*/
-    $("#armor3").html("Armor: "+User.aRm["3"].plating);
-    $("#insulation3").html("Insulation: "+User.aRm["3"].insulation);
-    $("#weapon30").html(User.aRm["3"].weapons[0]);
-    $("#weapon31").html(User.aRm["3"].weapons[1]);
-  /*Q4*/
-    $("#armor4").html("Armor: "+User.aRm["4"].plating);
-    $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
-    $("#weapon40").html(User.aRm["4"].weapons[0]);
-    $("#weapon41").html(User.aRm["4"].weapons[1]);
-  //Set up the opponent.
-    OPrutger();
-  })
-})
-
 $('#preMade').click(function(){
   populate(chosen)
 })
@@ -178,3 +53,122 @@ $('#preMade').click(function(){
 function playerFind(){
     return User;
 }
+
+function quadCreator(){
+  $('.creationPane').html(
+    '<form>\
+      <span class="top" id="Q">Quadrant '+quadCount+'</span>\
+      <span>Plating:<input type="number" value="0" min="0" max="80" id="armor1"></span>\
+      <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1"></span>\
+      <span>Weapon 1:\
+        <select class="weapSelect" id="weapon10">\
+        </select>\
+      </span>\
+      <span>Weapon 2:\
+        <select class="weapSelect" id="weapon11">\
+        </select>\
+      </span>\
+      <button class="closer" id="ender">Quadrant #'+quadCount+' Complete</button>\
+    </form>')
+  $('.weapSelect').append(
+    '<option selected>empty</option>\
+    <option>Misdemeanor</option>\
+    <option>Felony</option>\
+    <option>Repeat Offender</option>');
+  quadCount++;
+}
+
+$(document).on('click','#ender',function(){
+  event.preventDefault();
+  if(quadCount===0){
+    $('.infoPane').remove();
+    $('body').append('<div class="creationPane"></div>');
+    quadCount++;
+  }
+  quadCreator();
+})
+
+// $('#quadCreator').click(function(){
+//   quadCreator();
+// })
+
+
+// $("#creator").submit(function(){
+//   event.preventDefault();
+//   User={
+//     "Player":{
+//      	name:$('#name').val(),
+//       height:$('#height').val(),
+//       nationality:$('#nationality').val(),
+//       health:4,
+//     },
+//     "aRm":{
+//       1:{
+//         plating: $('#armor1').val(),
+//         insulation: $('#insulation1').val(),
+//         weapons: [$('#weapon10').val(),$('#weapon11').val()],
+//         equip:["empty"]
+//       },
+//       2:{
+//         plating: $('#armor2').val(),
+//         insulation: $('#insulation2').val(),
+//         weapons: [$('#weapon20').val(),$('#weapon21').val()],
+//         equip:["empty"]
+//       },
+//       3:{
+//         plating:$('#armor3').val(),
+//         insulation: $('#insulation3').val(),
+//         weapons: [$('#weapon30').val(),$('#weapon31').val()],
+//         equip:["empty"]
+//       },
+//       4:{
+//         plating: $('#armor4').val(),
+//         insulation: $('#insulation4').val(),
+//         weapons: [$('#weapon40').val(),$('#weapon41').val()],
+//         equip:["empty"]
+//       }
+//     }
+//   }
+
+//   var x=$("#character-select").find("option:selected");
+//   chosen=x[0].id;
+//   console.log(User,chosen);
+//   //Append remaining UI elements.
+//   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
+//   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
+//   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
+//   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
+//   $('.container').append('<div id="turnBox">...</div>');
+//   setTimeout(loader,2000);
+//   //Populate user fields with User created data when the match begins.
+//   $("#ignition").on('click', function(){
+//     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+//     // $('#imgInsert').addClass('shakeMe');
+//     $("#PlayerLog").append('>Match has begun!<br /><br />');
+//     $("#moniker").html(User.Player.name)
+//     $('#turnBox').html(User.Player.name);
+//     $("#health").html(User.Player.health);
+//   /*Q1*/
+//     $("#armor1").html("Armor: "+User.aRm["1"].plating);
+//     $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
+//     $("#weapon10").html(User.aRm["1"].weapons[0]);
+//     $("#weapon11").html(User.aRm["1"].weapons[1]);
+//   /*Q2*/
+//     $("#armor2").html("Armor: "+User.aRm["2"].plating);
+//     $("#insulation2").html("Insulation: "+User.aRm["2"].insulation);
+//     $("#weapon20").html(User.aRm["2"].weapons[0]);
+//     $("#weapon21").html(User.aRm["2"].weapons[1]);
+//   /*Q3*/
+//     $("#armor3").html("Armor: "+User.aRm["3"].plating);
+//     $("#insulation3").html("Insulation: "+User.aRm["3"].insulation);
+//     $("#weapon30").html(User.aRm["3"].weapons[0]);
+//     $("#weapon31").html(User.aRm["3"].weapons[1]);
+//   /*Q4*/
+//     $("#armor4").html("Armor: "+User.aRm["4"].plating);
+//     $("#insulation4").html("Insulation: "+User.aRm["4"].insulation);
+//     $("#weapon40").html(User.aRm["4"].weapons[0]);
+//     $("#weapon41").html(User.aRm["4"].weapons[1]);
+//   //Set up the opponent.
+//     OPrutger();
+//   })
+// })

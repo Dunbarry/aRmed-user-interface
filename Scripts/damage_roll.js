@@ -87,9 +87,6 @@ var aRmaments={
 
 $(".trigger").click(function(){
 	playerFind();
-  //Find what was clicker: $(this).val();
-  //Find what slot that corresponds to in the doc: document.getElementById(^);
-  //What is in the slot: thing.innerHTML
   var fire=(document.getElementById(($(this).val()))).innerHTML;
   console.log(fire);
   aRmaments[fire](toHit);
