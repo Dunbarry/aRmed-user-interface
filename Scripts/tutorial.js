@@ -111,7 +111,7 @@ $(document).ready(function(){
     <option>Felony</option>\
     <option>Repeat Offender</option>\
     <option>Pontificator</option>');
-  setTimeout(newSplash, 13000);
+  setTimeout(newSplash, 12500);
 })
 
 $('.splashVeil, .icon').click(function(){

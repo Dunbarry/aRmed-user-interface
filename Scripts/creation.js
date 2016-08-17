@@ -74,7 +74,63 @@ function playerFind(){
 $(document).on('click','#ender',function(){
   // event.preventDefault();
     $('.infoPane').remove();
-    $('.splashCloud').remove();
+    $('.splashVeil').remove()
+    $('body').append('<div class="creationPane"></div>');
+    // $('.creationPane').append(
+    //   '<form id="creator">\
+    //     <span>Character Name:<input type="text" placeholder="Character Name" id="name"></span>\
+    //     <span>Height:<input type="text" placeholder="1.65m" id="height"></span>\
+    //     <span>Nationality:<input type="text" placeholder="City, Country" id="nationality"></span>\
+    //     <!--Q1-->\
+    //     <span class="top" id="Q">Quadrant 1</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80" id="armor1"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon10">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon11">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q2-->\
+    //     <span id="Q">Quadrant 2</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor2"></span>\
+    //     <span>insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation2"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon20">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon21">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q3-->\
+    //     <span id="Q">Quadrant 3</span>\
+    //     <span>armor3:<input type="number" value="0" min="0" max="80"  id="armor3"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation3"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon30">\
+    //       </select>\
+    //     </span>\
+    //     <span>weapon 2:\
+    //       <select class="weapSelect" id="weapon31">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q4-->\
+    //     <span id="Q">Quadrant 4</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor4"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation4"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon40">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon41">\
+    //       </select>\
+    //     </span>\
+    //     <input type="submit" id="submit" value="Create!">\
+    //   </form>')
   })
 
 
