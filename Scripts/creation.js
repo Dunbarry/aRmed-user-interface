@@ -74,8 +74,8 @@ function playerFind(){
 $(document).on('click','#ender',function(){
   // event.preventDefault();
     $('.infoPane').remove();
-    $('.splashVeil').remove()
-    $('body').append('<div class="creationPane"></div>');
+    $('.splashCloud').remove()
+    // $('body').append('<div class="creationPane"></div>');
     // $('.creationPane').append(
     //   '<form id="creator">\
     //     <span>Character Name:<input type="text" placeholder="Character Name" id="name"></span>\
