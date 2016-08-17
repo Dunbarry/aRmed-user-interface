@@ -100,14 +100,18 @@ $(document).on("click","#closer",function(){
       $('.arrowPulse').remove();
       $('.infoPane').html(transition);
       break;
+
   }
 })
 
 $(document).ready(function(){
-  if(oneTimeOnly=1){
-    setTimeout(newSplash, 13000);
-    oneTimeOnly++;
-  }
+  $('.weapSelect').append(
+    '<option selected>empty</option>\
+    <option>Misdemeanor</option>\
+    <option>Felony</option>\
+    <option>Repeat Offender</option>\
+    <option>Pontificator</option>');
+  setTimeout(newSplash, 13000);
 })
 
 $('.splashVeil, .icon').click(function(){
