@@ -1,82 +1,38 @@
-// var counter=0;
-// var basics='<p>No, aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. Our duals allow the augmented, known as Shoulders, pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. To win, the other Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or, have their aRm broken: the entire prosthesis reduced to zero functionality.</p><button class="closer" id="closer">"Go on."</button>'
-//
-// var basicTactics='<p>Any school child knows the history of aRm technology. Our tournaments cater to the inevitable next step in that so-called abandoned tehcnology: weaponization. Basic aRm design is based around four quadrants, each fitted with a custom amount of plating, insulation, weapons, and other equipment. Ten minutes on a Tor browser and your basic user could have this information. So do not feel flattered.</p><p>Remove the defensive measures from a quadrant and you can then destory the weapons and equipment. Punch through the defenses and weapons of a quadrant, and the core will be exposed. Destory the core and you break the aRm.</p>\
-// <div class="crossSection">\
-//   <div class="outerHousing">\
-//     <p class="insulation">|X|_|X|_|X|_|X|_|X|</p>\
-//   </div>\
-//   <div class="weapon"></div>\
-//   <div class="innerHousing">\
-//     <div class="weapPeg"></div>\
-//     <div class="weapConduit"></div>\
-//     <div class="weapConduit1"></div>\
-//     <div class="weapConduit2"></div>\
-//   </div>\
-//   <div class="core"></div>\
-//   <div class="charge"></div>\
-// </div><button class="closer" id="closer">"Please continue."</button>'
-//
-// var chips='<p>But every dual has two sides, so handing out punishment must be done while also tanking it. Some Shoulders fortify their aRms like tanks, some build a completely offensive and bring the pain. And there are plenty of designers inbetween. Keeping abreast of the status of your own arm is key. Plating breaches, insulation failures and and destroyed weapons are all regular occurences. Without nerves to warn them, Shoulders must keep themselves informed.</p><button class="closer" id="closer">"I see."</button>'
-//
-// var core='<p>As for your question regarding power failures: I should think anyone who knows anything knows Cool Fusion is half of what makes aRm technology possible. Not quite cold, but much cooler than hot fusion. Not to mention infintely less messy when it goes critical. If a combants core does exactly that, the aRm is broken and they lose.</p><button class="closer" id="closer">Giddy up.</button>'
-//
-// var transition='<p>Come to think of it, I know the perfect match for you to see. One of the Shoulders is new to the circuit. The name is: <input type="text" placeholder="Character Name" id="name"> A newcomer, but one with promise. And should you decide to dishonor our agreement? Well, better one of our veterans is not the one to suffer.</p><p>I will be in contact with you on a date, time, and protocol. If you make me regret doing so, it will be a state we share.</p><button class="closer" id="ender">Giddy up.</button>'
-//
-// function newSplash(){
-//   $('.icon').remove();
-//   $('.splashVeil').remove();
-// }
-//
-// function tutorial(text){
-//   $('.infoPane').html(text)
-// }
-//
-// $(document).on("click","#closer",function(){
-//   counter++;
-//   switch (counter){
-//     case 1:
-//       $('.splash').remove();
-//       $('body').append('<div class="infoPane"></div>');
-//       tutorial(basics);
-//       break;
-//     case 2:
-//       $('.infoPane').html(basicTactics);
-//       break;
-//     case 3:
-//       $('.infoPane').html(chips);
-//       $('body').append('<div class="arrowStrafe"></div>');
-//       break;
-//     case 4:
-//       $('.arrowStrafe').remove();
-//       $('.infoPane').html(core);
-//       $('body').append('<div class="arrowPulse"></div>');
-//       break;
-//     case 5:
-//       $('.arrowPulse').remove();
-//       $('.infoPane').html(transition);
-//       break;
+// var quadCount=0;
+var User={};
+//   "Player":{
+//     name:"",
+//     height:0,
+//     nationality:"",
+//     health:4,
+//   },
+//   "aRm":{
+//     1:{
+//       plating:0,
+//       insulation: 0,
+//       weapons: ["",""],
+//       equip:["empty"]
+//     },
+//     2:{
+//       plating:0,
+//       insulation: 0,
+//       weapons: ["",""],
+//       equip:["empty"]
+//     },
+//     3:{
+//       plating:0,
+//       insulation: 0,
+//       weapons: ["",""],
+//       equip:["empty"]
+//     },
+//     4:{
+//       plating:0,
+//       insulation: 0,
+//       weapons: ["",""],
+//       equip:["empty"]
+//     }
 //   }
-// })
-//
-// $(document).on('click','#ender',function(){
-//   $('.infoPane').remove();
-//   $('.splashCloud').remove();
-// })
-//
-// $(document).ready(function(){``
-//   $('.weapSelect').append(
-//     '<option selected>empty</option>\
-//     <option>Misdemeanor</option>\
-//     <option>Felony</option>\
-//     <option>Repeat Offender</option>\
-//     <option>Streaker</option>')
-//   setTimeout(newSplash, 13000);
-// })
-//
-// $('.splashVeil, .icon').click(function(){
-//   newSplash();
-// })
+// }
 
 function charCheck(){
   var x=$("#character-select").find("option:selected");
@@ -90,8 +46,95 @@ function loader(){
   $("#OPLog").append('<br/>>Match pending...<br />')
 }
 
-var User={};
-$("#creator").submit(function(){
+$('#preMade').click(function(){
+  populate(chosen)
+})
+
+function playerFind(){
+    return User;
+}
+
+// function quadCreator(){
+//   $('.creationPane').html(
+//     '<form id="creator">\
+//       <span class="top" id="Q">Quadrant '+quadCount+'</span>\
+//       <span>Plating:<input type="number" value="0" min="0" max="80" id="armor'+quadCount+'"></span>\
+//       <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1'+quadCount+'"></span>\
+//       <span>Weapon 1:\
+//         <select class="weapSelect" id="weapon'+quadCount+'0">\
+//         </select>\
+//       </span>\
+//       <span>Weapon 2:\
+//         <select class="weapSelect" id="weapon'+quadCount+'1">\
+//         </select>\
+//       </span>\
+//       <input type="submit" id="submit" value="Create!">Quadrant #'+quadCount+' complete</input>\
+//     </form>')
+
+$(document).on('click','#ender',function(){
+  // event.preventDefault();
+    $('.infoPane').remove();
+    $('.splashVeil').remove()
+    $('body').append('<div class="creationPane"></div>');
+    // $('.creationPane').append(
+    //   '<form id="creator">\
+    //     <span>Character Name:<input type="text" placeholder="Character Name" id="name"></span>\
+    //     <span>Height:<input type="text" placeholder="1.65m" id="height"></span>\
+    //     <span>Nationality:<input type="text" placeholder="City, Country" id="nationality"></span>\
+    //     <!--Q1-->\
+    //     <span class="top" id="Q">Quadrant 1</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80" id="armor1"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon10">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon11">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q2-->\
+    //     <span id="Q">Quadrant 2</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor2"></span>\
+    //     <span>insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation2"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon20">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon21">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q3-->\
+    //     <span id="Q">Quadrant 3</span>\
+    //     <span>armor3:<input type="number" value="0" min="0" max="80"  id="armor3"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation3"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon30">\
+    //       </select>\
+    //     </span>\
+    //     <span>weapon 2:\
+    //       <select class="weapSelect" id="weapon31">\
+    //       </select>\
+    //     </span>\
+    //     <!--Q4-->\
+    //     <span id="Q">Quadrant 4</span>\
+    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor4"></span>\
+    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation4"></span>\
+    //     <span>Weapon 1:\
+    //       <select class="weapSelect" id="weapon40">\
+    //       </select>\
+    //     </span>\
+    //     <span>Weapon 2:\
+    //       <select class="weapSelect" id="weapon41">\
+    //       </select>\
+    //     </span>\
+    //     <input type="submit" id="submit" value="Create!">\
+    //   </form>')
+  })
+
+
+$("#creator").submit(function(event){
   event.preventDefault();
   User={
     "Player":{
@@ -169,12 +212,4 @@ $("#creator").submit(function(){
   //Set up the opponent.
     OPrutger();
   })
-})
-
-$('#preMade').click(function(){
-  populate(chosen)
-})
-
-function playerFind(){
-    return User;
-}
+});

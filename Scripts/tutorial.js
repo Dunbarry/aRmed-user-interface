@@ -1,3 +1,4 @@
+var oneTimeOnly=1;
 var counter=0;
 var colorCounter=0;
 var basics='<p>No, aRmed Combat is not blood sport. Killing your opponent does nothing but cut into your purse. Our duals allow the augmented, known as Shoulders, pit their self-made, armored prosthetics against one another in a test of design, durability, and destructive capabilty. To win, the other Shoulder must be disaRmed: their entire arsenal reduced to zero functionality. Or, have their aRm broken: the entire prosthesis reduced to zero functionality.</p><button class="closer" id="closer">"Go on."</button>'
@@ -33,11 +34,6 @@ function tutorial(text){
   $('.infoPane').html(text)
 }
 
-// function colorSweep(){
-//   console.log("colorSweep online.")
-//   while(colorCounter<5){
-//     switch (colorCounter){
-//       case 1:
 $(document).on("click", "#crossPlating", function(){
   console.log("Drone Online.")
   if($(this).hasClass('marked')){
@@ -80,25 +76,6 @@ $(document).on("click", "#crossWeap", function(){
   }
 });
 
-
-//         break;
-//       case 2:
-//         $('.insulation').css('color', '#F5F533');
-//         break;
-//       case 3:
-//         $('.weapon').css('background-color', 'red');
-//         break;
-//       case 4:
-//         $('.outerHousing').css('border', '10px solid gray')
-//         $('.insulation').css('color', 'black');
-//         $('.weapon').css('background-color', 'black');
-//         break;
-//     }
-//   console.log(colorCounter);
-//   colorCounter++
-//   }
-// }
-
 $(document).on("click","#closer",function(){
   counter++;
   switch (counter){
@@ -109,7 +86,6 @@ $(document).on("click","#closer",function(){
       break;
     case 2:
       $('.infoPane').html(basicTactics);
-      // colorSweep();
       break;
     case 3:
       $('.infoPane').html(chips);
@@ -124,22 +100,18 @@ $(document).on("click","#closer",function(){
       $('.arrowPulse').remove();
       $('.infoPane').html(transition);
       break;
+
   }
 })
 
-$(document).on('click','#ender',function(){
-  $('.infoPane').remove();
-  $('.splashCloud').remove();
-})
-
-$(document).ready(function(){``
+$(document).ready(function(){
   $('.weapSelect').append(
     '<option selected>empty</option>\
     <option>Misdemeanor</option>\
     <option>Felony</option>\
     <option>Repeat Offender</option>\
-    <option>Streaker</option>')
-  setTimeout(newSplash, 13000);
+    <option>Pontificator</option>');
+  setTimeout(newSplash, 12500);
 })
 
 $('.splashVeil, .icon').click(function(){
