@@ -35,7 +35,6 @@ function tutorial(text){
 }
 
 $(document).on("click", "#crossPlating", function(){
-  console.log("Drone Online.")
   if($(this).hasClass('marked')){
     $(this).removeClass('marked');
     $('.outerHousing').css('border', '10px solid gray')
@@ -49,7 +48,6 @@ $(document).on("click", "#crossPlating", function(){
 });
 
 $(document).on("click", "#crossInsul", function(){
-  console.log("Drone Online.")
   if($(this).hasClass('marked')){
     $(this).removeClass('marked');
     $('.insulation').css('color', 'black');
@@ -61,7 +59,6 @@ $(document).on("click", "#crossInsul", function(){
 });
 
 $(document).on("click", "#crossWeap", function(){
-  console.log("Drone Online.")
   if($(this).hasClass('marked')){
     $(this).removeClass('marked');
     $('.weapon').css('background-color', 'black');

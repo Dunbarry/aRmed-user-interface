@@ -72,3 +72,20 @@
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
 }
+
+/*Strobe effect*/
+@-webkit-keyframes strobe{
+  0%   {color: red;}
+  33%  {color: black;}
+  66%  {color: red;}
+  99%  {color: black;}
+  100% {color: red;}
+}
+
+  .strobe{
+    -webkit-animation-name: strobe;
+    -webkit-animation-duration: 2s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-timing-function: linear;
+  }

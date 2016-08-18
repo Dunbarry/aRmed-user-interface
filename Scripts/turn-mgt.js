@@ -25,13 +25,13 @@ function OPfire(){
   quadrantChoice=rngQ();
   if(shooter.aRm[quadrantChoice].weapons[0]!="empty"&&shooter.aRm[quadrantChoice].weapons[0]!="error 0"){
     var fire=shooter.aRm[quadrantChoice].weapons[0];
-    console.log("Firing "+fire+" from frame one.");
+    // console.log("Firing "+fire+" from frame one.");
     $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
     aRmaments[fire](toHit);
   }
   else if(shooter.aRm[quadrantChoice].weapons[1]!="empty"&&shooter.aRm[quadrantChoice].weapons[1]!="error 0"){
     var fire=shooter.aRm[quadrantChoice].weapons[1];
-    console.log("Firing "+fire+" from frame one.");
+    // console.log("Firing "+fire+" from frame one.");
     $("#PlayerLog").append('>Opponent is about to fire '+fire+'<br />');
     aRmaments[fire](toHit);
   }

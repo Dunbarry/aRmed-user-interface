@@ -130,7 +130,6 @@ function populate(chosen){
     else{
     chosen=valerie
     }
-
     User=chosen;
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);

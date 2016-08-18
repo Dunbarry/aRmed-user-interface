@@ -19,8 +19,6 @@ function toHit(aim,dmg){
   else{					          //Standard
     dmg=dmg+bypass;
   }
-	console.log(state+" is about to fire with "+hit+" to hit, for "+dmg+" damage!")
-	console.log("~~~~~~~~~~~=>");
   check(dmg);
 }
 
@@ -41,7 +39,6 @@ function multiHit(shots){
 			bypass+=base;
 		}
 		shots--;
-		console.log(shots+" shot remaining. Byass: "+bypass);
 	}
 }
 
@@ -88,6 +85,5 @@ var aRmaments={
 $(".trigger").click(function(){
 	playerFind();
   var fire=(document.getElementById(($(this).val()))).innerHTML;
-  console.log(fire);
   aRmaments[fire](toHit);
 })
