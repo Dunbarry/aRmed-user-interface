@@ -41,7 +41,22 @@ var rutger= {
 function OPrutger(){
   console.log("Rutger online.");
   $("#OPLog").append('<br /><br />');
-  $('#OPimgInsert').attr('src','images/rutger.jpg')
+  $('.box2').html(
+    '<div class="reticle">\
+      <div class="aim">1</div>\
+      <div class="aim">2</div>\
+      <div class="aim">3</div>\
+      <div class="aim">4</div>\
+    </div>');
+  // $('#OPimgInsert').attr('src','images/rutger.jpg')
+  // $('.box2').append(
+  //   '<div style="background-image: img("images/rutger.jpg") class="reticle">\
+  //     <div class="aim">1</div>\
+  //     <div class="aim">2</div>\
+  //     <div class="aim">3</div>\
+  //     <div class="aim">4</div>\
+  //   </div>');
+    // '<div style="background-image: url("images/rutger.jpg") class="reticle">\
   $("#OPmoniker").html(rutger.Player.name)
   $("#OPhealth").html(rutger.Player.health);
   /*Q1*/
