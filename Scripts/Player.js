@@ -112,13 +112,6 @@ function populate(chosen){
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
-  // $('.box2').append(
-  //   '<div class="reticle">\
-  //     <div class="aim">1</div>\
-  //     <div class="aim">2</div>\
-  //     <div class="aim">3</div>\
-  //     <div class="aim">4</div>\
-  //   </div>');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
   $('.igntion').html(id="ignitionAlt");

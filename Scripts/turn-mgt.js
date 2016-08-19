@@ -1,6 +1,8 @@
+var safetyState="on";
 var state="Player";
+
+// Turns~~~~~~~~~~~~~~~~~~
 function turnSwap(){
-  // console.log("I was just called!")
   if(state==="Player"){
     state="OP";
     console.log("It is now "+state+"'s turn.");
@@ -11,7 +13,6 @@ function turnSwap(){
   }
   else if(state==="OP"){
     state="Player";
-    console.log("It is now "+state+"'s turn.")
     $('#turnBox').html(User.Player.name);
   }
 }
@@ -20,6 +21,22 @@ function turnState(){
   return state;
 }
 
+// Safety~~~~~~~~~~~~~~~
+function safety(){
+  if(safetyState==="on"){
+    safetyState="off";
+  }
+  else if(safetyState==="off"){
+    safetyState="on";
+  }
+  console.log(safetyState);
+}
+
+function safetyCheck(){
+  return safetyState;
+}
+
+// Opponent Shot~~~~~~~~~~
 function OPfire(){
 	shooter=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
   quadrantChoice=rngQ();

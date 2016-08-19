@@ -43,11 +43,13 @@ function OPrutger(){
   $("#OPLog").append('<br /><br />');
   $('.box2').html(
     '<div class="reticle">\
-      <div class="aim">1</div>\
-      <div class="aim">2</div>\
-      <div class="aim">3</div>\
-      <div class="aim">4</div>\
+      <div class="aim" id="aim1">1</div>\
+      <div class="aim" id="aim2">2</div>\
+      <div class="aim" id="aim3">3</div>\
+      <div class="aim" id="aim4">4</div>\
     </div>');
+  $('.box2').append('<div class="combatLog" id="OPLog"></div>');
+  $("#OPLog").append('<br/>>Match pending...<br />')
   // $('#OPimgInsert').attr('src','images/rutger.jpg')
   // $('.box2').append(
   //   '<div style="background-image: img("images/rutger.jpg") class="reticle">\

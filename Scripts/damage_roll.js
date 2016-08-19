@@ -84,6 +84,18 @@ var aRmaments={
 
 $(".trigger").click(function(){
 	playerFind();
-  var fire=(document.getElementById(($(this).val()))).innerHTML;
-  aRmaments[fire](toHit);
+	safetyCheck();
+	if(safetyState==="on"){
+		if(state==="Player"){
+			alert("You must select a target quadrant!")
+		}
+		else{
+			alert(find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]()+" is firing!")
+		}
+	}
+	else{
+  	var fire=(document.getElementById(($(this).val()))).innerHTML;
+  	aRmaments[fire](toHit);
+		safety();
+	}
 })

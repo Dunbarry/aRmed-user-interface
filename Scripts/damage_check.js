@@ -1,3 +1,4 @@
+var q=0;
 function rngQ(){									//Randomly selecting a quadrant
 	num=Math.floor(Math.random()*4);
 	if(num===0){
@@ -46,8 +47,21 @@ function disaRmed(){
 	}
 }
 
+$(document).on('click', '.aim', function(){
+	targeted=document.getElementById(($(this).attr('id'))).innerHTML;
+	turnState();
+	safety();
+	if(state==="Player"){
+		q=targeted
+		console.log(q)
+	}
+	else{
+		alert(find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]()+" is firing!")
+	}
+})
+
 var turn="";
-var q=0;
+// var q=0;
 function check(dmg){		//Player attacking enemy.
 		turn=turnState();
 		if (turn==="Player"){ //Figure out who's shooting at whom!
@@ -60,41 +74,44 @@ function check(dmg){		//Player attacking enemy.
 			// [((document.getElementById('moniker')).innerHTML)+"Object"]();
 			turn="#";
 			write="Player"
+			q=rngQ();					//Quadrant to assign damage to.
 		}
 		if(dmg===0){
 			$('#'+write+'Log').append(">Miss!<br />")
 		}
-		q=rngQ();						//Quadrant to assign damage to.
-		setTimeout(rumble,900);
-		for(var i in target.aRm){
-	  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
-	   		if(target.aRm[q].plating===0){			//If there is no armor call breach func
-	       	pass=dmg
-	        breach(pass);
-	      }
-	    	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
-	    		target.aRm[q].plating=0;
-					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-					// impact=$(turn+'armor'+q);
-					// strobe(impact);
-					$("#"+write+"Log").append('>Plating destroyed in quadrant #'+q+'!<br />');
-	      }
-	      else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
-	        pass=dmg-target.aRm[q].plating;
-	        target.aRm[q].plating=0;
-					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-					// impact=$(turn+'armor'+q);
-					// strobe(impact);
-					$("#"+write+"Log").append('>Plating breached in quadrant #'+q+'<br />');
-	        breach(pass)
-	    	}
-	      else{																	//Else mark damage.
-	        target.aRm[q].plating-=dmg;
-					// impact=$(turn+'armor'+q);
-					// strobe(impact);
-					$("#"+write+"Log").append('>Plating reduced in quadrant #'+q+'<br />');
-					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-	      }
+		// q=rngQ();						//Quadrant to assign damage to.
+		else{
+			setTimeout(rumble,900);
+			for(var i in target.aRm){
+		  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
+		   		if(target.aRm[q].plating===0){			//If there is no armor call breach func
+		       	pass=dmg
+		        breach(pass);
+		      }
+		    	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
+		    		target.aRm[q].plating=0;
+						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+						// impact=$(turn+'armor'+q);
+						// strobe(impact);
+						$("#"+write+"Log").append('>Plating destroyed in quadrant #'+q+'!<br />');
+		      }
+		      else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
+		        pass=dmg-target.aRm[q].plating;
+		        target.aRm[q].plating=0;
+						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+						// impact=$(turn+'armor'+q);
+						// strobe(impact);
+						$("#"+write+"Log").append('>Plating breached in quadrant #'+q+'<br />');
+		        breach(pass)
+		    	}
+		      else{																	//Else mark damage.
+		        target.aRm[q].plating-=dmg;
+						// impact=$(turn+'armor'+q);
+						// strobe(impact);
+						$("#"+write+"Log").append('>Plating reduced in quadrant #'+q+'<br />');
+						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+		      }
+				}
 	    }
 	  }
 	turnSwap();
