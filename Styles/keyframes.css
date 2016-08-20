@@ -75,16 +75,21 @@
 
 /*Strobe effect*/
 @-webkit-keyframes strobe{
-  0%   {color: red; opacity:1;}
-  33%  {color: white; opacity:.25;}
-  66%  {color: red; opacity:1;}
-  99%  {color: white; opacity:.25;}
-  100% {color: red; opacity:.1;}
+  0%   {background-color: red; opacity:.75;}
+  33%  {background-color: transparent; opacity:.25;}
+  66%  {background-color: red; opacity:.75;}
+  99%  {background-color: transparent; opacity:.25;}
+  100% {background-color: red; opacity:.75;}
+  /*0%   {color: red; opacity:.75;}
+  33%  {color: transparent; opacity:.25;}
+  66%  {color: red; opacity:.75;}
+  99%  {color: transparent; opacity:.25;}
+  100% {color: red; opacity:.75;}*/
 }
 
   .strobe{
     -webkit-animation-name: strobe;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: .45s;
     -webkit-transform-origin:50% 50%;
     -webkit-animation-iteration-count: 3;
     -webkit-animation-timing-function: linear;
