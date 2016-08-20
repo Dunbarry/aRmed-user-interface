@@ -96,6 +96,8 @@ $(".trigger").click(function(){
 	else{
   	var fire=(document.getElementById(($(this).val()))).innerHTML;
   	aRmaments[fire](toHit);
+		targetAdjust=0;
 		safety();
+		targetAdjust=0;
 	}
 })

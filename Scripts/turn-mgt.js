@@ -1,3 +1,4 @@
+var targetAdjust=0;
 var safetyState="on";
 var state="Player";
 
@@ -23,13 +24,16 @@ function turnState(){
 
 // Safety~~~~~~~~~~~~~~~
 function safety(){
-  if(safetyState==="on"){
-    safetyState="off";
-  }
-  else if(safetyState==="off"){
-    safetyState="on";
+  if(targetAdjust===0){
+    if(safetyState==="on"){
+      safetyState="off";
+    }
+    else if(safetyState==="off"){
+      safetyState="on";
+    }
   }
   console.log(safetyState);
+  targetAdjust++;
 }
 
 function safetyCheck(){

@@ -1,4 +1,5 @@
 var q=0;
+var targeted="";
 function rngQ(){									//Randomly selecting a quadrant
 	num=Math.floor(Math.random()*4);
 	if(num===0){
@@ -47,6 +48,18 @@ function disaRmed(){
 	}
 }
 
+function reticleMgt(){
+	$('.aim').css('background-color','white');
+	$('.aim').css('opacity','0');
+	$('#aim'+targeted).css('background-color','lightblue');
+	$('#aim'+targeted).css('opacity','.25');
+}
+
+function reticleClear(){
+	$('.aim').css('background-color','white');
+	$('.aim').css('opacity','0');
+}
+
 $(document).on('click', '.aim', function(){
 	targeted=document.getElementById(($(this).attr('id'))).innerHTML;
 	turnState();
@@ -54,6 +67,7 @@ $(document).on('click', '.aim', function(){
 	if(state==="Player"){
 		q=targeted
 		console.log(q)
+		reticleMgt();
 	}
 	else{
 		alert(find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]()+" is firing!")
@@ -114,6 +128,7 @@ function check(dmg){		//Player attacking enemy.
 				}
 	    }
 	  }
+	reticleClear();
 	turnSwap();
 }
 
