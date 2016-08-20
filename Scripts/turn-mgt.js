@@ -8,8 +8,6 @@ function turnSwap(){
     state="OP";
     console.log("It is now "+state+"'s turn.");
     $('#turnBox').html(rutger.Player.name);
-    // delay=(Math.floor(Math.random()*7)*1000);
-    // console.log(delay);
     setTimeout(OPfire,5500);
   }
   else if(state==="OP"){
@@ -32,7 +30,6 @@ function safety(){
       safetyState="on";
     }
   }
-  console.log(safetyState);
   targetAdjust++;
 }
 

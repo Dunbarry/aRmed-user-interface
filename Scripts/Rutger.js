@@ -43,10 +43,10 @@ function OPrutger(){
   $("#OPLog").append('<br /><br />');
   $('.box2').html(
     '<div class="reticle">\
-      <div class="aim" id="aim1">1</div>\
-      <div class="aim" id="aim2">2</div>\
-      <div class="aim" id="aim3">3</div>\
-      <div class="aim" id="aim4">4</div>\
+      <div id="aim1">1</div>\
+      <div id="aim2">2</div>\
+      <div id="aim3">3</div>\
+      <div id="aim4">4</div>\
     </div>');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $("#OPLog").append('<br/>>Match pending...<br />')

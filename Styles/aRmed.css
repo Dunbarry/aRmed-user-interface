@@ -244,7 +244,8 @@ h4{
   z-index:10;
 }
 
-.aim{
+/*Aim controls*/
+#aim1{
   display:flex;
   position: relative;
   height: 245px;
@@ -259,7 +260,66 @@ h4{
   color: gray;
   z-index:10;
 }
+#aim2{
+  display:flex;
+  position: relative;
+  height: 245px;
+  width: 185px;
+  background-color: white;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease-in-out;
 
-.aim:hover{
+  justify-content:center;
+  align-items:center;
+  font-size:10em;
+  color: gray;
+  z-index:10;
+}
+#aim3{
+  display:flex;
+  position: relative;
+  height: 245px;
+  width: 185px;
+  background-color: white;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease-in-out;
+
+  justify-content:center;
+  align-items:center;
+  font-size:10em;
+  color: gray;
+  z-index:10;
+}
+#aim4{
+  display:flex;
+  position: relative;
+  height: 245px;
+  width: 185px;
+  background-color: white;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease-in-out;
+
+  justify-content:center;
+  align-items:center;
+  font-size:10em;
+  color: gray;
+  z-index:10;
+}
+#aim1:hover{
+  opacity:.25;
+}
+#aim2:hover{
+  opacity:.25;
+}
+#aim3:hover{
+  opacity:.25;
+}
+#aim4:hover{
+  opacity:.25;
+}
+
+
+.reticleSelect{
+  background-color: lightblue;
   opacity:.25;
 }

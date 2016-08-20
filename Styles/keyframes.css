@@ -75,11 +75,11 @@
 
 /*Strobe effect*/
 @-webkit-keyframes strobe{
-  0%   {color: red;}
-  33%  {color: black;}
-  66%  {color: red;}
-  99%  {color: black;}
-  100% {color: red;}
+  0%   {color: red; opacity:1;}
+  33%  {color: white; opacity:.25;}
+  66%  {color: red; opacity:1;}
+  99%  {color: white; opacity:.25;}
+  100% {color: red; opacity:.1;}
 }
 
   .strobe{

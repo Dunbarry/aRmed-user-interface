@@ -1,6 +1,9 @@
 var q=0;
 var targeted="";
-function rngQ(){									//Randomly selecting a quadrant
+var impact=('aim'+q);
+
+//Randomly selecting a quadrant
+function rngQ(){
 	num=Math.floor(Math.random()*4);
 	if(num===0){
 		random=4;
@@ -11,16 +14,44 @@ function rngQ(){									//Randomly selecting a quadrant
 	return random;
 }
 
-// function strobeHold(impact){
-// 	$(impact).removeClass('strobe');
-// }
-//
-// function strobe(impact){
-// 	$(impact).addClass('strobe');
-// 	console.log(impact)
-// 	setTimeout(strobeHold(impact),4000);
-// }
 
+//Reticle dynamics~~~~~~~~~~~~~~~~~
+// Strobe controls
+function strobeHold(){
+	$('#aim'+q).removeClass('strobe');
+}
+
+function strobe(){
+	console.log("Strobe Online.")
+	console.log($('#aim'+q));
+	$('#aim'+q).addClass('strobe');
+	// setTimeout(strobeHold,4000);
+}
+
+//Reticle controls
+function reticleMgt(){			//Q aimed for
+	managed=1;
+	while(managed<5){
+		$('#aim'+managed).css('background-color','white');
+		$('#aim'+managed).css('opacity','0');
+		managed++;
+	}
+	$('#aim'+targeted).css('background-color','lightblue');
+	$('#aim'+targeted).css('opacity','.25');
+}
+
+function impactMgt(){				//Q hit
+	$('#aim'+q).css('background-color','red');
+	$('#aim'+q).css('opacity','.25');
+}
+
+function dynamicsHold(){		//Clear holds
+	$('#aim'+q).removeClass('strobe')
+	$('#aim'+q).css('background-color','white');
+	$('#aim'+q).css('opacity','0');
+}
+
+// Rumble controls
 function shakeHold(){
 	$(turn+'imgInsert').removeClass('shakeMe');
 }
@@ -30,6 +61,11 @@ function rumble(){
 	setTimeout(shakeHold,900);
 }
 
+function driftImpact(){
+
+}
+
+// Determining DisaRmed
 function disaRmed(){
 	if(turnState()==="OP"){
 		for(var weapCheck in target.aRm){
@@ -48,25 +84,14 @@ function disaRmed(){
 	}
 }
 
-function reticleMgt(){
-	$('.aim').css('background-color','white');
-	$('.aim').css('opacity','0');
-	$('#aim'+targeted).css('background-color','lightblue');
-	$('#aim'+targeted).css('opacity','.25');
-}
-
-function reticleClear(){
-	$('.aim').css('background-color','white');
-	$('.aim').css('opacity','0');
-}
-
-$(document).on('click', '.aim', function(){
+//Reticle safety checks
+$(document).on('click', '#aim1, #aim2, #aim3, #aim4', function(){
 	targeted=document.getElementById(($(this).attr('id'))).innerHTML;
+	console.log(this);
 	turnState();
 	safety();
 	if(state==="Player"){
 		q=targeted
-		console.log(q)
 		reticleMgt();
 	}
 	else{
@@ -75,60 +100,63 @@ $(document).on('click', '.aim', function(){
 })
 
 var turn="";
-// var q=0;
 function check(dmg){		//Player attacking enemy.
-		turn=turnState();
-		if (turn==="Player"){ //Figure out who's shooting at whom!
-			target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
-			turn="#OP";
-			write="OP"
+	turn=turnState();
+	if (turn==="Player"){ //Figure out who's shooting at whom!
+		target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
+		turn="#OP";
+		write="OP"
+		strobe();
+	}
+	else{
+		target=playerFind();
+		// [((document.getElementById('moniker')).innerHTML)+"Object"]();
+		turn="#";
+		write="Player"
+		q=rngQ();					//Quadrant to assign damage to.
+	}
+	if(dmg===0){
+		$('#'+write+'Log').append(">Miss!<br />")
+	}
+	// q=rngQ();						//Quadrant to assign damage to.
+	else{
+		if(turn==="Player"){
+			setTimeout(strobe,1200);
 		}
-		else{
-			target=playerFind();
-			// [((document.getElementById('moniker')).innerHTML)+"Object"]();
-			turn="#";
-			write="Player"
-			q=rngQ();					//Quadrant to assign damage to.
-		}
-		if(dmg===0){
-			$('#'+write+'Log').append(">Miss!<br />")
-		}
-		// q=rngQ();						//Quadrant to assign damage to.
-		else{
-			setTimeout(rumble,900);
-			for(var i in target.aRm){
-		  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
-		   		if(target.aRm[q].plating===0){			//If there is no armor call breach func
-		       	pass=dmg
-		        breach(pass);
-		      }
-		    	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
-		    		target.aRm[q].plating=0;
-						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-						// impact=$(turn+'armor'+q);
-						// strobe(impact);
-						$("#"+write+"Log").append('>Plating destroyed in quadrant #'+q+'!<br />');
-		      }
-		      else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
-		        pass=dmg-target.aRm[q].plating;
-		        target.aRm[q].plating=0;
-						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-						// impact=$(turn+'armor'+q);
-						// strobe(impact);
-						$("#"+write+"Log").append('>Plating breached in quadrant #'+q+'<br />');
-		        breach(pass)
-		    	}
-		      else{																	//Else mark damage.
-		        target.aRm[q].plating-=dmg;
-						// impact=$(turn+'armor'+q);
-						// strobe(impact);
-						$("#"+write+"Log").append('>Plating reduced in quadrant #'+q+'<br />');
-						$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
-		      }
-				}
-	    }
+		setTimeout(rumble,900);
+		for(var i in target.aRm){
+	  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
+				if(target.aRm[q].plating===0){			//If there is no armor call breach func
+		     	pass=dmg
+		      breach(pass);
+	      }
+		  	else if(target.aRm[q].plating===dmg){	//If the armor is destroyed declare it.
+		  		target.aRm[q].plating=0;
+					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+					// impact=$(turn+'armor'+q);
+					// strobe(impact);
+					$("#"+write+"Log").append('>Plating destroyed in quadrant #'+q+'!<br />');
+		    }
+		    else if(target.aRm[q].plating<=dmg){	//If destroyed with spare dmg call breach func.
+		      pass=dmg-target.aRm[q].plating;
+		      target.aRm[q].plating=0;
+					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+					// impact=$(turn+'armor'+q);
+					// strobe(impact);
+					$("#"+write+"Log").append('>Plating breached in quadrant #'+q+'<br />');
+		      breach(pass)
+		    }
+		    else{																	//Else mark damage.
+		      target.aRm[q].plating-=dmg;
+					// impact=$(turn+'armor'+q);
+					// strobe(impact);
+					$("#"+write+"Log").append('>Plating reduced in quadrant #'+q+'<br />');
+					$(turn+'armor'+q).text("Armor: "+target.aRm[q].plating);
+		    }
+			}
 	  }
-	reticleClear();
+	}
+	setTimeout(dynamicsHold,2400);
 	turnSwap();
 }
 

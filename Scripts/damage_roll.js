@@ -1,7 +1,8 @@
 // Hit scale:
 // 0= Crit(dmg+.5%) OR suicide w/explosives
-// 1:6=hit
-// 7&8=glance (.5dmg)
+// 1:4=hit
+// 5&6= glanc on target (.5dmg)
+// 7&8=drift
 // 9 <= miss (no dmg)
 
 var base=2;
