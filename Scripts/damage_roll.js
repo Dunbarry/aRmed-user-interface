@@ -1,7 +1,8 @@
 // Hit scale:
 // 0= Crit(dmg+.5%) OR suicide w/explosives
-// 1:6=hit
-// 7&8=glance (.5dmg)
+// 1:4=hit
+// 5&6= glanc on target (.5dmg)
+// 7&8=drift
 // 9 <= miss (no dmg)
 
 var base=2;
@@ -19,8 +20,6 @@ function toHit(aim,dmg){
   else{					          //Standard
     dmg=dmg+bypass;
   }
-	console.log(state+" is about to fire with "+hit+" to hit, for "+dmg+" damage!")
-	console.log("~~~~~~~~~~~=>");
   check(dmg);
 }
 
@@ -41,7 +40,6 @@ function multiHit(shots){
 			bypass+=base;
 		}
 		shots--;
-		console.log(shots+" shot remaining. Byass: "+bypass);
 	}
 }
 
@@ -87,7 +85,20 @@ var aRmaments={
 
 $(".trigger").click(function(){
 	playerFind();
-  var fire=(document.getElementById(($(this).val()))).innerHTML;
-  console.log(fire);
-  aRmaments[fire](toHit);
+	safetyCheck();
+	if(safetyState==="on"){
+		if(state==="Player"){
+			alert("You must select a target quadrant!")
+		}
+		else{
+			alert(find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]()+" is firing!")
+		}
+	}
+	else{
+  	var fire=(document.getElementById(($(this).val()))).innerHTML;
+  	aRmaments[fire](toHit);
+		targetAdjust=0;
+		safety();
+		targetAdjust=0;
+	}
 })

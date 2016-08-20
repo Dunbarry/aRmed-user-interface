@@ -54,7 +54,7 @@
   box-shadow: 5px 3px 3px 1px rgba(0, 0, 0, 0.2);
   background-color: white;
   color: black;
-  z-index: 2;
+  z-index: 1;
 }
 
 .infoPane{

@@ -37,7 +37,6 @@ var User={};
 function charCheck(){
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
-  console.log(chosen)
   $("#creationInsert").attr("src","images/"+chosen+".jpg")
 }
 
@@ -50,87 +49,10 @@ $('#preMade').click(function(){
   populate(chosen)
 })
 
-function playerFind(){
-    return User;
-}
-
-// function quadCreator(){
-//   $('.creationPane').html(
-//     '<form id="creator">\
-//       <span class="top" id="Q">Quadrant '+quadCount+'</span>\
-//       <span>Plating:<input type="number" value="0" min="0" max="80" id="armor'+quadCount+'"></span>\
-//       <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1'+quadCount+'"></span>\
-//       <span>Weapon 1:\
-//         <select class="weapSelect" id="weapon'+quadCount+'0">\
-//         </select>\
-//       </span>\
-//       <span>Weapon 2:\
-//         <select class="weapSelect" id="weapon'+quadCount+'1">\
-//         </select>\
-//       </span>\
-//       <input type="submit" id="submit" value="Create!">Quadrant #'+quadCount+' complete</input>\
-//     </form>')
-
 $(document).on('click','#ender',function(){
   // event.preventDefault();
     $('.infoPane').remove();
     $('.splashCloud').remove()
-    // $('body').append('<div class="creationPane"></div>');
-    // $('.creationPane').append(
-    //   '<form id="creator">\
-    //     <span>Character Name:<input type="text" placeholder="Character Name" id="name"></span>\
-    //     <span>Height:<input type="text" placeholder="1.65m" id="height"></span>\
-    //     <span>Nationality:<input type="text" placeholder="City, Country" id="nationality"></span>\
-    //     <!--Q1-->\
-    //     <span class="top" id="Q">Quadrant 1</span>\
-    //     <span>Plating:<input type="number" value="0" min="0" max="80" id="armor1"></span>\
-    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation1"></span>\
-    //     <span>Weapon 1:\
-    //       <select class="weapSelect" id="weapon10">\
-    //       </select>\
-    //     </span>\
-    //     <span>Weapon 2:\
-    //       <select class="weapSelect" id="weapon11">\
-    //       </select>\
-    //     </span>\
-    //     <!--Q2-->\
-    //     <span id="Q">Quadrant 2</span>\
-    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor2"></span>\
-    //     <span>insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation2"></span>\
-    //     <span>Weapon 1:\
-    //       <select class="weapSelect" id="weapon20">\
-    //       </select>\
-    //     </span>\
-    //     <span>Weapon 2:\
-    //       <select class="weapSelect" id="weapon21">\
-    //       </select>\
-    //     </span>\
-    //     <!--Q3-->\
-    //     <span id="Q">Quadrant 3</span>\
-    //     <span>armor3:<input type="number" value="0" min="0" max="80"  id="armor3"></span>\
-    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation3"></span>\
-    //     <span>Weapon 1:\
-    //       <select class="weapSelect" id="weapon30">\
-    //       </select>\
-    //     </span>\
-    //     <span>weapon 2:\
-    //       <select class="weapSelect" id="weapon31">\
-    //       </select>\
-    //     </span>\
-    //     <!--Q4-->\
-    //     <span id="Q">Quadrant 4</span>\
-    //     <span>Plating:<input type="number" value="0" min="0" max="80"  id="armor4"></span>\
-    //     <span>Insulation Units:<input type="number" value="0" min="0" max="5.0"  id="insulation4"></span>\
-    //     <span>Weapon 1:\
-    //       <select class="weapSelect" id="weapon40">\
-    //       </select>\
-    //     </span>\
-    //     <span>Weapon 2:\
-    //       <select class="weapSelect" id="weapon41">\
-    //       </select>\
-    //     </span>\
-    //     <input type="submit" id="submit" value="Create!">\
-    //   </form>')
   })
 
 
@@ -173,7 +95,6 @@ $("#creator").submit(function(event){
 
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
-  console.log(User,chosen);
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
@@ -213,3 +134,7 @@ $("#creator").submit(function(event){
     OPrutger();
   })
 });
+
+function playerFind(){
+    return User;
+}
