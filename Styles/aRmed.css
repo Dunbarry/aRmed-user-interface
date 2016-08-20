@@ -43,11 +43,6 @@ footer{
   padding: 0em;
 }
 
-header{
-	background-color: #FFFFFF;
-	padding: 1.5em;
-}
-
 .container{
 	display: flex;
   height: 50%;
@@ -57,7 +52,7 @@ header{
 .box1{
   order: 2;
 	flex: 3;
-  padding-top: .5vw;
+  padding-top: .5vw:
 
   text-align: center;
   background-color: black;
@@ -322,4 +317,12 @@ h4{
 .reticleSelect{
   background-color: lightblue;
   opacity:.25;
+}
+
+.healthSpan{
+  display:flex;
+  border: .1em solid grey;
+  height:.7em;
+  width:1em;
+  background-color: #66ff66;
 }

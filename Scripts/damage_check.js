@@ -106,8 +106,8 @@ function check(dmg){		//Player attacking enemy.
 		target=find[(((document.getElementById('OPmoniker')).innerHTML).toLowerCase())+"Object"]();
 		turn="#OP";
 		write="OP"
-		dynamicsHold();
-		strobe();
+		setTimeout(dynamicsHold,900);
+		setTimeout(strobe,900);
 	}
 	else{
 		target=playerFind();

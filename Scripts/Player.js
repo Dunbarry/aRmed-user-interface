@@ -133,7 +133,7 @@ function populate(chosen){
     User=chosen;
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);
-    $("#health").html(chosen.Player.health);
+    // $("#health").html(chosen.Player.health);
   /*Q1*/
     $("#armor1").html("Armor: "+chosen.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+chosen.aRm["1"].insulation);
