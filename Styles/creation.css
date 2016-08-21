@@ -54,7 +54,7 @@
   box-shadow: 5px 3px 3px 1px rgba(0, 0, 0, 0.2);
   background-color: white;
   color: black;
-  z-index: 1;
+  z-index: 2;
 }
 
 .infoPane{
@@ -135,10 +135,33 @@
   margin-top: 1vw;
 }
 
+.frame1{
+  position:absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  width: 20vw;
+  background-color: black;
+  border: .2vw solid grey;
+  z-index:1;
+}
+
+.frame2{
+  position:absolute;
+  top: 0;
+  right:0;
+  height: 100%;
+  width: 20vw;
+  background-color: black;
+  border: .2vw solid grey;
+  z-index:1;
+}
+
 form > span{
   display: flex;
   justify-content: space-between;
-
+  color: white;
+  margin-left:.25vw;
 }
 
 #submit{
@@ -316,4 +339,12 @@ input{
   background-color:lightblue;
 
   z-index:3;
+}
+
+.info{
+  padding: .5em;
+  font-family: digital-7;
+  color: #66ff66;
+  opacity: 0;
+  -webkit-transition: opacity .35s ease-in-out;
 }

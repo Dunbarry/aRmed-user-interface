@@ -51,10 +51,40 @@ $('#preMade').click(function(){
 
 $(document).on('click','#ender',function(){
   // event.preventDefault();
-    $('.infoPane').remove();
-    $('.splashCloud').remove()
-  })
+  $('.infoPane').remove();
+  $('.splashCloud').remove()
+  $('.status1').append(
+    '<div class="frame1">\
+      <p class="info" id="platingInfo">A layer of ultra-thin armor forming the outer shell of an aRm.\
+      A single quadrant can have a maximum of 15 layers of Plating. But assign them wisely, as the entire\
+      aRm can only carry 40 layers. Anything more risks be heavy enough to break even the Shoulders\
+      reinforced spine, or ripping the aRm from it"s fixtures.</p>\
+      <p class="info" id="insulationInfo">Insulation units manage heat within the casing of an aRm. They"re\
+      most useful in conjuction with energy weapons and explosives, but also serve as a secondary layer\
+      of protection for weapons and an aRm"s core.</p>\
+    </div>');
+  $('.status2').append('<div class="frame2"></div>');
+})
 
+$(document).on('mouseenter', '#armor1, #info4Plating', function(){
+  console.log("Hover online.")
+  $('#platingInfo').css('opacity','1');
+})
+
+$(document).on('mouseleave', '#armor1, #info4Plating', function(){
+  console.log("Hover offline.")
+  $('#platingInfo').css('opacity','0');
+})
+
+$(document).on('mouseenter', '#insulation1, #info4Insulation', function(){
+  console.log("Hover online.")
+  $('#insulationInfo').css('opacity','1');
+})
+
+$(document).on('mouseleave', '#insulation1, #info4Insulation', function(){
+  console.log("Hover offline.")
+  $('#insulationInfo').css('opacity','0');
+})
 
 $("#creator").submit(function(event){
   event.preventDefault();
