@@ -40,7 +40,7 @@ var rutger= {
 
 function OPrutger(){
   console.log("Rutger online.");
-  $("#OPLog").append('<br /><br />');
+  // $("#OPLog").append('<br /><br />');
   $('.box2').html(
     '<div class="reticle">\
       <div id="aim1">1</div>\
@@ -50,6 +50,7 @@ function OPrutger(){
     </div>');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $("#OPLog").append('<br/>>Match pending...<br />')
+  $("#OPLog").append('<br /><br />');
   // $('#OPimgInsert').attr('src','images/rutger.jpg')
   // $('.box2').append(
   //   '<div style="background-image: img("images/rutger.jpg") class="reticle">\
@@ -60,7 +61,12 @@ function OPrutger(){
   //   </div>');
     // '<div style="background-image: url("images/rutger.jpg") class="reticle">\
   $("#OPmoniker").html(rutger.Player.name)
-  $("#OPhealth").html(rutger.Player.health);
+  // $("#OPhealth").html(rutger.Player.health);
+  $('#OPhealth').append(
+    '<span class="healthSpan" id="OPhealth0"></span>\
+    <span class="healthSpan" id="OPhealth1"></span>\
+    <span class="healthSpan" id="OPhealth2"></span>\
+    <span class="healthSpan" id="OPhealth3"></span>')
   /*Q1*/
   $("#OParmor1").html("Armor: "+rutger.aRm["1"].plating);
   $("#OPinsulation1").html("Insulation: "+rutger.aRm["1"].insulation);

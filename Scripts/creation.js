@@ -105,11 +105,15 @@ $("#creator").submit(function(event){
   //Populate user fields with User created data when the match begins.
   $("#ignition").on('click', function(){
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
-    // $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
     $('#turnBox').html(User.Player.name);
-    $("#health").html(User.Player.health);
+    // $("#health").html(User.Player.health);
+    $('#health').append(
+      '<span class="healthSpan" id="health0"></span>\
+      <span class="healthSpan" id="health1"></span>\
+      <span class="healthSpan" id="health2"></span>\
+      <span class="healthSpan" id="health3"></span>')
   /*Q1*/
     $("#armor1").html("Armor: "+User.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
