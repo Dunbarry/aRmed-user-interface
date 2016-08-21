@@ -134,6 +134,11 @@ function populate(chosen){
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);
     // $("#health").html(chosen.Player.health);
+    $('#health').append(
+      '<span class="healthSpan" id="health0"></span>\
+      <span class="healthSpan" id="health1"></span>\
+      <span class="healthSpan" id="health2"></span>\
+      <span class="healthSpan" id="health3"></span>')
   /*Q1*/
     $("#armor1").html("Armor: "+chosen.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+chosen.aRm["1"].insulation);

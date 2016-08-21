@@ -14,7 +14,6 @@ function rngQ(){
 	return random;
 }
 
-
 //Reticle dynamics~~~~~~~~~~~~~~~~~
 // Strobe controls
 function strobeHold(){
@@ -61,9 +60,9 @@ function rumble(){
 	setTimeout(shakeHold,900);
 }
 
-function driftImpact(){
-
-}
+// function driftImpact(){
+//
+// }
 
 // Determining DisaRmed
 function disaRmed(){
@@ -203,7 +202,8 @@ function breach(pass){ //Checks damage breaching armor against insulation.
 
 function wound(){
   target.Player.health-=1;
-	$(turn+'health').html(target.Player.health);
+	shader=target.Player.health
+	$(turn+'health'+shader).css('background-color','red');
 	$("#"+write+"Log").append('>Warning: core has been damaged.<br />');
   if(target.Player.health===0){
     console.log("aRm destroyed!")
@@ -213,6 +213,6 @@ function wound(){
 		else{
 			console.log("You win!");
 		}
-		setTimeout(hsalps,3000);
+		setTimeout(finalPane,3000);
   }
 };

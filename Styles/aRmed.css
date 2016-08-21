@@ -128,7 +128,6 @@ footer{
 /*Stat Windows*/
 #OPhealth{
   display: flex;
-  display: block;
   justify-content:flex-end;
 }
 
