@@ -100,11 +100,10 @@ $(document).on('click','#ender',function(){
         <span class="weapInfo">Damage : \
           <span class="healthSpan"></span>\
           <span class="healthSpan"></span>\
-          <span class="healthSpan"></span>\
+          <span class="yellowSpan"></span>\
           <span class="yellowSpan"></span>\
         </span>\
         <span class="weapInfo">Accuracy : \
-          <span class="healthSpan"></span>\
           <span class="yellowSpan"></span>\
         </span>\
       </div>\

@@ -111,6 +111,15 @@ function populate(chosen){
   // Removing frames
   $('.frame1').remove();
   $('.frame2').remove();
+  // Adding backgrounds
+  $('body').append('<div class="splashVeil"></div>')
+  $('.splashVeil').append(
+  '<div class="wrapper">\
+    <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
+    <label for="toggle" class="powerBtn">\
+      <span class="powerBtn-light"></span>\
+    </label>\
+  </div>');
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');

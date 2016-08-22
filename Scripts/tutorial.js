@@ -97,7 +97,6 @@ $(document).on("click","#closer",function(){
       $('.arrowPulse').remove();
       $('.infoPane').html(transition);
       break;
-
   }
 })
 

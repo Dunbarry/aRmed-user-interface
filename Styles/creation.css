@@ -352,6 +352,10 @@ input{
   -webkit-transition: opacity .35s ease-in-out;
 }
 
+.weapInfo{
+  padding-bottom: .25vw;
+}
+
 .info{
   opacity: 0;
   -webkit-transition: opacity .35s ease-in-out;

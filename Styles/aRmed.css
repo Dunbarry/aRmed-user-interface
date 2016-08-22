@@ -12,6 +12,90 @@
   height: 1vw;
 }
 
+/*Power Button*/
+.wrapper {
+  width: 80px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #363636;
+  margin: auto;
+
+  z-index:11;
+}
+
+.toggle {
+  display: none;
+}
+
+.powerBtn {
+  box-sizing: border-box;
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  background-color: rgb(83,87,93);
+  transition: all .2s linear;
+  box-shadow: 0 1px 0 3px rgb(34,34,34), 0 7px 10px 0 rgb(17,17,17), inset 0 1px 1px 0 rgba(250,250,250,.2), inset 0 -12px 35px 0 rgba(0,0,0,.5);
+}
+
+.toggle:checked + label {
+  transition: all .2s linear;
+  box-shadow: 0 0 0 0 rgb(34,34,34), 0 3px 7px 0 rgb(17,17,17), inset 0 1px 1px 0 rgba(250,250,250,.2), inset 0 -10px 35px 5px rgba(0,0,0,.4);
+  background-color: rgb(83,87,93);
+}
+
+.powerBtn-light {
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border: 6px solid red;
+  position : absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 4px 0 #999999;
+  transition: all .1s ease-in-out;
+}
+
+.powerBtn-light:before {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 24px;
+  margin: auto;
+  border-style: solid;
+  border-width: 0 3px 0;
+  border-color: rgb(83,87,93);
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  background: red;
+  box-shadow: inherit;
+  border-radius: 10px;
+  z-index: 3;
+  transition: all .2s ease-in-out;
+}
+
+.toggle:checked + .powerBtn .powerBtn-light {
+  border: 6px solid rgb(50,205,50);
+  transition: all .1s linear;
+}
+
+.toggle:checked + .powerBtn .powerBtn-light:after {
+  box-shadow: 0 0 5px 0 #666666;
+}
+
+.toggle:checked + .powerBtn .powerBtn-light:before {
+  background: rgb(50,205,50);
+  transition: all .1s linear;
+}
+/*End Power Button*/
+
 #turnBox{
   position:absolute;
   display: flex;
