@@ -341,10 +341,18 @@ input{
   z-index:3;
 }
 
-.info{
+.info, .weapInfo{
+  display:flex;
+  flex-direction: row;
   padding: .5em;
+  font-size: .9em;
   font-family: digital-7;
   color: #66ff66;
+  opacity:1;
+  -webkit-transition: opacity .35s ease-in-out;
+}
+
+.info{
   opacity: 0;
   -webkit-transition: opacity .35s ease-in-out;
 }

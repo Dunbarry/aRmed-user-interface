@@ -55,15 +55,60 @@ $(document).on('click','#ender',function(){
   $('.splashCloud').remove()
   $('.status1').append(
     '<div class="frame1">\
-      <p class="info" id="platingInfo">A layer of ultra-thin armor forming the outer shell of an aRm.\
-      A single quadrant can have a maximum of 15 layers of Plating. But assign them wisely, as the entire\
-      aRm can only carry 40 layers. Anything more risks be heavy enough to break even the Shoulders\
-      reinforced spine, or ripping the aRm from it"s fixtures.</p>\
-      <p class="info" id="insulationInfo">Insulation units manage heat within the casing of an aRm. They"re\
-      most useful in conjuction with energy weapons and explosives, but also serve as a secondary layer\
-      of protection for weapons and an aRm"s core.</p>\
+      <p class="info" id="platingInfo">Plating: A layer of ultra-thin, ultra-dense, ablative armor forming the\
+      outer shell of an aRm. A single quadrant can have a maximum of 15 layers of Plating. But assign\
+      them wisely, as the entire aRm can only carry 40 layers. Anything more risks be heavy enough to\
+      break even the Shoulders reinforced spine, or pull an aRm from a socket.</p>\
+      <p class="info" id="insulationInfo">Insulation: Micro units manage heat within the casing of an aRm.\
+      They are most useful in conjuction with energy weapons and explosives (coming soon!), but also\
+      serve as a secondary layer of protection for weapons and an aRm core. A single unit negates 5 points of heat while operating and one point of damage when destroyed.</p>\
     </div>');
-  $('.status2').append('<div class="frame2"></div>');
+  $('.status2').append(
+    '<div class="frame2">\
+      <div>\
+        <p class="weapInfo" id="misInfo">Misdemeanor: One of the first weapons platforms developed for aRm mounting.\
+        As weaponization of aRm constructs is illegal, it has never seen mass production. So the simplicity of the\
+        design and use of fairly common parts makes it favored by builders on a budget.</p>\
+        <span class="weapInfo">Damage : \
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+        </span>\
+        <span class="weapInfo">Accuracy : \
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+        </span>\
+      </div>\
+      <div>\
+        <p class="weapInfo" id="felInfo">Felony: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed\
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\
+        <span class="weapInfo">Damage : \
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+        </span>\
+        <span class="weapInfo">Accuracy : \
+          <span class="healthSpan"></span>\
+        </span>\
+      </div>\
+      <div>\
+        <p class="weapInfo" id="repInfo">Repeat Offender: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed\
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>\
+        <span class="weapInfo">Damage : \
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+          <span class="healthSpan"></span>\
+          <span class="yellowSpan"></span>\
+        </span>\
+        <span class="weapInfo">Accuracy : \
+          <span class="healthSpan"></span>\
+          <span class="yellowSpan"></span>\
+        </span>\
+      </div>\
+    </div>');
 })
 
 $(document).on('mouseenter', '#armor1, #info4Plating', function(){
@@ -125,6 +170,9 @@ $("#creator").submit(function(event){
 
   var x=$("#character-select").find("option:selected");
   chosen=x[0].id;
+  // removing UI elements.
+  $('.frame1').remove();
+  $('.frame2').remove();
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');

@@ -312,7 +312,6 @@ h4{
   opacity:.25;
 }
 
-
 .reticleSelect{
   background-color: lightblue;
   opacity:.25;
@@ -324,4 +323,20 @@ h4{
   height:.7em;
   width:1em;
   background-color: #66ff66;
+}
+
+.spacer{
+  display:flex;
+  border: .1em solid black;
+  height:.7em;
+  width:1em;
+  background-color: black;
+}
+
+.yellowSpan{
+  display:flex;
+  border: .1em solid grey;
+  height:.7em;
+  width:1em;
+  background-color: yellow;
 }
