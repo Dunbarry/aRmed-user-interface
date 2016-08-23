@@ -333,8 +333,8 @@ h4{
   flex-wrap:wrap;
   height: 490px;
   width: 370px;
+  /*background-image: url('./images/rutger.jpg');*/
   background-image: url('file:///Users/Drone/Documents/Workshop/aRmed/website.assets/images/rutger.jpg');
-/*https://pbs.twimg.com/media/CpwLJGfWAAAu4R5.jpg*/
   z-index:10;
 }
 

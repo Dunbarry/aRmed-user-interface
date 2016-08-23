@@ -100,6 +100,10 @@ $(document).on("click","#closer",function(){
   }
 })
 
+function quadArrow(){
+  $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
+}
+
 $(document).ready(function(){
   $('.weapSelect').append(
     '<option selected>empty</option>\

@@ -48,13 +48,13 @@ function OPrutger(){
       <div id="aim3">3</div>\
       <div id="aim4">4</div>\
     </div>');
-  $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
+  setTimeout(quadArrow,3000);
+  // $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $("#OPLog").append('<br/>>Match pending...<br />')
   $("#OPLog").append('<br /><br />');
   // $('#OPimgInsert').attr('src','images/rutger.jpg')
   $("#OPmoniker").html(rutger.Player.name)
-  // $("#OPhealth").html(rutger.Player.health);
   $('#OPhealth').append(
     '<span class="healthSpan" id="OPhealth0"></span>\
     <span class="healthSpan" id="OPhealth1"></span>\

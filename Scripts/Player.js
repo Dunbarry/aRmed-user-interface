@@ -114,14 +114,14 @@ function populate(chosen){
   $('.frame1').remove();
   $('.frame2').remove();
   // Adding backgrounds
-  // $('body').append('<div class="splashVeil"></div>')
-  // $('.splashVeil').append(
-  // '<div class="wrapper">\
-  //   <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
-  //   <label for="toggle" class="powerBtn">\
-  //     <span class="powerBtn-light"></span>\
-  //   </label>\
-  // </div>');
+  $('body').append('<div class="splashVeil"></div>')
+  $('.splashVeil').append(
+  '<div class="wrapper">\
+    <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
+    <label for="toggle" class="powerBtn">\
+      <span class="powerBtn-light"></span>\
+    </label>\
+  </div>');
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
@@ -130,12 +130,14 @@ function populate(chosen){
   $('.container').append('<div id="turnBox">...</div>');
   $('.igntion').html(id="ignitionAlt");
   setTimeout(loader,2000);
+  $('#imgInsert').attr('src','images/'+chosen+'.jpg')
   //Populate user fields with User created data when the match begins.
-  $('#ignition').click(function(){
-    // setTimeout(buttonClear,3000);
-    $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+  $('.wrapper').click(function(){
+    setTimeout(buttonClear,3000);
+    // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     // $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
+    // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     if(chosen==="danny"){
     chosen = danny;
     }
