@@ -6,6 +6,13 @@
 .trigger{
   width:3vw;
   height:.5px;
+  background-color:red;
+}
+
+.OPtrigger{
+  width:3vw;
+  height:.5px;
+  background-color: yellow;
 }
 
 #ignition{
@@ -307,6 +314,15 @@ h4{
 .green{
   cursor: pointer;
   color:#66ff66;
+}
+
+#safetyOff{
+  cursor: pointer;
+  background-color: #66ff66;
+}
+
+#safetyOn{
+  background-color: red;
 }
 
 /*Aiming Panes*/

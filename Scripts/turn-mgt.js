@@ -25,9 +25,11 @@ function safety(){
   if(targetAdjust===0){
     if(safetyState==="on"){
       safetyState="off";
+      $('.trigger').attr('id','safetyOff')
     }
     else if(safetyState==="off"){
       safetyState="on";
+      $('.trigger').attr('id','safetyOn')
     }
   }
   targetAdjust++;

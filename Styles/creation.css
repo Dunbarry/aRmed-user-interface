@@ -230,6 +230,11 @@ input{
   z-index: 10;
 }
 
+#quadArrow{
+  margin-left: 75%;
+  top:5%;
+}
+
 .crossSection{
   display:inline;
   margin-left: 20%;

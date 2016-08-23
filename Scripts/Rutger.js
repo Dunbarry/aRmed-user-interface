@@ -48,6 +48,7 @@ function OPrutger(){
       <div id="aim3">3</div>\
       <div id="aim4">4</div>\
     </div>');
+  $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $("#OPLog").append('<br/>>Match pending...<br />')
   $("#OPLog").append('<br /><br />');

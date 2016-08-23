@@ -87,6 +87,7 @@ function disaRmed(){
 $(document).on('click', '#aim1, #aim2, #aim3, #aim4', function(){
 	targeted=document.getElementById(($(this).attr('id'))).innerHTML;
 	console.log(this);
+	$('#quadArrow').remove();
 	turnState();
 	safety();
 	if(state==="Player"){
