@@ -40,6 +40,7 @@ var rutger= {
 
 function OPrutger(){
   console.log("Rutger online.");
+  if(wtf===0){
   // $("#OPLog").append('<br /><br />');
   $('.box2').html(
     '<div class="reticle">\
@@ -48,18 +49,20 @@ function OPrutger(){
       <div id="aim3">3</div>\
       <div id="aim4">4</div>\
     </div>');
-  $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
+  // $('.class').css('background-image','url('/images/rutger.jpg');)')
+  setTimeout(quadArrow,3000);
+  // $('body').append('<div class="arrowPulse" id="quadArrow"></div>')
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $("#OPLog").append('<br/>>Match pending...<br />')
   $("#OPLog").append('<br /><br />');
   // $('#OPimgInsert').attr('src','images/rutger.jpg')
   $("#OPmoniker").html(rutger.Player.name)
-  // $("#OPhealth").html(rutger.Player.health);
   $('#OPhealth').append(
     '<span class="healthSpan" id="OPhealth0"></span>\
     <span class="healthSpan" id="OPhealth1"></span>\
     <span class="healthSpan" id="OPhealth2"></span>\
     <span class="healthSpan" id="OPhealth3"></span>')
+    wtf++;
   /*Q1*/
   $("#OParmor1").html("Armor: "+rutger.aRm["1"].plating);
   $("#OPinsulation1").html("Insulation: "+rutger.aRm["1"].insulation);
@@ -80,6 +83,7 @@ function OPrutger(){
   $("#OPinsulation4").html("Insulation: "+rutger.aRm["4"].insulation);
   $("#OPweapon40").html(rutger.aRm["4"].weapons[0]);
   $("#OPweapon41").html(rutger.aRm["4"].weapons[1]);
+  }
 }
 
 var find={

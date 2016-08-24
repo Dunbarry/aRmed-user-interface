@@ -1,4 +1,4 @@
-// var quadCount=0;
+wtlf=0;
 var User={};
 //   "Player":{
 //     name:"",
@@ -172,6 +172,16 @@ $("#creator").submit(function(event){
   // removing UI elements.
   $('.frame1').remove();
   $('.frame2').remove();
+  $('.healthSpan').remove();
+  //Adding Button
+  $('body').append('<div class="splashVeil"></div>')
+  $('.splashVeil').append(
+  '<div class="wrapper">\
+    <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
+    <label for="toggle" class="powerBtn">\
+      <span class="powerBtn-light"></span>\
+    </label>\
+  </div>');
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
@@ -180,17 +190,19 @@ $("#creator").submit(function(event){
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
   //Populate user fields with User created data when the match begins.
-  $("#ignition").on('click', function(){
+  $(".wrapper").on('click', function(){
+    if(wtlf===0){
+    setTimeout(buttonClear,3000);
     $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     $("#PlayerLog").append('>Match has begun!<br /><br />');
     $("#moniker").html(User.Player.name)
     $('#turnBox').html(User.Player.name);
-    // $("#health").html(User.Player.health);
     $('#health').append(
       '<span class="healthSpan" id="health0"></span>\
       <span class="healthSpan" id="health1"></span>\
       <span class="healthSpan" id="health2"></span>\
       <span class="healthSpan" id="health3"></span>')
+      wtlf++;
   /*Q1*/
     $("#armor1").html("Armor: "+User.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+User.aRm["1"].insulation);
@@ -213,6 +225,7 @@ $("#creator").submit(function(event){
     $("#weapon41").html(User.aRm["4"].weapons[1]);
   //Set up the opponent.
     OPrutger();
+    }
   })
 });
 

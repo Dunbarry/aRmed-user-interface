@@ -64,6 +64,12 @@ function rumble(){
 //
 // }
 
+
+function finalPane(){
+	$('body').append('<div class="splashCloud"></div>')
+	tutorial(signOff);
+}
+
 // Determining DisaRmed
 function disaRmed(){
 	if(turnState()==="OP"){
@@ -77,7 +83,7 @@ function disaRmed(){
 			weapCheck++
 			if(weapCheck===5){
 				console.log("You lose!");
-				setTimeout(hsalps,3000);
+				setTimeout(finalPane,3000);
 			}
 		}
 	}
@@ -86,7 +92,6 @@ function disaRmed(){
 //Reticle safety checks
 $(document).on('click', '#aim1, #aim2, #aim3, #aim4', function(){
 	targeted=document.getElementById(($(this).attr('id'))).innerHTML;
-	console.log(this);
 	$('#quadArrow').remove();
 	turnState();
 	safety();
@@ -209,10 +214,10 @@ function wound(){
   if(target.Player.health===0){
     console.log("aRm destroyed!")
 		if(turnState()==="OP"){
-			console.log("You lose...")
+			$('#PlayerLog').append("You lose...")
 		}
 		else{
-			console.log("You win!");
+			$('#PlayerLog').append("You win!");
 		}
 		setTimeout(finalPane,3000);
   }

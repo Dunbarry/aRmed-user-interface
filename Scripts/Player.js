@@ -1,5 +1,5 @@
 //Here do pre-builds for all three avatars. When the button is clicked for the pre-built selection, these will be chosen by picture and the correct values will load.
-
+var wtf=0;
 var danny={
   "Player":{
    	name:"Danny",
@@ -114,14 +114,14 @@ function populate(chosen){
   $('.frame1').remove();
   $('.frame2').remove();
   // Adding backgrounds
-  // $('body').append('<div class="splashVeil"></div>')
-  // $('.splashVeil').append(
-  // '<div class="wrapper">\
-  //   <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
-  //   <label for="toggle" class="powerBtn">\
-  //     <span class="powerBtn-light"></span>\
-  //   </label>\
-  // </div>');
+  $('body').append('<div class="splashVeil"></div>')
+  $('.splashVeil').append(
+  '<div class="wrapper">\
+    <input type="checkbox" id="toggle" class="toggle" name="toggle" />\
+    <label for="toggle" class="powerBtn">\
+      <span class="powerBtn-light"></span>\
+    </label>\
+  </div>');
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
@@ -130,12 +130,19 @@ function populate(chosen){
   $('.container').append('<div id="turnBox">...</div>');
   $('.igntion').html(id="ignitionAlt");
   setTimeout(loader,2000);
+  $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+  $('#health').append(
+    '<span class="healthSpan" id="health0"></span>\
+    <span class="healthSpan" id="health1"></span>\
+    <span class="healthSpan" id="health2"></span>\
+    <span class="healthSpan" id="health3"></span>')
   //Populate user fields with User created data when the match begins.
-  $('#ignition').click(function(){
-    // setTimeout(buttonClear,3000);
-    $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+  $('.wrapper').click(function(){
+    setTimeout(buttonClear,3000);
+    // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     // $('#imgInsert').addClass('shakeMe');
     $("#PlayerLog").append('>Match has begun!<br /><br />');
+    // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     if(chosen==="danny"){
     chosen = danny;
     }
@@ -149,11 +156,11 @@ function populate(chosen){
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);
     // $("#health").html(chosen.Player.health);
-    $('#health').append(
-      '<span class="healthSpan" id="health0"></span>\
-      <span class="healthSpan" id="health1"></span>\
-      <span class="healthSpan" id="health2"></span>\
-      <span class="healthSpan" id="health3"></span>')
+    // $('#health').append(
+    //   '<span class="healthSpan" id="health0"></span>\
+    //   <span class="healthSpan" id="health1"></span>\
+    //   <span class="healthSpan" id="health2"></span>\
+    //   <span class="healthSpan" id="health3"></span>')
   /*Q1*/
     $("#armor1").html("Armor: "+chosen.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+chosen.aRm["1"].insulation);
