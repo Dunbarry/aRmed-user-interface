@@ -25,6 +25,15 @@ var core='<button class="closer" id="closer">Giddy up.</button><p>As for your qu
 
 var transition='<button class="closer" id="ender">Giddy up.</button><p>Come to think of it, I know the perfect match for you to see. One of the Shoulders is new to the circuit. The name is: <input type="text" placeholder="Character Name" id="name"> A newcomer, but one with promise. And should you decide to dishonor our agreement? Well, better one of our veterans is not the one to suffer.</p><p>I will be in contact with you on a date, time, and protocol. If you make me regret doing so, it will be a state we share.</p>'
 
+var signOff='<p>Thank you for playing the demo for aRmed Combat! Future plans include:</p>\
+  <ul>\
+    <li>Additional weapons</li>\
+    <li>Weapon mods</li>\
+    <li>Character customization</li>\
+    <li>Character perks</li>\
+    <li>And more!</li>\
+  </ul>'
+
 function newSplash(){
   $('.icon').remove();
   $('.splashVeil').remove();

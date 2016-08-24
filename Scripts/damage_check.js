@@ -64,6 +64,12 @@ function rumble(){
 //
 // }
 
+
+function finalPane(){
+	$('body').append('<div class="splashCloud"></div>')
+	tutorial(signOff);
+}
+
 // Determining DisaRmed
 function disaRmed(){
 	if(turnState()==="OP"){
@@ -77,7 +83,7 @@ function disaRmed(){
 			weapCheck++
 			if(weapCheck===5){
 				console.log("You lose!");
-				setTimeout(hsalps,3000);
+				setTimeout(finalPane,3000);
 			}
 		}
 	}
