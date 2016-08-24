@@ -1,38 +1,5 @@
 wtlf=0;
 var User={};
-//   "Player":{
-//     name:"",
-//     height:0,
-//     nationality:"",
-//     health:4,
-//   },
-//   "aRm":{
-//     1:{
-//       plating:0,
-//       insulation: 0,
-//       weapons: ["",""],
-//       equip:["empty"]
-//     },
-//     2:{
-//       plating:0,
-//       insulation: 0,
-//       weapons: ["",""],
-//       equip:["empty"]
-//     },
-//     3:{
-//       plating:0,
-//       insulation: 0,
-//       weapons: ["",""],
-//       equip:["empty"]
-//     },
-//     4:{
-//       plating:0,
-//       insulation: 0,
-//       weapons: ["",""],
-//       equip:["empty"]
-//     }
-//   }
-// }
 
 function charCheck(){
   var x=$("#character-select").find("option:selected");
@@ -62,6 +29,8 @@ $(document).on('click','#ender',function(){
       <p class="info" id="insulationInfo">Insulation: Micro units manage heat within the casing of an aRm.\
       They are most useful in conjuction with energy weapons and explosives (coming soon!), but also\
       serve as a secondary layer of protection for weapons and an aRm core. A single unit negates 5 points of heat while operating and one point of damage when destroyed.</p>\
+      <p class="info" id="creationInfo">To make a custom character and aRm, fill out the character sheet and select a picture. Then click this button. For tips on how to use a pre-made character and aRm, mouse over the "Deploy" button.</p>\
+      <p class="info" id="preMadeInfo">To use a pre-made character and aRm, select a picture and then click this button. For tips on how to create a custom character and aRm, mouse over the "Deploy" button.</p>\
     </div>');
   $('.status2').append(
     '<div class="frame2">\
@@ -128,6 +97,26 @@ $(document).on('mouseenter', '#insulation1, #info4Insulation', function(){
 $(document).on('mouseleave', '#insulation1, #info4Insulation', function(){
   console.log("Hover offline.")
   $('#insulationInfo').css('opacity','0');
+})
+
+$(document).on('mouseenter', '#submit', function(){
+  console.log("Hover online.")
+  $('#creationInfo').css('opacity','1');
+})
+
+$(document).on('mouseleave', '#submit', function(){
+  console.log("Hover offline.")
+  $('#creationInfo').css('opacity','0');
+})
+
+$(document).on('mouseenter', '#preMade', function(){
+  console.log("Hover online.")
+  $('#preMadeInfo').css('opacity','1');
+})
+
+$(document).on('mouseleave', '#preMade', function(){
+  console.log("Hover offline.")
+  $('#preMadeInfo').css('opacity','0');
 })
 
 $("#creator").submit(function(event){
