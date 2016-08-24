@@ -18,14 +18,16 @@ function rngQ(){
 // Strobe controls
 function strobeHold(){
 	$('#aim'+q).removeClass('strobe');
-	$('#OPtag'+q).removeClass('strobe');
+	$(turn+'tag'+q).removeClass('tagStrobe');
 }
 
 function strobe(){
 	console.log("Strobe Online.")
 	console.log($('#aim'+q));
-	$('#aim'+q).addClass('strobe');
-	$('#OPtag'+q).addClass('strobe');
+	if(state==="OP"){
+		$('#aim'+q).addClass('strobe');
+	}
+	$(turn+'tag'+q).addClass('tagStrobe');
 	// setTimeout(strobeHold,4000);
 }
 
@@ -52,7 +54,7 @@ function dynamicsHold(){		//Clear holds
 	$('#aim'+q).removeClass('strobe')
 	$('#aim'+q).css('background-color','white');
 	$('#aim'+q).css('opacity','0');
-	$('#OPtag'+q).css('color','black')
+	$(turn+'tag'+q).css('color','black')
 }
 
 // Rumble controls
@@ -131,9 +133,7 @@ function check(dmg){		//Player attacking enemy.
 	}
 	// q=rngQ();						//Quadrant to assign damage to.
 	else{
-		if(turn==="Player"){
-			setTimeout(strobe,1200);
-		}
+		setTimeout(strobe,1200);
 		setTimeout(rumble,900);
 		for(var i in target.aRm){
 	  	if(target.aRm[i]===target.aRm[q]){		//Find the right quadrant & check armor
