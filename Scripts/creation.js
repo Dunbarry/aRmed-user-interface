@@ -171,6 +171,7 @@ $("#creator").submit(function(event){
       <span class="powerBtn-light"></span>\
     </label>\
   </div>');
+  if(wtlf===0){
   //Append remaining UI elements.
   $('.box1').html('<img id="imgInsert" src="http://placehold.it/370x490">');
   $('.box1').append('<div class="combatLog" id="PlayerLog"></div>');
@@ -178,6 +179,7 @@ $("#creator").submit(function(event){
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
   setTimeout(loader,2000);
+  }
   //Populate user fields with User created data when the match begins.
   $(".wrapper").on('click', function(){
     if(wtlf===0){
