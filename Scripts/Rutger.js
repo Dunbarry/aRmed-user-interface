@@ -1,3 +1,4 @@
+var wtf=0;
 var rutger= {
   "Player":{
    	name:"Rutger",

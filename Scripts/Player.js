@@ -1,5 +1,5 @@
 //Here do pre-builds for all three avatars. When the button is clicked for the pre-built selection, these will be chosen by picture and the correct values will load.
-var wtf=0;
+var wtaf=0;
 var danny={
   "Player":{
    	name:"Danny",
@@ -128,7 +128,7 @@ function populate(chosen){
   $('.box2').html('<img id="OPimgInsert" src="http://placehold.it/370x490">');
   $('.box2').append('<div class="combatLog" id="OPLog"></div>');
   $('.container').append('<div id="turnBox">...</div>');
-  $('.igntion').html(id="ignitionAlt");
+  // $('.igntion').html(id="ignitionAlt");
   setTimeout(loader,2000);
   $('#imgInsert').attr('src','images/'+chosen+'.jpg')
   $('#health').append(
@@ -141,7 +141,10 @@ function populate(chosen){
     setTimeout(buttonClear,3000);
     // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     // $('#imgInsert').addClass('shakeMe');
+    if(wtaf===0){
     $("#PlayerLog").append('>Match has begun!<br /><br />');
+    }
+    wtaf++;
     // $('#imgInsert').attr('src','images/'+chosen+'.jpg')
     if(chosen==="danny"){
     chosen = danny;
