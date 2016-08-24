@@ -18,12 +18,14 @@ function rngQ(){
 // Strobe controls
 function strobeHold(){
 	$('#aim'+q).removeClass('strobe');
+	$('#OPtag'+q).removeClass('strobe');
 }
 
 function strobe(){
 	console.log("Strobe Online.")
 	console.log($('#aim'+q));
 	$('#aim'+q).addClass('strobe');
+	$('#OPtag'+q).addClass('strobe');
 	// setTimeout(strobeHold,4000);
 }
 
@@ -33,10 +35,12 @@ function reticleMgt(){			//Q aimed for
 	while(managed<5){
 		$('#aim'+managed).css('background-color','white');
 		$('#aim'+managed).css('opacity','0');
+		$('#OPtag'+managed).css('color','black')
 		managed++;
 	}
 	$('#aim'+targeted).css('background-color','lightblue');
 	$('#aim'+targeted).css('opacity','.25');
+	$('#OPtag'+targeted).css('color','lightblue')
 }
 
 function impactMgt(){				//Q hit
@@ -48,6 +52,7 @@ function dynamicsHold(){		//Clear holds
 	$('#aim'+q).removeClass('strobe')
 	$('#aim'+q).css('background-color','white');
 	$('#aim'+q).css('opacity','0');
+	$('#OPtag'+q).css('color','black')
 }
 
 // Rumble controls
