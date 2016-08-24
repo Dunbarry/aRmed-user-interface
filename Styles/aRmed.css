@@ -334,7 +334,7 @@ h4{
   height: 490px;
   width: 370px;
   /*background-image: url('./images/rutger.jpg');*/
-  background-image: url('file:///Users/Drone/Documents/Workshop/aRmed/website.assets/images/rutger.jpg');
+  background-image: url('../images/rutger.jpg');
   z-index:10;
 }
 

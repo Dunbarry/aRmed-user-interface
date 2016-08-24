@@ -1,5 +1,5 @@
 //Here do pre-builds for all three avatars. When the button is clicked for the pre-built selection, these will be chosen by picture and the correct values will load.
-
+var wtf=0;
 var danny={
   "Player":{
    	name:"Danny",
@@ -131,6 +131,11 @@ function populate(chosen){
   $('.igntion').html(id="ignitionAlt");
   setTimeout(loader,2000);
   $('#imgInsert').attr('src','images/'+chosen+'.jpg')
+  $('#health').append(
+    '<span class="healthSpan" id="health0"></span>\
+    <span class="healthSpan" id="health1"></span>\
+    <span class="healthSpan" id="health2"></span>\
+    <span class="healthSpan" id="health3"></span>')
   //Populate user fields with User created data when the match begins.
   $('.wrapper').click(function(){
     setTimeout(buttonClear,3000);
@@ -151,11 +156,11 @@ function populate(chosen){
     $("#moniker").html(chosen.Player.name)
     $('#turnBox').html(chosen.Player.name);
     // $("#health").html(chosen.Player.health);
-    $('#health').append(
-      '<span class="healthSpan" id="health0"></span>\
-      <span class="healthSpan" id="health1"></span>\
-      <span class="healthSpan" id="health2"></span>\
-      <span class="healthSpan" id="health3"></span>')
+    // $('#health').append(
+    //   '<span class="healthSpan" id="health0"></span>\
+    //   <span class="healthSpan" id="health1"></span>\
+    //   <span class="healthSpan" id="health2"></span>\
+    //   <span class="healthSpan" id="health3"></span>')
   /*Q1*/
     $("#armor1").html("Armor: "+chosen.aRm["1"].plating);
     $("#insulation1").html("Insulation: "+chosen.aRm["1"].insulation);
