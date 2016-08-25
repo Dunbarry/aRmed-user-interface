@@ -118,9 +118,8 @@ $(document).ready(function(){
     '<option selected>empty</option>\
     <option>Misdemeanor</option>\
     <option>Felony</option>\
-    <option>Repeat Offender</option>\
-    <option>Pontificator</option>');
-  setTimeout(newSplash, 12500);
+    <option>Repeat Offender</option>');
+  setTimeout(newSplash, 13000);
 })
 
 $('.splashVeil, .icon').click(function(){
